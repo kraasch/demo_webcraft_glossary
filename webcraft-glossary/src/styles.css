@@ -1,17 +1,19 @@
 
 /* You can add global styles to this file, and also import other style files */
 
+@import "tailwindcss";
+
+@plugin "daisyui";
+
+/* For v3 compatibility maybe...
+@import "tailwindcss/postcss";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* For v3 compatibility maybe...
 @import "tailwindcss";
 @import "tailwindcss/theme";
 @import "tailwindcss/utilities";
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 */
 
