@@ -64,6 +64,7 @@ export class MythemeswitchComponent {
     { isDiv:false, name:"sunset",        },
     { isDiv:false, name:"synthwave",     },
     { isDiv:false, name:"wireframe",     },
+    { isDiv:false, name:"walkingdino",   },
     { isDiv:true,  name:"LOW CONTRAST",  },
     { isDiv:false, name:"acid",          },
     { isDiv:false, name:"autumn",        },
