@@ -22,7 +22,7 @@ import { RouterModule } from '@angular/router';
         <div class="max-w-md">
           <h1 class="mb-5 text-5xl font-bold">Webcraft Glossary</h1>
           <p class="mb-5">
-            A small, humble collection of some, but not all, web development terminology.
+            A humble, non-exhaustive collection of some, but not all, web development terminology.
           </p>
           <!-- BUTTON
             <button class="btn btn-primary" (click)="counterService.increment()">Add</button>
