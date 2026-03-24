@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [
+  ],
   template: `
     <div class="hero bg-base-100 min-h-164">
       <div class="hero-content text-center">
@@ -12,7 +14,7 @@ import { Component } from '@angular/core';
           <p class="py-6">
             Here a collection of web development terminology.
           </p>
-          <button class="btn btn-primary">Open Glossary</button>
+          <button (click)="goToGlossary()" class="btn btn-primary">Open Glossary</button>
         </div>
       </div>
     </div>
@@ -21,4 +23,11 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  constructor(private router: Router) {}
+
+  goToGlossary() {
+    this.router.navigate(['/glossary']);
+  }
+
 }
+
