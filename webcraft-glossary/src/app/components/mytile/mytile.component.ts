@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+
+import { Component, Input } from '@angular/core';
+import { GlossaryEntry, DEFAULT_ENTRY } from '../../services/data/glossary-entry';
 
 @Component({
   selector: 'app-mytile',
@@ -47,8 +49,14 @@ import { Component } from '@angular/core';
     * </div>
     -------------------------------------------->
   `,
-  styles: ``
+  styles: `
+    .card {
+      width: 100%;
+      height: 100%;
+    }
+`
 })
 export class MytileComponent {
-
+  @Input() tileData: GlossaryEntry = DEFAULT_ENTRY;
 }
+

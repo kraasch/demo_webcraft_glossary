@@ -54,3 +54,13 @@
 @import "tailwindcss/utilities";
 */
 
+body {
+  border: 5px solid transparent;
+  /* DEBUG */
+  /*
+  border-color: #0f0;
+  overflow-x: hidden;
+  */
+  padding: 5px;
+}
+

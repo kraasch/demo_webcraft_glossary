@@ -1,3 +1,4 @@
+
 import { Component, inject } from '@angular/core';
 import { MytileComponent } from '../../components/mytile/mytile.component';
 import { LocalDataProviderService } from '../../services/data/local-data-provider.service';
@@ -9,17 +10,36 @@ import { LocalDataProviderService } from '../../services/data/local-data-provide
     MytileComponent,
   ],
   template: `
-    <div>
-      @for (item of data; track item.id) {
-        <app-mytile [tileData]="item" />
+    <div class="mybox">
+      @for (dataItem of data; track dataItem.id) {
+        <app-mytile
+          class="myitem"
+          [tileData]="dataItem"
+        />
       } @empty {
         <p>No tiles available.</p>
       }
     </div>
   `,
-  styles: ``
+  styles: `
+.mybox {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.myitem {
+  padding: 5px;
+  /* DEBUG */
+  /*
+  border-color: #f00;
+  overflow-x: hidden;
+  border: solid;
+  */
+}
+`
 })
 export class GlossaryComponent {
   dataProvider = inject(LocalDataProviderService);
   data = this.dataProvider.getData();
 }
+
