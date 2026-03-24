@@ -8,8 +8,13 @@ A project with...
 
 <!--
 optional:
- - [ ] use of REST-API requests.
- - [ ] use of `forkJoin`.
+  - [ ] use of REST-API requests.
+  - [ ] use of `forkJoin`.
+  - [ ] ts:      class interface enum.
+  - [ ] ng:      directive pipe module.
+  - [ ] routing: guard resolver interceptor.
+  - [ ] more:    app-shell service-worker web-worker.
+  - [ ] misc:    config environments.
  -->
 
 ## Credits
