@@ -8,49 +8,57 @@ import { GlossaryEntry, DEFAULT_ENTRY } from '../../services/data/glossary-entry
   imports: [],
   template: `
     <div class="card bg-base-100 w-96 shadow-sm">
-        <!-- -- or use https://daisyui.com/components/card/#card-with-image-overlay -- --
-      <figure class="h-20 min-w-full rounded-lg">
-        <img alt="Image" src="https://img.daisyui.com/images/profile/demo/batperson@192.webp" />
-      </figure>
-      <figure class="h-20 w-20 rounded-lg">
-        <img alt="Image" src="https://img.daisyui.com/images/profile/demo/batperson@192.webp" />
-      </figure>
-        -->
+      <!--- TODO: include nice images here -->
+      <!-- -- or use https://daisyui.com/components/card/#card-with-image-overlay -- --
+        <figure class="h-20 min-w-full rounded-lg">
+          <img alt="Image" src="https://img.daisyui.com/images/profile/demo/batperson@192.webp" />
+        </figure>
+        <figure class="h-20 w-20 rounded-lg">
+          <img alt="Image" src="https://img.daisyui.com/images/profile/demo/batperson@192.webp" />
+        </figure>
+      -->
       <div class="card-body">
         <h2 class="card-title">
-          Card Title
-          <div class="badge badge-secondary">NEW</div>
+          {{ tileData.term }}
+          @if (tileData.tags.length) {
+            <!--- TODO: look up tag color here -->
+            <!--- TODO: update filter to only include these tags on button click -->
+            <div class="card-actions justify-end">
+              @for (tag of tileData.tags; track tag) {
+                <div class="badge badge-info">{{ tag }}</div>
+              }
+            </div>
+          }
         </h2>
-        <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-        <div class="card-actions justify-end">
-          <div class="badge badge-outline">Fashion</div>
-          <div class="badge badge-outline">Products</div>
-        </div>
+        <p>{{ tileData.text }}</p>
+        @if (tileData.points.length) {
+          <ul>
+            @for (point of tileData.points; track point) {
+              <li>{{ point }}</li>
+            }
+          </ul>
+        }
+        @if (tileData.references.length) {
+          <ul>
+            @for (ref of tileData.references; track ref.weblink ) {
+              <li>
+                {{ ref.handle }}: <a href="{{ ref.weblink }}">{{ ref.weblink }}</a>
+              </li>
+            }
+          </ul>
+        }
+        @if (tileData.crossrefs.length) {
+          <div class="card-actions justify-end">
+            @for (crossref  of tileData.crossrefs; track crossref ) {
+              <!--- TODO: resolve link to crossref -->
+              <!--- TODO: resolve name of crossref -->
+              <!--- TODO: update filter to only include this reference on button click -->
+              <div class="badge badge-outline">{{ crossref  }}</div>
+            }
+          </div>
+        }
       </div>
     </div>
-    <!-------------------------------------------
-    * <div class="tile">
-    *   <h3>{{ tileData.term }}</h3>
-    *   <p>{{ tileData.text }}</p>
-    *
-    *   @if (tileData.points?.length) {
-    *     <ul>
-    *       @for (point of tileData.points; track $index) { <li>{{ point }}</li> }
-    *     </ul>
-    *   }
-    *
-    *   @if (tileData.sourceLinks?.length) {
-    *     <div>Sources:
-    *       @for (source of tileData.sourceLinks; track source.handle) {
-    *         <a [href]="source.weblink">{{ source.handle }}</a>
-    *       }
-    *     </div>
-    *   }
-    *
-    *   Tags: {{ tileData.tags?.join(', ') ?? 'none' }}
-    *   Types: {{ tileData.sourceTypes?.join(', ') ?? 'none' }}
-    * </div>
-    -------------------------------------------->
   `,
   styles: `
     .card {
