@@ -1,11 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MycounterService } from '../../services/mycounter/mycounter.service';
+import { MythemeswitchComponent } from '../../components/mythemeswitch/mythemeswitch.component';
 
 @Component({
   selector: 'app-myfooter',
   standalone: true,
-  imports: [],
+  imports: [ MythemeswitchComponent ],
   template: `
     <footer class="footer footer-horizontal footer-center bg-base-200 text-base-content rounded p-10">
       <nav class="grid grid-flow-col gap-4">
@@ -13,10 +14,13 @@ import { MycounterService } from '../../services/mycounter/mycounter.service';
         <a class="link link-hover">Glossary</a>
         <a class="link link-hover">Stats</a>
       </nav>
-      <div>
+      <nav>
+        <app-mythemeswitch class="h-6 max-h-6" />
+      </nav>
+      <!--
         <p>Items: {{ counterService.getCount() }}</p>
         <button class="btn btn-primary" (click)="counterService.decrement()">Remove</button>
-      </div>
+      -->
       <nav>
         <div class="grid grid-flow-col gap-4">
 
