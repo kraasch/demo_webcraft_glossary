@@ -46,6 +46,7 @@ export class LocalDataProviderService {
       crossrefs: [ 1, ],
       tags: [ "tool" ],
       srcs: [ "ack" ],
+      imgurl: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
     },
     {
       id: 1,
@@ -64,6 +65,7 @@ export class LocalDataProviderService {
       crossrefs: [ 4 ],
       tags: [ "language", "browser wars" ],
       srcs: [ "ack" ],
+      imgurl: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
     },
     {
       id: 2,
@@ -81,6 +83,7 @@ export class LocalDataProviderService {
       crossrefs: [ 0, ],
       tags: [ "tool" ],
       srcs: [ "ack" ],
+      imgurl: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
     },
     {
       id: 3,
@@ -99,6 +102,7 @@ export class LocalDataProviderService {
       crossrefs: [ 4, ],
       tags: [ "browser", "browser wars" ],
       srcs: [ "ack" ],
+      imgurl: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
     },
     {
       id: 4,
@@ -116,21 +120,22 @@ export class LocalDataProviderService {
       crossrefs: [ 3, ],
       tags: [ "historic event" ],
       srcs: [ "ack" ],
+      imgurl: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
     },
     /* SOME DUMMY ENTRIES
      */
-    { id:  5, term: "A", text: "B", points: [ "C", "D", ], abbreviations: [ { short: "E", long: "F" }, { short: "G", long: "H" }, ], references: [ { handle: "I", weblink: "J" }, { handle: "K", weblink: "L" }, ], crossrefs: [ 0, 1 ], tags: [ "M", "N" ], srcs: [ "O", "P" ], },
-    { id:  6, term: "A", text: "B", points: [ "C", "D", ], abbreviations: [ { short: "E", long: "F" }, { short: "G", long: "H" }, ], references: [ { handle: "I", weblink: "J" }, { handle: "K", weblink: "L" }, ], crossrefs: [ 0, 1 ], tags: [ "M", "N" ], srcs: [ "O", "P" ], },
-    { id:  7, term: "A", text: "B", points: [ "C", "D", ], abbreviations: [ { short: "E", long: "F" }, { short: "G", long: "H" }, ], references: [ { handle: "I", weblink: "J" }, { handle: "K", weblink: "L" }, ], crossrefs: [ 0, 1 ], tags: [ "M", "N" ], srcs: [ "O", "P" ], },
-    { id:  8, term: "A", text: "B", points: [ "C", "D", ], abbreviations: [ { short: "E", long: "F" }, { short: "G", long: "H" }, ], references: [ { handle: "I", weblink: "J" }, { handle: "K", weblink: "L" }, ], crossrefs: [ 0, 1 ], tags: [ "M", "N" ], srcs: [ "O", "P" ], },
-    { id:  9, term: "A", text: "B", points: [ "C", "D", ], abbreviations: [ { short: "E", long: "F" }, { short: "G", long: "H" }, ], references: [ { handle: "I", weblink: "J" }, { handle: "K", weblink: "L" }, ], crossrefs: [ 0, 1 ], tags: [ "M", "N" ], srcs: [ "O", "P" ], },
-    { id: 10, term: "A", text: "B", points: [ "C", "D", ], abbreviations: [ { short: "E", long: "F" }, { short: "G", long: "H" }, ], references: [ { handle: "I", weblink: "J" }, { handle: "K", weblink: "L" }, ], crossrefs: [ 0, 1 ], tags: [ "M", "N" ], srcs: [ "O", "P" ], },
-    { id: 11, term: "A", text: "B", points: [ "C", "D", ], abbreviations: [ { short: "E", long: "F" }, { short: "G", long: "H" }, ], references: [ { handle: "I", weblink: "J" }, { handle: "K", weblink: "L" }, ], crossrefs: [ 0, 1 ], tags: [ "M", "N" ], srcs: [ "O", "P" ], },
-    { id: 12, term: "A", text: "B", points: [ "C", "D", ], abbreviations: [ { short: "E", long: "F" }, { short: "G", long: "H" }, ], references: [ { handle: "I", weblink: "J" }, { handle: "K", weblink: "L" }, ], crossrefs: [ 0, 1 ], tags: [ "M", "N" ], srcs: [ "O", "P" ], },
-    { id: 13, term: "A", text: "B", points: [ "C", "D", ], abbreviations: [ { short: "E", long: "F" }, { short: "G", long: "H" }, ], references: [ { handle: "I", weblink: "J" }, { handle: "K", weblink: "L" }, ], crossrefs: [ 0, 1 ], tags: [ "M", "N" ], srcs: [ "O", "P" ], },
-    { id: 14, term: "A", text: "B", points: [ "C", "D", ], abbreviations: [ { short: "E", long: "F" }, { short: "G", long: "H" }, ], references: [ { handle: "I", weblink: "J" }, { handle: "K", weblink: "L" }, ], crossrefs: [ 0, 1 ], tags: [ "M", "N" ], srcs: [ "O", "P" ], },
-    { id: 15, term: "A", text: "B", points: [ "C", "D", ], abbreviations: [ { short: "E", long: "F" }, { short: "G", long: "H" }, ], references: [ { handle: "I", weblink: "J" }, { handle: "K", weblink: "L" }, ], crossrefs: [ 0, 1 ], tags: [ "M", "N" ], srcs: [ "O", "P" ], },
-    { id: 16, term: "A", text: "B", points: [ "C", "D", ], abbreviations: [ { short: "E", long: "F" }, { short: "G", long: "H" }, ], references: [ { handle: "I", weblink: "J" }, { handle: "K", weblink: "L" }, ], crossrefs: [ 0, 1 ], tags: [ "M", "N" ], srcs: [ "O", "P" ], },
+    { id:  5, term: "A", text: "B", points: [ "C", "D", ], abbreviations: [ { short: "E", long: "F" }, { short: "G", long: "H" }, ], references: [ { handle: "I", weblink: "J" }, { handle: "K", weblink: "L" }, ], crossrefs: [ 0, 1 ], tags: [ "M", "N" ], srcs: [ "O", "P" ], imgurl: "", },
+    { id:  6, term: "A", text: "B", points: [ "C", "D", ], abbreviations: [ { short: "E", long: "F" }, { short: "G", long: "H" }, ], references: [ { handle: "I", weblink: "J" }, { handle: "K", weblink: "L" }, ], crossrefs: [ 0, 1 ], tags: [ "M", "N" ], srcs: [ "O", "P" ], imgurl: "", },
+    { id:  7, term: "A", text: "B", points: [ "C", "D", ], abbreviations: [ { short: "E", long: "F" }, { short: "G", long: "H" }, ], references: [ { handle: "I", weblink: "J" }, { handle: "K", weblink: "L" }, ], crossrefs: [ 0, 1 ], tags: [ "M", "N" ], srcs: [ "O", "P" ], imgurl: "", },
+    { id:  8, term: "A", text: "B", points: [ "C", "D", ], abbreviations: [ { short: "E", long: "F" }, { short: "G", long: "H" }, ], references: [ { handle: "I", weblink: "J" }, { handle: "K", weblink: "L" }, ], crossrefs: [ 0, 1 ], tags: [ "M", "N" ], srcs: [ "O", "P" ], imgurl: "", },
+    { id:  9, term: "A", text: "B", points: [ "C", "D", ], abbreviations: [ { short: "E", long: "F" }, { short: "G", long: "H" }, ], references: [ { handle: "I", weblink: "J" }, { handle: "K", weblink: "L" }, ], crossrefs: [ 0, 1 ], tags: [ "M", "N" ], srcs: [ "O", "P" ], imgurl: "", },
+    { id: 10, term: "A", text: "B", points: [ "C", "D", ], abbreviations: [ { short: "E", long: "F" }, { short: "G", long: "H" }, ], references: [ { handle: "I", weblink: "J" }, { handle: "K", weblink: "L" }, ], crossrefs: [ 0, 1 ], tags: [ "M", "N" ], srcs: [ "O", "P" ], imgurl: "", },
+    { id: 11, term: "A", text: "B", points: [ "C", "D", ], abbreviations: [ { short: "E", long: "F" }, { short: "G", long: "H" }, ], references: [ { handle: "I", weblink: "J" }, { handle: "K", weblink: "L" }, ], crossrefs: [ 0, 1 ], tags: [ "M", "N" ], srcs: [ "O", "P" ], imgurl: "", },
+    { id: 12, term: "A", text: "B", points: [ "C", "D", ], abbreviations: [ { short: "E", long: "F" }, { short: "G", long: "H" }, ], references: [ { handle: "I", weblink: "J" }, { handle: "K", weblink: "L" }, ], crossrefs: [ 0, 1 ], tags: [ "M", "N" ], srcs: [ "O", "P" ], imgurl: "", },
+    { id: 13, term: "A", text: "B", points: [ "C", "D", ], abbreviations: [ { short: "E", long: "F" }, { short: "G", long: "H" }, ], references: [ { handle: "I", weblink: "J" }, { handle: "K", weblink: "L" }, ], crossrefs: [ 0, 1 ], tags: [ "M", "N" ], srcs: [ "O", "P" ], imgurl: "", },
+    { id: 14, term: "A", text: "B", points: [ "C", "D", ], abbreviations: [ { short: "E", long: "F" }, { short: "G", long: "H" }, ], references: [ { handle: "I", weblink: "J" }, { handle: "K", weblink: "L" }, ], crossrefs: [ 0, 1 ], tags: [ "M", "N" ], srcs: [ "O", "P" ], imgurl: "", },
+    { id: 15, term: "A", text: "B", points: [ "C", "D", ], abbreviations: [ { short: "E", long: "F" }, { short: "G", long: "H" }, ], references: [ { handle: "I", weblink: "J" }, { handle: "K", weblink: "L" }, ], crossrefs: [ 0, 1 ], tags: [ "M", "N" ], srcs: [ "O", "P" ], imgurl: "", },
+    { id: 16, term: "A", text: "B", points: [ "C", "D", ], abbreviations: [ { short: "E", long: "F" }, { short: "G", long: "H" }, ], references: [ { handle: "I", weblink: "J" }, { handle: "K", weblink: "L" }, ], crossrefs: [ 0, 1 ], tags: [ "M", "N" ], srcs: [ "O", "P" ], imgurl: "", },
   ];
 
   getData() {
