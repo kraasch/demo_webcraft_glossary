@@ -26,4 +26,5 @@ optional:
 
   - Read about [implied end tags](https://html.spec.whatwg.org/multipage/parsing.html#closing-elements-that-have-implied-end-tags).
   - About tailwind's [min-h utilities](https://windframe.dev/tailwind/classes/tailwind-min-height).
+  - The pie chart's color scheme is the [Sweet Things Palette](https://lospec.com/palette-list/sweet-things).
 
