@@ -1,10 +1,13 @@
 
 # Webcraft Glossary
 
+Link to the [Github Pages upload](https://kraasch.github.io/demo_webcraft_glossary/).
+
 A project with...
 
   - [X] Angular 17,
-  - [ ] use of filters.
+  - [ ] upload to Github Pages,
+  - [ ] provide some filters.
 
 <!--
 optional:
