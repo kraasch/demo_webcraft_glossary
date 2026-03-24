@@ -16,7 +16,7 @@ import { LocalDataProviderService } from '../../services/data/local-data-provide
         Filter
       </div>
       <div class="collapse-content bg-secondary text-secondary-content peer-checked:bg-secondary peer-checked:text-secondary-content" >
-        Click the "Sign Up" button in the top right corner and follow the registration process.
+        Implement some filters here.
       </div>
     </div>
     <div class="mybox">

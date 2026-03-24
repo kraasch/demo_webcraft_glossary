@@ -63,7 +63,6 @@ export class MythemeswitchComponent {
     { isDiv:false, name:"night",         },
     { isDiv:false, name:"sunset",        },
     { isDiv:false, name:"synthwave",     },
-    { isDiv:false, name:"wireframe",     },
     { isDiv:false, name:"walkingdino",   },
     { isDiv:true,  name:"LOW CONTRAST",  },
     { isDiv:false, name:"acid",          },
@@ -86,6 +85,7 @@ export class MythemeswitchComponent {
     { isDiv:false, name:"silk",          },
     { isDiv:false, name:"valentine",     },
     { isDiv:false, name:"winter",        },
+    { isDiv:false, name:"wireframe",     },
   ];
 
 }
