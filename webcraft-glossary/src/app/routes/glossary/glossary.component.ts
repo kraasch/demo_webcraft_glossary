@@ -10,6 +10,15 @@ import { LocalDataProviderService } from '../../services/data/local-data-provide
     MytileComponent,
   ],
   template: `
+    <div class="bg-base-100 border-base-300 collapse border rounded-none">
+      <input type="checkbox" class="peer" />
+      <div class="collapse-title bg-base-300 text-secondary-content peer-checked:bg-secondary peer-checked:text-secondary-content" >
+        Filter
+      </div>
+      <div class="collapse-content bg-secondary text-secondary-content peer-checked:bg-secondary peer-checked:text-secondary-content" >
+        Click the "Sign Up" button in the top right corner and follow the registration process.
+      </div>
+    </div>
     <div class="mybox">
       @for (dataItem of data; track dataItem.id) {
         <app-mytile

@@ -28,7 +28,7 @@ import { RouterModule } from '@angular/router';
       </nav>
       -->
       <nav>
-        <app-mythemeswitch class="h-6 max-h-6" />
+        <app-mythemeswitch class="h-6 max-h-6 dropdown-right dropdown-end" />
       </nav>
       <!--
         <p>Items: {{ counterService.getCount() }}</p>
@@ -38,7 +38,7 @@ import { RouterModule } from '@angular/router';
         <div class="grid grid-flow-col gap-4">
 
           <!-- link to github -->
-          <a href="https://github.com/kraasch/">
+          <a href="https://github.com/kraasch/demo_webcraft_glossary/">
           <span style="white-space: nowrap">
             <svg fill="currentColor" height="20" width="20" version="1.1" xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-267 265 264.5 225.1" xml:space="preserve">

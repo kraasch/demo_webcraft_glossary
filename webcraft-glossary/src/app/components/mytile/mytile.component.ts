@@ -8,9 +8,14 @@ import { GlossaryEntry, DEFAULT_ENTRY } from '../../services/data/glossary-entry
   imports: [],
   template: `
     <div class="card bg-base-100 w-96 shadow-sm">
-      <figure>
-        <img src="" alt="Image" />
+        <!--
+      <figure class="h-20 min-w-full rounded-lg">
+        <img alt="Image" src="https://img.daisyui.com/images/profile/demo/batperson@192.webp" />
       </figure>
+      <figure class="h-20 w-20 rounded-lg">
+        <img alt="Image" src="https://img.daisyui.com/images/profile/demo/batperson@192.webp" />
+      </figure>
+        -->
       <div class="card-body">
         <h2 class="card-title">
           Card Title

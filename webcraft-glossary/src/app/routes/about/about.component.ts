@@ -9,9 +9,8 @@ import { Component } from '@angular/core';
       <div class="hero-content text-center">
         <div class="max-w-md">
           <h1 class="text-5xl font-bold">About</h1>
-          <p class="py-6">
-            Here some about.
-          </p>
+          <p class="py-6">A Glossary of web development terminology and a demo app for Angular 17.</p>
+          <p class="py-6">See further info in footer.</p>
         </div>
       </div>
     </div>
