@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MythemeswitchComponent } from '../mythemeswitch/mythemeswitch.component';
+import { MythemeswitchComponent } from '../../components/mythemeswitch/mythemeswitch.component';
 
 @Component({
   selector: 'app-myheader',
