@@ -1,18 +1,29 @@
+
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MycounterService } from '../../services/mycounter/mycounter.service';
 import { MythemeswitchComponent } from '../../components/mythemeswitch/mythemeswitch.component';
 
+import { RouterOutlet } from '@angular/router';
+import { RouterModule } from '@angular/router';
+
 @Component({
   selector: 'app-myfooter',
   standalone: true,
-  imports: [ MythemeswitchComponent ],
+  imports: [
+    MythemeswitchComponent,
+    RouterModule,
+  ],
   template: `
     <footer class="footer footer-horizontal footer-center bg-base-200 text-base-content rounded p-10">
       <nav class="grid grid-flow-col gap-4">
-        <a class="link link-hover">Main</a>
-        <a class="link link-hover">Glossary</a>
-        <a class="link link-hover">Stats</a>
+        <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+        <div class="divider divider-horizontal"></div>
+        <a routerLink="glossary" routerLinkActive="active">Glossary</a>
+        <div class="divider divider-horizontal"></div>
+        <a routerLink="stats" routerLinkActive="active">Stats</a>
+        <div class="divider divider-horizontal"></div>
+        <a routerLink="about" routerLinkActive="active">About</a>
       </nav>
       <nav>
         <app-mythemeswitch class="h-6 max-h-6" />
@@ -78,3 +89,4 @@ export class MyfooterComponent {
   counterService = inject(MycounterService);
   currentYear: number = new Date().getFullYear();
 }
+
