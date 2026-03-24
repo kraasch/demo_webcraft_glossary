@@ -6,9 +6,11 @@ A project with...
   - [X] Angular 17,
   - [ ] use of filters.
 
-[//]: # optional:
-[//]: #  - [ ] use of REST-API requests.
-[//]: #  - [ ] use of `forkJoin`.
+<!--
+optional:
+ - [ ] use of REST-API requests.
+ - [ ] use of `forkJoin`.
+ -->
 
 ## Credits
 
