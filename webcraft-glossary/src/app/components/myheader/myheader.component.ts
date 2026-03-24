@@ -2,10 +2,15 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MycounterService } from '../../services/mycounter/mycounter.service';
 
+import { RouterModule } from '@angular/router';
+
 @Component({
   selector: 'app-myheader',
   standalone: true,
-  imports: [ CommonModule ],
+  imports: [
+    CommonModule,
+    RouterModule,
+  ],
   template: `
     <div
       class="hero min-h-1.5"
@@ -24,6 +29,22 @@ import { MycounterService } from '../../services/mycounter/mycounter.service';
             <label>Count button presses: <span class="badge">{{ count$ | async }}</span></label>
           -->
           <br />
+        </div>
+      </div>
+    </div>
+    <div class="hero bg-base-200 min-h-1.5" >
+      <div class="hero-overlay"></div>
+      <div class="hero-content text-neutral-content text-center">
+        <div class="max-w-md">
+          <nav class="grid grid-flow-col gap-4">
+            <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+            <div class="divider divider-horizontal"></div>
+            <a routerLink="glossary" routerLinkActive="active">Glossary</a>
+            <div class="divider divider-horizontal"></div>
+            <a routerLink="stats" routerLinkActive="active">Stats</a>
+            <div class="divider divider-horizontal"></div>
+            <a routerLink="about" routerLinkActive="active">About</a>
+          </nav>
         </div>
       </div>
     </div>

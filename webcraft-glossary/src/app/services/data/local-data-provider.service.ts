@@ -117,6 +117,20 @@ export class LocalDataProviderService {
       tags: [ "historic event" ],
       srcs: [ "ack" ],
     },
+    /* SOME DUMMY ENTRIES
+     */
+    { id:  5, term: "A", text: "B", points: [ "C", "D", ], abbreviations: [ { short: "E", long: "F" }, { short: "G", long: "H" }, ], references: [ { handle: "I", weblink: "J" }, { handle: "K", weblink: "L" }, ], crossrefs: [ 0, 1 ], tags: [ "M", "N" ], srcs: [ "O", "P" ], },
+    { id:  6, term: "A", text: "B", points: [ "C", "D", ], abbreviations: [ { short: "E", long: "F" }, { short: "G", long: "H" }, ], references: [ { handle: "I", weblink: "J" }, { handle: "K", weblink: "L" }, ], crossrefs: [ 0, 1 ], tags: [ "M", "N" ], srcs: [ "O", "P" ], },
+    { id:  7, term: "A", text: "B", points: [ "C", "D", ], abbreviations: [ { short: "E", long: "F" }, { short: "G", long: "H" }, ], references: [ { handle: "I", weblink: "J" }, { handle: "K", weblink: "L" }, ], crossrefs: [ 0, 1 ], tags: [ "M", "N" ], srcs: [ "O", "P" ], },
+    { id:  8, term: "A", text: "B", points: [ "C", "D", ], abbreviations: [ { short: "E", long: "F" }, { short: "G", long: "H" }, ], references: [ { handle: "I", weblink: "J" }, { handle: "K", weblink: "L" }, ], crossrefs: [ 0, 1 ], tags: [ "M", "N" ], srcs: [ "O", "P" ], },
+    { id:  9, term: "A", text: "B", points: [ "C", "D", ], abbreviations: [ { short: "E", long: "F" }, { short: "G", long: "H" }, ], references: [ { handle: "I", weblink: "J" }, { handle: "K", weblink: "L" }, ], crossrefs: [ 0, 1 ], tags: [ "M", "N" ], srcs: [ "O", "P" ], },
+    { id: 10, term: "A", text: "B", points: [ "C", "D", ], abbreviations: [ { short: "E", long: "F" }, { short: "G", long: "H" }, ], references: [ { handle: "I", weblink: "J" }, { handle: "K", weblink: "L" }, ], crossrefs: [ 0, 1 ], tags: [ "M", "N" ], srcs: [ "O", "P" ], },
+    { id: 11, term: "A", text: "B", points: [ "C", "D", ], abbreviations: [ { short: "E", long: "F" }, { short: "G", long: "H" }, ], references: [ { handle: "I", weblink: "J" }, { handle: "K", weblink: "L" }, ], crossrefs: [ 0, 1 ], tags: [ "M", "N" ], srcs: [ "O", "P" ], },
+    { id: 12, term: "A", text: "B", points: [ "C", "D", ], abbreviations: [ { short: "E", long: "F" }, { short: "G", long: "H" }, ], references: [ { handle: "I", weblink: "J" }, { handle: "K", weblink: "L" }, ], crossrefs: [ 0, 1 ], tags: [ "M", "N" ], srcs: [ "O", "P" ], },
+    { id: 13, term: "A", text: "B", points: [ "C", "D", ], abbreviations: [ { short: "E", long: "F" }, { short: "G", long: "H" }, ], references: [ { handle: "I", weblink: "J" }, { handle: "K", weblink: "L" }, ], crossrefs: [ 0, 1 ], tags: [ "M", "N" ], srcs: [ "O", "P" ], },
+    { id: 14, term: "A", text: "B", points: [ "C", "D", ], abbreviations: [ { short: "E", long: "F" }, { short: "G", long: "H" }, ], references: [ { handle: "I", weblink: "J" }, { handle: "K", weblink: "L" }, ], crossrefs: [ 0, 1 ], tags: [ "M", "N" ], srcs: [ "O", "P" ], },
+    { id: 15, term: "A", text: "B", points: [ "C", "D", ], abbreviations: [ { short: "E", long: "F" }, { short: "G", long: "H" }, ], references: [ { handle: "I", weblink: "J" }, { handle: "K", weblink: "L" }, ], crossrefs: [ 0, 1 ], tags: [ "M", "N" ], srcs: [ "O", "P" ], },
+    { id: 16, term: "A", text: "B", points: [ "C", "D", ], abbreviations: [ { short: "E", long: "F" }, { short: "G", long: "H" }, ], references: [ { handle: "I", weblink: "J" }, { handle: "K", weblink: "L" }, ], crossrefs: [ 0, 1 ], tags: [ "M", "N" ], srcs: [ "O", "P" ], },
   ];
 
   getData() {

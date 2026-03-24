@@ -5,9 +5,16 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   template: `
-    <p>
-      about works!
-    </p>
+    <div class="hero bg-base-100 min-h-164">
+      <div class="hero-content text-center">
+        <div class="max-w-md">
+          <h1 class="text-5xl font-bold">About</h1>
+          <p class="py-6">
+            Here some about.
+          </p>
+        </div>
+      </div>
+    </div>
   `,
   styles: ``
 })

@@ -16,6 +16,7 @@ import { RouterModule } from '@angular/router';
   ],
   template: `
     <footer class="footer footer-horizontal footer-center bg-base-200 text-base-content rounded p-10">
+      <!--
       <nav class="grid grid-flow-col gap-4">
         <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
         <div class="divider divider-horizontal"></div>
@@ -25,6 +26,7 @@ import { RouterModule } from '@angular/router';
         <div class="divider divider-horizontal"></div>
         <a routerLink="about" routerLinkActive="active">About</a>
       </nav>
+      -->
       <nav>
         <app-mythemeswitch class="h-6 max-h-6" />
       </nav>

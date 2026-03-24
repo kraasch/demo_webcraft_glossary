@@ -5,9 +5,17 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   template: `
-    <p>
-      home works!
-    </p>
+    <div class="hero bg-base-100 min-h-164">
+      <div class="hero-content text-center">
+        <div class="max-w-md">
+          <h1 class="text-5xl font-bold">Hello there</h1>
+          <p class="py-6">
+            Here a collection of web development terminology.
+          </p>
+          <button class="btn btn-primary">Open Glossary</button>
+        </div>
+      </div>
+    </div>
   `,
   styles: ``
 })
