@@ -8,7 +8,7 @@ import { GlossaryEntry, DEFAULT_ENTRY } from '../../services/data/glossary-entry
   imports: [],
   template: `
     <div class="card bg-base-100 w-96 shadow-sm">
-        <!--
+        <!-- -- or use https://daisyui.com/components/card/#card-with-image-overlay -- --
       <figure class="h-20 min-w-full rounded-lg">
         <img alt="Image" src="https://img.daisyui.com/images/profile/demo/batperson@192.webp" />
       </figure>
