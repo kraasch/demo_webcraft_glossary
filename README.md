@@ -18,4 +18,5 @@ A project with...
 ## Interesting docs
 
   - Read about [implied end tags](https://html.spec.whatwg.org/multipage/parsing.html#closing-elements-that-have-implied-end-tags).
+  - About tailwind's [min-h utilities](https://windframe.dev/tailwind/classes/tailwind-min-height).
 
