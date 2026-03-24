@@ -17,7 +17,7 @@ optional:
   - [ ] Favicon from [icon8.com](https://icons8.com/icon/17857/sailing-boat/).
   - [ ] Home screen picture from [unsplash.com](https://images.unsplash.com/).
 
-## Interesting docs
+## Interesting Docs
 
   - Read about [implied end tags](https://html.spec.whatwg.org/multipage/parsing.html#closing-elements-that-have-implied-end-tags).
   - About tailwind's [min-h utilities](https://windframe.dev/tailwind/classes/tailwind-min-height).
