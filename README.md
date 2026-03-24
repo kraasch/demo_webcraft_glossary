@@ -3,10 +3,8 @@
 
 A project with...
 
-to-do:
-
-  - [ ] Angular 17
-  - [ ] use of filters
+  - [X] Angular 17,
+  - [ ] use of filters.
 
 [//]: # optional:
 [//]: #  - [ ] use of REST-API requests.
@@ -14,6 +12,10 @@ to-do:
 
 ## Credits
 
-  - [ ] favicon from https://icons8.com/icon/17857/sailing-boat/
-  - [ ] home screen picture: https://images.unsplash.com/
+  - [ ] Favicon from [icon8.com](https://icons8.com/icon/17857/sailing-boat/).
+  - [ ] Home screen picture from [unsplash.com](https://images.unsplash.com/).
+
+## Interesting docs
+
+  - Read about [implied end tags](https://html.spec.whatwg.org/multipage/parsing.html#closing-elements-that-have-implied-end-tags).
 
