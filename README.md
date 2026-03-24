@@ -6,10 +6,14 @@ A project with...
 to-do:
 
   - [ ] Angular 17
-
-optional:
-
   - [ ] use of filters
-  - [ ] use of REST-API requests
-  - [ ] use of `forkJoin`
+
+[//]: # optional:
+[//]: #  - [ ] use of REST-API requests.
+[//]: #  - [ ] use of `forkJoin`.
+
+## Credits
+
+  - [ ] favicon from https://icons8.com/icon/17857/sailing-boat/
+  - [ ] home screen picture: https://images.unsplash.com/
 
