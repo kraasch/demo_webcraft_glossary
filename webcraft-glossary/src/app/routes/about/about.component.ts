@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
         <div class="max-w-md">
           <h1 class="text-5xl font-bold">About</h1>
           <p class="py-6">A Glossary of web development terminology and a demo app for Angular 17.</p>
-          <p class="py-6">See further info in footer.</p>
+          <p class="py-6">For more info see the weblinks provided in the footer.</p>
         </div>
       </div>
     </div>
