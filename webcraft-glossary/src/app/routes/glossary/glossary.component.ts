@@ -13,7 +13,16 @@ import { LocalDataProviderService } from '../../services/data/local-data-provide
     <div class="bg-base-100 border-base-300 collapse border rounded-none">
       <input type="checkbox" class="peer" />
       <div class="collapse-title bg-base-300 text-secondary-content peer-checked:bg-secondary peer-checked:text-secondary-content" >
-        Filter
+        » Options
+      </div>
+      <div class="collapse-content bg-secondary text-secondary-content peer-checked:bg-secondary peer-checked:text-secondary-content" >
+        Implement some visual options here.
+      </div>
+    </div>
+    <div class="bg-base-100 border-base-300 collapse border rounded-none">
+      <input type="checkbox" class="peer" />
+      <div class="collapse-title bg-base-300 text-secondary-content peer-checked:bg-secondary peer-checked:text-secondary-content" >
+        » Filters
       </div>
       <div class="collapse-content bg-secondary text-secondary-content peer-checked:bg-secondary peer-checked:text-secondary-content" >
         Implement some filters here.
