@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { MythemeswitchComponent } from '../../components/mythemeswitch/mythemeswitch.component';
+import { MycounterService } from '../../services/mycounter/mycounter.service';
 
 @Component({
   selector: 'app-myheader',
   standalone: true,
-  imports: [ MythemeswitchComponent ],
+  imports: [ MythemeswitchComponent, CommonModule ],
   template: `
     <div
       class="hero min-h-1.5"
@@ -18,7 +20,10 @@ import { MythemeswitchComponent } from '../../components/mythemeswitch/mythemesw
             Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
             quasi. In deleniti eaque aut repudiandae et a id nisi.
           </p>
-          <button class="btn btn-primary">Get Started</button>
+          <button class="btn btn-primary" (click)="counterService.increment()">Add</button>
+          <br />
+          <label>Count button presses: <span class="badge">{{ count$ | async }}</span></label>
+          <br />
           <app-mythemeswitch />
         </div>
       </div>
@@ -27,5 +32,7 @@ import { MythemeswitchComponent } from '../../components/mythemeswitch/mythemesw
   styles: ``
 })
 export class MyheaderComponent {
+  counterService = inject(MycounterService);
+  count$ = this.counterService.count$;
 
 }

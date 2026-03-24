@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { MycounterService } from '../../services/mycounter/mycounter.service';
 
 @Component({
   selector: 'app-myfooter',
@@ -12,6 +14,10 @@ import { Component } from '@angular/core';
         <a class="link link-hover">Jobs</a>
         <a class="link link-hover">Press kit</a>
       </nav>
+      <div>
+        <p>Items: {{ counterService.getCount() }}</p>
+        <button class="btn btn-primary" (click)="counterService.decrement()">Remove</button>
+      </div>
       <nav>
         <div class="grid grid-flow-col gap-4">
           <a>
@@ -58,5 +64,6 @@ import { Component } from '@angular/core';
 })
 
 export class MyfooterComponent {
+  counterService = inject(MycounterService);
   currentYear: number = new Date().getFullYear();
 }
