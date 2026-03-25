@@ -34,7 +34,7 @@ import { GlossaryEntry, DEFAULT_ENTRY } from '../../services/data/glossary-entry
         <div>
           <p>{{ tileData.text }}</p>
           @if (tileData.points.length) {
-            <ul class="list bg-base-100 rounded-box opacity-80">
+            <ul class="list bg-base-100 rounded-box opacity-80 mt-3">
               @for (point of tileData.points; track point; let idx = $index;) {
                 <li class="list-row">
                   <svg class="size-[1.2em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
