@@ -10,29 +10,30 @@ import { LocalDataProviderService } from '../../services/data/local-data-provide
     MytileComponent,
   ],
   template: `
+
     <div class="bg-base-100 border-base-300 collapse border rounded-none">
       <input type="checkbox" class="peer" />
       <div class="collapse-title bg-base-300 text-secondary-content peer-checked:bg-secondary peer-checked:text-secondary-content" >
         » Options
       </div>
-      <div class="collapse-content bg-secondary text-secondary-content peer-checked:bg-secondary peer-checked:text-secondary-content" >
-        Implement some visual options here.
+      <!-- collapse-content -->
+      <div class="bg-secondary text-secondary-content peer-checked:bg-secondary peer-checked:text-secondary-content" >
+        <fieldset class="fieldset bg-secondary border-info rounded-box border p-4">
+          <legend class="fieldset-legend">Card style</legend>
+          <label class="label">
+            <input type="checkbox" [checked]="cardsHaveBg" (change)="cardsHaveBg = !cardsHaveBg" class="toggle" />
+            Background images
+          </label>
+        </fieldset>
       </div>
     </div>
-    <div class="bg-base-100 border-base-300 collapse border rounded-none">
-      <input type="checkbox" class="peer" />
-      <div class="collapse-title bg-base-300 text-secondary-content peer-checked:bg-secondary peer-checked:text-secondary-content" >
-        » Filters
-      </div>
-      <div class="collapse-content bg-secondary text-secondary-content peer-checked:bg-secondary peer-checked:text-secondary-content" >
-        Implement some filters here.
-      </div>
-    </div>
+
     <div class="mybox">
       @for (dataItem of data; track dataItem.id) {
         <app-mytile
           class="myitem"
           [tileData]="dataItem"
+          [hasBg]="cardsHaveBg"
         />
       } @empty {
         <p>No tiles available.</p>
@@ -59,5 +60,7 @@ import { LocalDataProviderService } from '../../services/data/local-data-provide
 export class GlossaryComponent {
   dataProvider = inject(LocalDataProviderService);
   data = this.dataProvider.getData();
+
+  cardsHaveBg: boolean = true;
 }
 

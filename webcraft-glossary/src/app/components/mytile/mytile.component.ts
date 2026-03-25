@@ -7,16 +7,17 @@ import { GlossaryEntry, DEFAULT_ENTRY } from '../../services/data/glossary-entry
   standalone: true,
   imports: [],
   template: `
-    <div class="card bg-base-100 w-96 shadow-sm">
-      <!--- TODO: include nice images here -->
-      <!-- -- or use https://daisyui.com/components/card/#card-with-image-overlay -- --
-        <figure class="h-20 min-w-full rounded-lg">
-          <img alt="Image" src="https://img.daisyui.com/images/profile/demo/batperson@192.webp" />
+    <div class="card bg-base-100 w-96 shadow-sm image-full" >
+        @if (hasBg) {
+        <figure>
+          <img alt="Image" src="{{ tileData.imgurl }}" />
         </figure>
-        <figure class="h-20 w-20 rounded-lg">
-          <img alt="Image" src="https://img.daisyui.com/images/profile/demo/batperson@192.webp" />
-        </figure>
-      -->
+        }
+        <!--- TODO: include nice images here
+          see for more https://daisyui.com/components/card/
+          <figure class="h-20 min-w-full rounded-lg">
+          <figure class="h-20 w-20 rounded-lg">
+        -->
       <div class="card-body">
         <h2 class="card-title">
           {{ tileData.term }}
@@ -30,33 +31,44 @@ import { GlossaryEntry, DEFAULT_ENTRY } from '../../services/data/glossary-entry
             </div>
           }
         </h2>
-        <p>{{ tileData.text }}</p>
-        @if (tileData.points.length) {
-          <ul>
-            @for (point of tileData.points; track point) {
-              <li>{{ point }}</li>
-            }
-          </ul>
-        }
-        @if (tileData.references.length) {
-          <ul>
-            @for (ref of tileData.references; track ref.weblink ) {
-              <li>
-                {{ ref.handle }}: <a href="{{ ref.weblink }}">{{ ref.weblink }}</a>
-              </li>
-            }
-          </ul>
-        }
-        @if (tileData.crossrefs.length) {
-          <div class="card-actions justify-end">
-            @for (crossref  of tileData.crossrefs; track crossref ) {
-              <!--- TODO: resolve link to crossref -->
-              <!--- TODO: resolve name of crossref -->
-              <!--- TODO: update filter to only include this reference on button click -->
-              <div class="badge badge-outline">{{ crossref  }}</div>
-            }
-          </div>
-        }
+        <div>
+          <p>{{ tileData.text }}</p>
+          @if (tileData.points.length) {
+            <ul class="list bg-base-100 rounded-box opacity-80">
+              @for (point of tileData.points; track point; let idx = $index;) {
+                <li class="list-row">
+                  <svg class="size-[1.2em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="currentColor">
+                      <path d="M6 3L20 12 6 21 6 3z" />
+                    </g>
+                  </svg>
+                  <div class="list-col-grow">
+                    <div>{{ point }}</div>
+                  </div>
+                </li>
+              }
+            </ul>
+          }
+          @if (tileData.references.length) {
+            <ul class="list-disc space-y-0 pl-4 text-xs mt-3">
+              @for (ref of tileData.references; track ref.weblink ) {
+                <li class="text-xs md:text-xs">
+                  {{ ref.handle }}: <a class="link link-info text-xs" href="{{ ref.weblink }}">{{ ref.txt }}</a>
+                </li>
+              }
+            </ul>
+          }
+          @if (tileData.crossrefs.length) {
+            <div class="card-actions justify-end">
+              @for (crossref  of tileData.crossrefs; track crossref ) {
+                <!--- TODO: resolve link to crossref -->
+                <!--- TODO: resolve name of crossref -->
+                <!--- TODO: update filter to only include this reference on button click -->
+                <div class="badge badge-outline">{{ crossref  }}</div>
+              }
+            </div>
+          }
+        </div>
       </div>
     </div>
   `,
@@ -69,5 +81,6 @@ import { GlossaryEntry, DEFAULT_ENTRY } from '../../services/data/glossary-entry
 })
 export class MytileComponent {
   @Input() tileData: GlossaryEntry = DEFAULT_ENTRY;
+  @Input() hasBg: boolean = false;
 }
 

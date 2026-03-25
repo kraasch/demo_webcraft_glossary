@@ -7,6 +7,7 @@ export interface Abbreviation {
 export interface Reference {
   handle:  string;
   weblink: string;
+  txt:     string;
 }
 
 export interface GlossaryEntry {
