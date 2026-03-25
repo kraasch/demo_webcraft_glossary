@@ -1,5 +1,5 @@
 
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { GlossaryEntry, DEFAULT_ENTRY } from '../../services/data/glossary-entry';
 
 @Component({
@@ -7,7 +7,7 @@ import { GlossaryEntry, DEFAULT_ENTRY } from '../../services/data/glossary-entry
   standalone: true,
   imports: [],
   template: `
-    <div class="card bg-base-100 w-96 shadow-sm image-full" >
+    <div class="card bg-base-200 w-96 shadow-sm image-full" >
         @if (hasBg) {
         <figure>
           <img alt="Image" src="{{ tileData.imgurl }}" />
@@ -22,11 +22,16 @@ import { GlossaryEntry, DEFAULT_ENTRY } from '../../services/data/glossary-entry
         <h2 class="card-title">
           {{ tileData.term }}
           @if (tileData.tags.length) {
-            <!--- TODO: look up tag color here -->
             <!--- TODO: update filter to only include these tags on button click -->
             <div class="card-actions justify-end">
               @for (tag of tileData.tags; track tag) {
-                <div class="badge badge-info">{{ tag }}</div>
+                <button
+                  class="badge badge-info"
+                  [style.background-color]="tagColors[tag]"
+                  (click)="emitTagClicked(tag)"
+                >
+                  {{ tag }}
+                </button>
               }
             </div>
           }
@@ -58,13 +63,12 @@ import { GlossaryEntry, DEFAULT_ENTRY } from '../../services/data/glossary-entry
               }
             </ul>
           }
-          @if (tileData.crossrefs.length) {
-            <div class="card-actions justify-end">
-              @for (crossref  of tileData.crossrefs; track crossref ) {
-                <!--- TODO: resolve link to crossref -->
-                <!--- TODO: resolve name of crossref -->
-                <!--- TODO: update filter to only include this reference on button click -->
-                <div class="badge badge-outline">{{ crossref  }}</div>
+          <!--- TODO: resolve link to crossref -->
+          @if (getCrossrefData().length) {
+            <div class="mt-2 text-sm text-secondary">
+              <strong class="pr-2">See also:</strong>
+              @for (term of getCrossrefData(); track $index) {
+                <div class="badge badge-outline">{{ term  }}</div>
               }
             </div>
           }
@@ -82,5 +86,19 @@ import { GlossaryEntry, DEFAULT_ENTRY } from '../../services/data/glossary-entry
 export class MytileComponent {
   @Input() tileData: GlossaryEntry = DEFAULT_ENTRY;
   @Input() hasBg: boolean = false;
+  @Input() crossrefData!: Map<number, { term: string }>;
+  @Input() tagColors: Record<string, string> = {};
+  @Output() tagClicked = new EventEmitter<string>();
+
+  emitTagClicked(tag: string): void {
+    this.tagClicked.emit(tag);
+  }
+
+  getCrossrefData(): string[] {
+    if (!this.tileData?.crossrefs?.length) return [];
+    return this.tileData.crossrefs
+      .map((id: number) => this.crossrefData.get(id)?.term || '')
+      .filter(term => !!term);
+  }
 }
 
