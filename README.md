@@ -9,24 +9,13 @@ A project with...
   - [X] provide some filters,
 
 <!--
-my task list:
+task list:
   - [X] implement click and search for related terms,
   - [X] write more stats.
   - [ ] implement sorting,
   - [ ] write more entries.
   - [ ] upload to Github Pages,
   - [ ] solve issue: do not scroll past footer,
- -->
-
-<!--
-optional:
-  - [ ] use of REST-API requests.
-  - [ ] use of `forkJoin`.
-  - [ ] ts:      class interface enum.
-  - [ ] ng:      directive pipe module.
-  - [ ] routing: guard resolver interceptor.
-  - [ ] more:    app-shell service-worker web-worker.
-  - [ ] misc:    config environments.
  -->
 
 ## Credits

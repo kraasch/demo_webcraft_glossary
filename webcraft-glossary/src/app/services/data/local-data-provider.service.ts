@@ -5,6 +5,15 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class LocalDataProviderService {
+
+  /* MORE ENTRIES:
+    - misc:            restful api, REST-API, forkJoin.
+    - TypeScript:      class interface enum.
+    - Angular ng:      directive pipe module.
+    - Angular routing: guard resolver interceptor.
+    - Angular more:    app-shell service-worker web-worker.
+    - Angular misc:    config environments.
+  */
   data = [
 
     /* BASIC TERMS */
