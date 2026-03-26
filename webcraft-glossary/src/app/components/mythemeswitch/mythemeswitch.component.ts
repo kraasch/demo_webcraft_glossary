@@ -18,7 +18,7 @@ import { TitleCasePipe } from '@angular/common';
           <path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path>
         </svg>
       </div>
-      <ul tabindex="-1" class="dropdown-content bg-base-300 rounded-box z-1 w-52 p-2 shadow-2xl">
+      <ul tabindex="-1" class="dropdown-content bg-base-300 rounded-box z-11 w-52 p-2 shadow-2xl">
 
         @for (aTheme of allThemes; track aTheme.name; let idx = $index) {
 
@@ -42,7 +42,7 @@ import { TitleCasePipe } from '@angular/common';
       </ul>
     </div>
   `,
-  styles: ``
+  styles: ``,
 })
 export class MythemeswitchComponent {
 

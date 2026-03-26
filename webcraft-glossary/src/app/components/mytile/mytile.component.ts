@@ -33,7 +33,6 @@ import { GlossaryEntry, DEFAULT_ENTRY } from '../../services/data/glossary-entry
      left: -6px;
      top: 13px;
      width: 110px;
-     background: #fa0;
      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
    }
 
