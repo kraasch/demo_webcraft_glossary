@@ -6,8 +6,9 @@ import { TitleCasePipe } from '@angular/common';
   standalone: true,
   imports: [ TitleCasePipe ],
   template: `
-    <div class="dropdown mb-72">
-      <div tabindex="0" role="button" class="btn m-1">
+    <div class="dropdown mb-0">
+
+      <div tabindex="0" role="button" class="btn m-0">
         Theme
         <svg
           width="12px"
@@ -18,6 +19,7 @@ import { TitleCasePipe } from '@angular/common';
           <path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path>
         </svg>
       </div>
+
       <ul tabindex="-1" class="dropdown-content bg-base-300 rounded-box z-11 w-52 p-2 shadow-2xl">
 
         @for (aTheme of allThemes; track aTheme.name; let idx = $index) {

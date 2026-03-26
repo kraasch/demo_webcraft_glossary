@@ -14,7 +14,7 @@ task list:
   - [X] write more stats.
   - [x] implement sorting,
   - [X] have a visually more appealing sort-by drop down.
-  - [ ] solve issue: do not scroll past footer,
+  - [X] solve issue: do not scroll past footer,
   - [ ] write more entries.
   - [ ] upload to Github Pages,
  -->
