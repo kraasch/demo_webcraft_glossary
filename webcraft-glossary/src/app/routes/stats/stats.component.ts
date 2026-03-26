@@ -21,13 +21,13 @@ import Chart from 'chart.js/auto';
     <div class="mybox">
 
       <!-- TAG FREQUENCY -->
-      <div class="myitem" class="card bg-base-100 shadow-xl p-10 max-h-120">
+      <div class="myitem" class="card bg-base-100 shadow-xl p-10 max-h-120 m-1">
         <h3 class="card-title mb-4">Tag frequency</h3>
         <canvas #chartElement class="p-4" width="400" height="300"></canvas>
       </div>
 
       <!-- DICTIONARY STATISTICS -->
-      <div class="myitem" class="card bg-base-100 shadow-xl p-10">
+      <div class="myitem" class="card bg-base-100 shadow-xl p-5 m-1">
         <h3 class="card-title mb-4">Dictionary statistics</h3>
         <ul class="list rounded-box shadow-md m-0">
         @for (stat of stats; track stat.key; let idx=$index ) {
@@ -43,9 +43,9 @@ import Chart from 'chart.js/auto';
       </div>
 
       <!-- TIMELINE -->
-      <div class="myitem" class="card bg-base-100 shadow-xl p-10 max-h-120">
+      <div class="myitem" class="card bg-base-100 shadow-xl p-10 max-h-120 m-1">
         <h4 class="card-title mb-4">Card data</h4>
-        Number of points per card
+        Number of trivia points per card
         <canvas #chartElement2 class="p-4" width="400" height="300"></canvas>
       </div>
 
@@ -242,7 +242,13 @@ export class StatsComponent implements OnInit {
             grid: { color: 'rgba(255,255,255,0.1)' },
           },
           x: {
-            ticks: { color: '#FFF' },
+            ticks: {
+              color: '#FFF',
+              maxRotation: 45,    // Max angle (degrees)
+              minRotation: 70,    // Min angle, locks to exactly 45 degrees.
+              // mirror: false,   // Should mirror the lables, but does not...
+              // autoSkip: false, // Uncomment to show all labels
+            },
             grid: { color: 'rgba(255,255,255,0.1)' },
           },
         },
