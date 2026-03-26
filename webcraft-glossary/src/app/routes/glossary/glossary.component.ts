@@ -1,5 +1,6 @@
 
 import { Component, inject } from '@angular/core';
+import { ReactiveFormsModule, FormsModule, FormControl, FormGroup } from '@angular/forms';
 import { MytileComponent } from '../../components/mytile/mytile.component';
 import { LocalDataProviderService } from '../../services/data/local-data-provider.service';
 
@@ -8,9 +9,14 @@ import { LocalDataProviderService } from '../../services/data/local-data-provide
   standalone: true,
   imports: [
     MytileComponent,
+    ReactiveFormsModule,
+    FormsModule,
   ],
   template: `
+
+    <!-- BEGIN OF SEARCH OPTIONS -->
     <div class="bg-base-100 border-base-300 collapse border rounded-none collapse-arrow">
+
       <input type="checkbox" class="peer" />
       <div class="collapse-title bg-base-300 text-info-content peer-checked:bg-info peer-checked:text-info-content" >
         Options, filters, searches and sorting
@@ -21,7 +27,7 @@ import { LocalDataProviderService } from '../../services/data/local-data-provide
         <fieldset class="fieldset bg-info rounded-box p-2">
           <legend class="fieldset-legend">Card style</legend>
           <label class="label">
-            <input type="checkbox" [checked]="cardsHaveBg" (change)="cardsHaveBg = !cardsHaveBg" class="toggle" />
+            <input type="checkbox" class="toggle" [checked]="cardsHaveBg" (change)="cardsHaveBg = !cardsHaveBg" />
             Background images
           </label>
         </fieldset>
@@ -30,22 +36,44 @@ import { LocalDataProviderService } from '../../services/data/local-data-provide
         <!-- NOTE: input tags within labels are risky. -->
         <fieldset class="fieldset bg-info rounded-box p-2">
           <legend class="fieldset-legend">Filter tags</legend>
-            <form class="my-padded-tags-form" (submit)="$event.preventDefault()">
-              <input type="button" class="btn btn-square m-1" value="×" (click)="deselectAllTags()"/>
-              <input type="button" class="btn btn-square m-1" value="✓" (click)="selectAllTags()"/>
-              @for (tag of allTags; track tag) {
-                <input class="btn m-1" type="checkbox"
-                  [attr.aria-label]="tag"
-                  [name]="'tag_' + tag"
-                  [checked]="selectedTags[tag]"
-                  (change)="toggleTag(tag)"
-                  [style.color]="tagColors[tag]"
-                />
-              }
-            </form>
+          <form class="my-padded-tags-form" (submit)="$event.preventDefault()">
+            <input type="button" class="btn btn-square m-1" value="×" (click)="deselectAllTags()"/>
+            <input type="button" class="btn btn-square m-1" value="✓" (click)="selectAllTags()"/>
+            @for (tag of allTags; track tag) {
+              <input class="btn m-1" type="checkbox"
+                [attr.aria-label]="tag"
+                [name]="'tag_' + tag"
+                [checked]="selectedTags[tag]"
+                (change)="toggleTag(tag)"
+                [style.color]="tagColors[tag]"
+              />
+            }
+          </form>
         </fieldset>
+
+        <!-- search within text -->
+        <fieldset class="fieldset bg-info rounded-box p-2">
+          <legend class="fieldset-legend">Search within cards</legend>
+          <form class="my-padded-tags-form" (submit)="$event.preventDefault()" [formGroup]="myfilters">
+            <input formControlName="searchBody" type="text" placeholder="Search" class="input" />
+          </form>
+          <label class="label">
+            <input type="checkbox" class="toggle" [checked]="searchWithinTerms" (change)="searchWithinTerms = !searchWithinTerms" />
+            Search titles
+          </label>
+          <label class="label">
+            <input type="checkbox" class="toggle" [checked]="searchWithinTexts" (change)="searchWithinTexts = !searchWithinTexts" />
+            Search descriptions
+          </label>
+          <label class="label">
+            <input type="checkbox" class="toggle" [checked]="searchWithinPoints" (change)="searchWithinPoints = !searchWithinPoints" />
+            Search trivia
+          </label>
+        </fieldset>
+
       </div>
     </div>
+    <!-- END OF SEARCH OPTIONS -->
 
     <div class="mybox mt-3">
       @for (dataItem of filteredData; track dataItem.id) {
@@ -58,8 +86,12 @@ import { LocalDataProviderService } from '../../services/data/local-data-provide
           (tagClicked)="onTagClicked($event)"
         />
       } @empty {
-        <p>No tiles available.</p>
+        <p></p>
+        <!--
+        <p>No cards to display.</p>
+        -->
       }
+
     </div>
   `,
   styles: `
@@ -89,6 +121,13 @@ export class GlossaryComponent {
   selectedTags: Record<string, boolean> = {};
   tagColors: Record<string, string> = {};
   idToElementData: Map<number, { term: string }> = new Map();
+  searchWithinTerms:  boolean = true;
+  searchWithinTexts:  boolean = true;
+  searchWithinPoints: boolean = true;
+
+  myfilters = new FormGroup({
+    searchBody:  new FormControl('')
+  });
 
   ngOnInit(): void {
     // Extract all tags and initialize deselected.
@@ -147,28 +186,20 @@ export class GlossaryComponent {
   // Computed filtered data.
   get filteredData() {
     let filtered = this.data.filter( e => {
-      return true;
-      /* NOTE: inspiration for later.
-      const searchName = this.myfilters.get('searchName')?.value?.toLowerCase() ?? '';
-      const searchBody = this.myfilters.get('searchBody')?.value?.toLowerCase() ?? '';
-      const heartRating = parseFloat(this.heartRating);
-      console.log(searchName);
-      // apply decade filter.
-      return e.yr >= 1950 + (this.minYear * 10) &&
-           // apply name search filter.
-           (searchName === '' ||
-             e.title.toLowerCase().includes(searchName)) &&
-           // apply body search filter.
-           (searchBody === '' ||
-             e.title.toLowerCase().includes(searchBody) ||
-             e.yr.toString().toLowerCase().includes(searchBody) ||
-             e.description.toLowerCase().includes(searchBody)) &&
-           // apply heart filter.
-           (
-             (heartRating == 0 ) ||
-             (parseFloat(e.rating) >= heartRating && parseFloat(e.rating) <= heartRating + 1.0)
-           );
-        */
+      const searchBody = this.myfilters.get('searchBody')?.value?.toLowerCase() ?? ''; // The search phrase provided by input.
+      let searchTargets = ""; // The text which will be searched in the end.
+      // Add parts to search in, depending on toggle choices.
+      if (this.searchWithinTerms) {
+        searchTargets += e.term;
+      }
+      if (this.searchWithinTexts) {
+        searchTargets += e.text;
+      }
+      if (this.searchWithinPoints) {
+        searchTargets += e.points;
+      }
+      // Apply search filter.
+      return (searchBody === '' || searchTargets.toLowerCase().includes(searchBody));
     });
     // Apply tag filter.
     filtered = filtered.filter( e => {

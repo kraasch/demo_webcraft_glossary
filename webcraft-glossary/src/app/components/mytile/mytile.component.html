@@ -1,0 +1,87 @@
+<div class="card bg-base-200 w-96 shadow-sm image-full" >
+  <!-- SECTION FOR BACKGROUND IMAGE -->
+  @if (hasBg) {
+  <figure>
+    <img alt="Image" src="{{ tileData.imgurl }}" />
+  </figure>
+  }
+  <div class="card-body">
+    <div class="flex flex-col h-full">
+      <!-- SECTION FOR TITLE AND TAGS -->
+      <h2 class="card-title">
+        {{ tileData.term }}
+        @if (tileData.tags.length) {
+        <div class="card-actions justify-end">
+          @for (tag of tileData.tags; track tag) {
+          <button
+            class="badge badge-info"
+            [style.background-color]="tagColors[tag]"
+            (click)="emitTagClicked(tag)"
+          >
+            {{ tag }}
+          </button>
+          }
+        </div>
+        }
+      </h2>
+      <!-- SECTION FOR TRIVIA POINTS -->
+      <div>
+        <p>{{ tileData.text }}</p>
+        @if (tileData.points.length) {
+        <ul class="list bg-base-100 rounded-box opacity-80 mt-3">
+          @for (point of tileData.points; track point; let idx = $index;) {
+          <li class="list-row">
+            <svg class="size-[1.2em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="currentColor">
+                <path d="M6 3L20 12 6 21 6 3z" />
+              </g>
+            </svg>
+            <div class="list-col-grow">
+              <div>{{ point }}</div>
+            </div>
+          </li>
+          }
+        </ul>
+        }
+      </div>
+      <div class="mt-auto">
+        <!-- DIVIDER NOTE -->
+       <div class="divider divider-start"></div>
+        <!-- SECTION FOR ABBREVIATIONS -->
+        <!--- TODO: add abbreviations here. -->
+        @if (tileData.abbreviations.length) {
+        <div class="mt-2 text-sm text-secondary">
+          <ul class="pl-4 text-xs">
+            @for (abbr of tileData.abbreviations; track abbr.long ) {
+            <li class="text-xs md:text-xs">
+              <div class="badge badge-secondary badge-ghost mr-2">{{ abbr.short }}</div> = {{abbr.long}}
+            </li>
+            }
+          </ul>
+        </div>
+        }
+        <!-- SECTION FOR WEBLINKS -->
+        @if (tileData.references.length) {
+        <ul class="space-y-0 pl-4 text-xs mt-3">
+          @for (ref of tileData.references; track ref.weblink ) {
+          <li class="text-xs md:text-xs">
+            <div class="badge badge-secondary badge-info mr-2 mb-1">{{ ref.handle }}</div>
+            <a class="link link-info text-xs" href="{{ ref.weblink }}">{{ ref.txt }}</a>
+          </li>
+          }
+        </ul>
+        }
+        <!-- SECTION FOR CROSS-REFERENCES -->
+        <!--- TODO: resolve link to crossref -->
+        @if (getCrossrefData().length) {
+        <div class="mt-2 text-sm text-secondary">
+          <strong class="pl-5 pr-2">See also:</strong>
+          @for (term of getCrossrefData(); track $index) {
+          <div class="badge badge-outline">{{ term  }}</div>
+          }
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>
