@@ -53,21 +53,34 @@ import { LocalDataProviderService } from '../../services/data/local-data-provide
 
         <!-- search within text -->
         <fieldset class="fieldset bg-info rounded-box p-2">
-          <legend class="fieldset-legend">Search within cards</legend>
+          <legend class="fieldset-legend">Search content</legend>
           <form class="my-padded-tags-form" (submit)="$event.preventDefault()" [formGroup]="myfilters">
-            <input formControlName="searchBody" type="text" placeholder="Search" class="input" />
+            <input formControlName="searchBody" type="text" placeholder="Search here" class="input" />
           </form>
           <label class="label">
             <input type="checkbox" class="toggle" [checked]="searchWithinTerms" (change)="searchWithinTerms = !searchWithinTerms" />
-            Search titles
+            Include titles
           </label>
           <label class="label">
             <input type="checkbox" class="toggle" [checked]="searchWithinTexts" (change)="searchWithinTexts = !searchWithinTexts" />
-            Search descriptions
+            Include descriptions
           </label>
           <label class="label">
             <input type="checkbox" class="toggle" [checked]="searchWithinPoints" (change)="searchWithinPoints = !searchWithinPoints" />
-            Search trivia
+            Include notes
+          </label>
+        </fieldset>
+
+        <!-- sort results -->
+        <!--
+          TODO: by tag number (numerically).
+          TODO: by title (alphabetically).
+        -->
+        <fieldset class="fieldset bg-info rounded-box p-2">
+          <legend class="fieldset-legend">Sort style</legend>
+          <label class="label">
+            <input type="checkbox" class="toggle" [checked]="sortAscending" (change)="sortAscending = !sortAscending" />
+            Sort ascending
           </label>
         </fieldset>
 
@@ -124,6 +137,7 @@ export class GlossaryComponent {
   searchWithinTerms:  boolean = true;
   searchWithinTexts:  boolean = true;
   searchWithinPoints: boolean = true;
+  sortAscending:      boolean = true;
 
   myfilters = new FormGroup({
     searchBody:  new FormControl('')
@@ -214,5 +228,6 @@ export class GlossaryComponent {
     });
     return filtered;
   }
+
 }
 
