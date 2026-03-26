@@ -23,6 +23,7 @@ import Chart from 'chart.js/auto';
       <!-- TAG FREQUENCY -->
       <div class="myitem" class="card bg-base-100 shadow-xl p-10 max-h-120 m-1">
         <h3 class="card-title mb-4">Tag frequency</h3>
+        How often each tag occurs compared to all the other
         <canvas #chartElement class="p-4" width="400" height="300"></canvas>
       </div>
 
@@ -44,7 +45,7 @@ import Chart from 'chart.js/auto';
 
       <!-- TIMELINE -->
       <div class="myitem" class="card bg-base-100 shadow-xl p-10 max-h-120 m-1">
-        <h4 class="card-title mb-4">Card data</h4>
+        <h3 class="card-title mb-4">Card data</h3>
         Number of trivia points per card
         <canvas #chartElement2 class="p-4" width="400" height="300"></canvas>
       </div>
