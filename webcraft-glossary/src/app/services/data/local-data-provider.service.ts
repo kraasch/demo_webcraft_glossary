@@ -131,6 +131,7 @@ export class LocalDataProviderService {
 
   /* SOME DUMMY ENTRIES BELOW */
   /*
+  */
   {
     id: 5,
     term: "JScript",
@@ -632,7 +633,6 @@ export class LocalDataProviderService {
     creation_date: "2026-03-26",
     srcs: [ "perplexity" ],
   },
-  */
 
   /* FOR LEARNING */
   {

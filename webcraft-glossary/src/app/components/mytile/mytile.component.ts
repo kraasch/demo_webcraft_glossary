@@ -5,15 +5,20 @@ import { GlossaryEntry, DEFAULT_ENTRY } from '../../services/data/glossary-entry
 const colors: Record<string, string> = {
   "concrete":    "#a0a0a0",
   "green":       "#4fd11f",
-  "orange":      "#f0a000",
+  "orange":      "#ff7700",
   "yellow":      "#f5ef42",
+  "pink":        "#ff00dd",
+  "blue":        "#0077ff",
+  "c0ffee":      "#c0ffee",
+  "eggshell":    "#f0ead6",
+  "dark-blue":   "#161bab",
 };
 const ribbonColors: Record<string, string> = {
   "AI":  colors['orange'],
   "BASIC": colors['concrete'],
   "NEW": colors['yellow'],
 };
-const defaultRibbonColor: string = colors['green'];
+const defaultRibbonColor: string = colors['c0ffee'];
 
 @Component({
   selector: 'app-mytile',
