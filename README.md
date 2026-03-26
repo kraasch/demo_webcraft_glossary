@@ -13,7 +13,7 @@ task list:
   - [X] implement click and search for related terms,
   - [X] write more stats.
   - [x] implement sorting,
-  - [ ] have a visually more appealing sort-by drop down.
+  - [X] have a visually more appealing sort-by drop down.
   - [ ] solve issue: do not scroll past footer,
   - [ ] write more entries.
   - [ ] upload to Github Pages,
