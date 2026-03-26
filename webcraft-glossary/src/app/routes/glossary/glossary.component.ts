@@ -200,6 +200,7 @@ export class GlossaryComponent {
 
   // A cross-ref was clicked, therefore search it.
   onCrossRefClicked(crossRef: string): void {
+    this.selectAllTags();
     this.searchWithinPoints = false;
     this.searchWithinTexts = false;
     this.searchWithinTerms = true;
