@@ -37,7 +37,7 @@ export class LocalDataProviderService {
       tags: [ "tool" ],
       imgurl: "https://upload.wikimedia.org/wikipedia/commons/d/db/Npm-logo.svg",
       // additional info.
-      ribbon: "",
+      ribbon: "BASIC",
       creation_date: "2026-05-26",
       srcs: [ "ack" ],
     },
@@ -59,7 +59,7 @@ export class LocalDataProviderService {
       tags: [ "language", "browser wars" ],
       imgurl: "https://upload.wikimedia.org/wikipedia/commons/9/91/JavaScript_screenshot.png",
       // additional info.
-      ribbon: "",
+      ribbon: "BASIC",
       creation_date: "2026-05-26",
       srcs: [ "ack" ],
     },
@@ -81,7 +81,7 @@ export class LocalDataProviderService {
       tags: [ "tool" ],
       imgurl: "https://upload.wikimedia.org/wikipedia/commons/2/29/Linux_command-line._Bash._GNOME_Terminal._screenshot.png",
       // additional info.
-      ribbon: "",
+      ribbon: "BASIC",
       creation_date: "2026-05-26",
       srcs: [ "ack" ],
     },
@@ -103,7 +103,7 @@ export class LocalDataProviderService {
       tags: [ "browser", "browser wars" ],
       imgurl: "https://upload.wikimedia.org/wikipedia/commons/e/e9/Fuck_Internet_Explorer.jpg",
       // additional info.
-      ribbon: "",
+      ribbon: "BASIC",
       creation_date: "2026-05-26",
       srcs: [ "ack" ],
     },
@@ -124,7 +124,7 @@ export class LocalDataProviderService {
       tags: [ "historic event" ],
       imgurl: "https://upload.wikimedia.org/wikipedia/commons/1/13/Countries_by_most_used_web_browser.png",
       // additional info.
-      ribbon: "",
+      ribbon: "BASIC",
       creation_date: "2026-05-26",
       srcs: [ "ack" ],
     },

@@ -3,14 +3,14 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { GlossaryEntry, DEFAULT_ENTRY } from '../../services/data/glossary-entry';
 
 const colors: Record<string, string> = {
-  "grape":       "#7118c9",
+  "concrete":    "#a0a0a0",
   "green":       "#4fd11f",
   "orange":      "#f0a000",
   "yellow":      "#f5ef42",
 };
 const ribbonColors: Record<string, string> = {
   "AI":  colors['orange'],
-  "IDK": colors['grape'],
+  "BASIC": colors['concrete'],
   "NEW": colors['yellow'],
 };
 const defaultRibbonColor: string = colors['green'];
