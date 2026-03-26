@@ -12,10 +12,11 @@ A project with...
 task list:
   - [X] implement click and search for related terms,
   - [X] write more stats.
-  - [ ] implement sorting,
+  - [x] implement sorting,
+  - [ ] have a visually more appealing sort-by drop down.
+  - [ ] solve issue: do not scroll past footer,
   - [ ] write more entries.
   - [ ] upload to Github Pages,
-  - [ ] solve issue: do not scroll past footer,
  -->
 
 ## Credits
