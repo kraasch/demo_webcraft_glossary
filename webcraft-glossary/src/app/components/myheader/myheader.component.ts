@@ -36,14 +36,14 @@ import { RouterModule } from '@angular/router';
       <div class="hero-overlay"></div>
       <div class="hero-content text-neutral-content text-center">
         <div class="max-w-md">
-          <nav class="grid grid-flow-col gap-4">
-            <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
-            <div class="divider divider-horizontal"></div>
-            <a routerLink="glossary" routerLinkActive="active">Glossary</a>
-            <div class="divider divider-horizontal"></div>
-            <a routerLink="stats" routerLinkActive="active">Stats</a>
-            <div class="divider divider-horizontal"></div>
-            <a routerLink="about" routerLinkActive="active">About</a>
+          <nav class="flex flex-wrap items-center">
+            <a class="ml-2 mr-2" routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+            <div class="divider divider-horizontal hidden sm:block"></div>
+            <a class="ml-2 mr-2" routerLink="glossary" routerLinkActive="active">Glossary</a>
+            <div class="divider divider-horizontal hidden sm:block"></div>
+            <a class="ml-2 mr-2" routerLink="stats" routerLinkActive="active">Stats</a>
+            <div class="divider divider-horizontal hidden sm:block"></div>
+            <a class="ml-2 mr-2" routerLink="about" routerLinkActive="active">About</a>
           </nav>
         </div>
       </div>
