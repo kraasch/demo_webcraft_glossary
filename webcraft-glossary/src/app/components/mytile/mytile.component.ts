@@ -2,6 +2,19 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { GlossaryEntry, DEFAULT_ENTRY } from '../../services/data/glossary-entry';
 
+const colors: Record<string, string> = {
+  "grape":       "#7118c9",
+  "green":       "#4fd11f",
+  "orange":      "#f0a000",
+  "yellow":      "#f5ef42",
+};
+const ribbonColors: Record<string, string> = {
+  "AI":  colors['orange'],
+  "IDK": colors['grape'],
+  "NEW": colors['yellow'],
+};
+const defaultRibbonColor: string = colors['green'];
+
 @Component({
   selector: 'app-mytile',
   standalone: true,
@@ -60,12 +73,22 @@ import { GlossaryEntry, DEFAULT_ENTRY } from '../../services/data/glossary-entry
 `
 })
 export class MytileComponent {
+
   @Input() tileData: GlossaryEntry = DEFAULT_ENTRY;
   @Input() hasBg: boolean = false;
   @Input() crossrefData!: Map<number, { term: string }>;
   @Input() tagColors: Record<string, string> = {};
   @Output() tagClicked = new EventEmitter<string>();
   @Output() refClicked = new EventEmitter<string>();
+
+
+  searchRibbonColor(text: string) {
+    let newColor = defaultRibbonColor;
+    if (text in ribbonColors) {
+      newColor = ribbonColors[text];
+    }
+    return newColor;
+  }
 
   emitRefClicked(term: string): void {
     this.refClicked.emit(term);

@@ -9,7 +9,9 @@
   @if (tileData.ribbon.length) {
   <div class="ribbon-wrapper">
     <div
-      class="ribbon bg-primary" >
+      class="ribbon bg-primary"
+      [style.background-color]="searchRibbonColor(tileData.ribbon)"
+    >
       {{ tileData.ribbon }}
     </div>
   </div>
