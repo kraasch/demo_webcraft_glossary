@@ -21,6 +21,7 @@ import { GlossaryEntry, DEFAULT_ENTRY } from '../../services/data/glossary-entry
      height: 74px;
      overflow: hidden;
      z-index: 10;
+     pointer-events: none;
    }
 
    .ribbon {
@@ -34,6 +35,7 @@ import { GlossaryEntry, DEFAULT_ENTRY } from '../../services/data/glossary-entry
      top: 13px;
      width: 110px;
      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+     pointer-events: none;
    }
 
    .ribbon:before, .ribbon:after {
@@ -43,14 +45,17 @@ import { GlossaryEntry, DEFAULT_ENTRY } from '../../services/data/glossary-entry
      border-right: 2px solid transparent;
      position: absolute;
      bottom: -2px;
+     pointer-events: none;
    }
 
    .ribbon:before {
      left: 0;
+     pointer-events: none;
    }
 
    .ribbon:after {
      right: 0;
+     pointer-events: none;
    }
 `
 })
