@@ -19,22 +19,20 @@ import Chart from 'chart.js/auto';
       </div>
     </div>
     <div class="mybox">
+
       <div class="myitem" class="card bg-base-100 shadow-xl p-10 max-h-120">
         <h3 class="card-title mb-4">Tag frequency</h3>
         <canvas #chartElement width="400" height="300"></canvas>
       </div>
+
       <div class="myitem" class="card bg-base-100 shadow-xl p-10 max-h-120">
         Another stat.
       </div>
+
       <div class="myitem" class="card bg-base-100 shadow-xl p-10 max-h-120">
         Another stat.
       </div>
-      <div class="myitem" class="card bg-base-100 shadow-xl p-10 max-h-120">
-        Another stat.
-      </div>
-      <div class="myitem" class="card bg-base-100 shadow-xl p-10 max-h-120">
-        Another stat.
-      </div>
+
     </div>
   `,
   styles: `
