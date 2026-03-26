@@ -82,8 +82,11 @@ type SortTarget = 'term' | 'id';
           <legend class="fieldset-legend">Sort style</legend>
 
           <!-- change w-100 popover-1 and --anchor-1 names. Use unique names for each dropdown -->
-          <button class="btn" popovertarget="popover-1" style="anchor-name:--anchor-1; width: 100px">
+          <label class="label">
             Sort by
+          </label>
+          <button class="btn" popovertarget="popover-1" style="anchor-name:--anchor-1; width: 100px">
+            {{ sortTargetToText() }}
           </button>
           <ul class="dropdown menu w-52 rounded-box bg-base-100 shadow-sm"
               popover #sortPopover
@@ -182,6 +185,16 @@ export class GlossaryComponent {
     }
   }
 
+  sortTargetToText(): string {
+    if (this.sortTarget == 'term') {
+      return "Title";
+    }
+    if (this.sortTarget == 'id') {
+      return "Card ID";
+    }
+    return "N/A";
+  }
+
   chooseSort(target: SortTarget, popover: HTMLElement): void {
     this.sortTarget = target;
     // TypeScript‑safe hidePopover call.
@@ -212,7 +225,6 @@ export class GlossaryComponent {
       default:
         break;
     }
-
   }
 
   // Resets collection of seleectedd tags.
