@@ -60,6 +60,11 @@ export class MytileComponent {
   @Input() crossrefData!: Map<number, { term: string }>;
   @Input() tagColors: Record<string, string> = {};
   @Output() tagClicked = new EventEmitter<string>();
+  @Output() refClicked = new EventEmitter<string>();
+
+  emitRefClicked(term: string): void {
+    this.refClicked.emit(term);
+  }
 
   emitTagClicked(tag: string): void {
     this.tagClicked.emit(tag);

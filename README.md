@@ -10,9 +10,10 @@ A project with...
 
 <!--
 my task list:
-  - [ ] implement click and search for related terms,
+  - [X] implement click and search for related terms,
   - [ ] implement sorting,
   - [ ] solve issue: do not scroll past footer,
+  - [ ] write more stats.
   - [ ] write more entries.
   - [ ] upload to Github Pages,
  -->

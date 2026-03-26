@@ -87,7 +87,12 @@
         <div class="mt-2 text-sm text-secondary">
           <strong class="pl-5 pr-2">See also:</strong>
           @for (term of getCrossrefData(); track $index) {
-          <div class="badge badge-outline">{{ term  }}</div>
+          <button
+            class="badge badge-outline"
+            (click)="emitRefClicked(term)"
+          >
+            {{ term }}
+          </button>
           }
         </div>
         }

@@ -97,6 +97,7 @@ import { LocalDataProviderService } from '../../services/data/local-data-provide
           [crossrefData]="idToElementData"
           [tagColors]="tagColors"
           (tagClicked)="onTagClicked($event)"
+          (refClicked)="onCrossRefClicked($event)"
         />
       } @empty {
         <p></p>
@@ -195,6 +196,14 @@ export class GlossaryComponent {
   onTagClicked(tag: string): void {
     this.deselectAllTags();
     this.selectedTags[tag] = true;
+  }
+
+  // A cross-ref was clicked, therefore search it.
+  onCrossRefClicked(crossRef: string): void {
+    this.searchWithinPoints = false;
+    this.searchWithinTexts = false;
+    this.searchWithinTerms = true;
+    this.myfilters.get('searchBody')?.setValue(crossRef, { emitEvent: true });
   }
 
   // Computed filtered data.
