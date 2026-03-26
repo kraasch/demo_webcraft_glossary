@@ -12,6 +12,47 @@ import { GlossaryEntry, DEFAULT_ENTRY } from '../../services/data/glossary-entry
       width: 100%;
       height: 100%;
     }
+
+   .ribbon-wrapper {
+     position: absolute;
+     top: -3px;
+     right: -3px;
+     width: 74px;
+     height: 74px;
+     overflow: hidden;
+     z-index: 10;
+   }
+
+   .ribbon {
+     font: bold 12px sans-serif;
+     color: #333;
+     text-align: center;
+     transform: rotate(45deg);
+     position: relative;
+     padding: 5px 0;
+     left: -6px;
+     top: 13px;
+     width: 110px;
+     background: #fa0;
+     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+   }
+
+   .ribbon:before, .ribbon:after {
+     content: "";
+     border-top: 2px solid #f57f17;
+     border-left: 2px solid transparent;
+     border-right: 2px solid transparent;
+     position: absolute;
+     bottom: -2px;
+   }
+
+   .ribbon:before {
+     left: 0;
+   }
+
+   .ribbon:after {
+     right: 0;
+   }
 `
 })
 export class MytileComponent {

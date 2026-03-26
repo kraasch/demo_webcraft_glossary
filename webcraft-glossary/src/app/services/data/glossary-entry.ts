@@ -19,8 +19,10 @@ export interface GlossaryEntry {
   references:    Reference[];
   crossrefs:     number[];
   tags:          string[];
-  srcs:          string[];
   imgurl:        string;
+  ribbon:        string;
+  creation_date: string;
+  srcs:          string[];
 }
 
 export const DEFAULT_ENTRY: GlossaryEntry = {
@@ -32,8 +34,10 @@ export const DEFAULT_ENTRY: GlossaryEntry = {
   references: [],
   crossrefs: [],
   tags: [],
-  srcs: [],
   imgurl: '',
+  ribbon:  '',
+  creation_date:  '',
+  srcs: [],
 };
 
 /* If creating entries is needed. */

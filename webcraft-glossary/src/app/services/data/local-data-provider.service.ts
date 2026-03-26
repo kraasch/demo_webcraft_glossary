@@ -30,6 +30,7 @@ export class LocalDataProviderService {
       tags: [ "tool" ],
       imgurl: "https://upload.wikimedia.org/wikipedia/commons/d/db/Npm-logo.svg",
       // additional info.
+      ribbon: "",
       creation_date: "2026-05-26",
       srcs: [ "ack" ],
     },
@@ -51,6 +52,7 @@ export class LocalDataProviderService {
       tags: [ "language", "browser wars" ],
       imgurl: "https://upload.wikimedia.org/wikipedia/commons/9/91/JavaScript_screenshot.png",
       // additional info.
+      ribbon: "",
       creation_date: "2026-05-26",
       srcs: [ "ack" ],
     },
@@ -72,6 +74,7 @@ export class LocalDataProviderService {
       tags: [ "tool" ],
       imgurl: "https://upload.wikimedia.org/wikipedia/commons/2/29/Linux_command-line._Bash._GNOME_Terminal._screenshot.png",
       // additional info.
+      ribbon: "",
       creation_date: "2026-05-26",
       srcs: [ "ack" ],
     },
@@ -93,6 +96,7 @@ export class LocalDataProviderService {
       tags: [ "browser", "browser wars" ],
       imgurl: "https://upload.wikimedia.org/wikipedia/commons/e/e9/Fuck_Internet_Explorer.jpg",
       // additional info.
+      ribbon: "",
       creation_date: "2026-05-26",
       srcs: [ "ack" ],
     },
@@ -113,6 +117,7 @@ export class LocalDataProviderService {
       tags: [ "historic event" ],
       imgurl: "https://upload.wikimedia.org/wikipedia/commons/1/13/Countries_by_most_used_web_browser.png",
       // additional info.
+      ribbon: "",
       creation_date: "2026-05-26",
       srcs: [ "ack" ],
     },
@@ -133,6 +138,8 @@ export class LocalDataProviderService {
     crossrefs: [ 0, 6 ],
     tags: [ "javascript", "engine" ],
     imgurl: "",
+    // additional info.
+    ribbon: "AI",
     creation_date: "2026-03-26",
     srcs: [ "perplexity" ],
   },
@@ -152,6 +159,8 @@ export class LocalDataProviderService {
     crossrefs: [ 0 ],
     tags: [ "language" ],
     imgurl: "",
+    // additional info.
+    ribbon: "AI",
     creation_date: "2026-03-26",
     srcs: [ "perplexity" ],
   },
@@ -171,6 +180,8 @@ export class LocalDataProviderService {
     crossrefs: [ 0, 8, 9 ],
     tags: [ "browser" ],
     imgurl: "",
+    // additional info.
+    ribbon: "AI",
     creation_date: "2026-03-26",
     srcs: [ "perplexity" ],
   },
@@ -190,6 +201,8 @@ export class LocalDataProviderService {
     crossrefs: [ 7, 9, 13 ],
     tags: [ "browser", "engine" ],
     imgurl: "",
+    // additional info.
+    ribbon: "AI",
     creation_date: "2026-03-26",
     srcs: [ "perplexity" ],
   },
@@ -209,6 +222,8 @@ export class LocalDataProviderService {
     crossrefs: [ 8, 13 ],
     tags: [ "browser" ],
     imgurl: "",
+    // additional info.
+    ribbon: "AI",
     creation_date: "2026-03-26",
     srcs: [ "perplexity" ],
   },
@@ -228,6 +243,8 @@ export class LocalDataProviderService {
     crossrefs: [ 14 ],
     tags: [ "browser" ],
     imgurl: "",
+    // additional info.
+    ribbon: "AI",
     creation_date: "2026-03-26",
     srcs: [ "perplexity" ],
   },
@@ -247,6 +264,8 @@ export class LocalDataProviderService {
     crossrefs: [ 3, 4 ],
     tags: [ "rendering-engine" ],
     imgurl: "",
+    // additional info.
+    ribbon: "AI",
     creation_date: "2026-03-26",
     srcs: [ "perplexity" ],
   },
@@ -266,6 +285,8 @@ export class LocalDataProviderService {
     crossrefs: [ 3, 4 ],
     tags: [ "js-engine" ],
     imgurl: "",
+    // additional info.
+    ribbon: "AI",
     creation_date: "2026-03-26",
     srcs: [ "perplexity" ],
   },
@@ -285,6 +306,8 @@ export class LocalDataProviderService {
     crossrefs: [ 8, 9 ],
     tags: [ "js-engine" ],
     imgurl: "",
+    // additional info.
+    ribbon: "AI",
     creation_date: "2026-03-26",
     srcs: [ "perplexity" ],
   },
@@ -304,6 +327,8 @@ export class LocalDataProviderService {
     crossrefs: [ 10 ],
     tags: [ "rendering-engine" ],
     imgurl: "",
+    // additional info.
+    ribbon: "AI",
     creation_date: "2026-03-26",
     srcs: [ "perplexity" ],
   },
@@ -323,6 +348,8 @@ export class LocalDataProviderService {
     crossrefs: [ 20 ],
     tags: [ "stylesheet" ],
     imgurl: "",
+    // additional info.
+    ribbon: "AI",
     creation_date: "2026-03-26",
     srcs: [ "perplexity" ],
   },
@@ -342,6 +369,8 @@ export class LocalDataProviderService {
     crossrefs: [],
     tags: [ "plugin" ],
     imgurl: "",
+    // additional info.
+    ribbon: "AI",
     creation_date: "2026-03-26",
     srcs: [ "perplexity" ],
   },
@@ -361,6 +390,8 @@ export class LocalDataProviderService {
     crossrefs: [ 19 ],
     tags: [ "security", "protocol" ],
     imgurl: "",
+    // additional info.
+    ribbon: "AI",
     creation_date: "2026-03-26",
     srcs: [ "perplexity" ],
   },
@@ -380,6 +411,8 @@ export class LocalDataProviderService {
     crossrefs: [ 19 ],
     tags: [ "protocol" ],
     imgurl: "",
+    // additional info.
+    ribbon: "AI",
     creation_date: "2026-03-26",
     srcs: [ "perplexity" ],
   },
@@ -399,6 +432,8 @@ export class LocalDataProviderService {
     crossrefs: [ 17, 18 ],
     tags: [ "protocol", "security" ],
     imgurl: "",
+    // additional info.
+    ribbon: "AI",
     creation_date: "2026-03-26",
     srcs: [ "perplexity" ],
   },
@@ -418,6 +453,8 @@ export class LocalDataProviderService {
     crossrefs: [ 15 ],
     tags: [ "markup" ],
     imgurl: "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg",
+    // additional info.
+    ribbon: "AI",
     creation_date: "2026-03-26",
     srcs: [ "perplexity" ],
   },
@@ -437,6 +474,8 @@ export class LocalDataProviderService {
     crossrefs: [],
     tags: [ "protocol" ],
     imgurl: "",
+    // additional info.
+    ribbon: "AI",
     creation_date: "2026-03-26",
     srcs: [ "perplexity" ],
   },
@@ -456,6 +495,8 @@ export class LocalDataProviderService {
     crossrefs: [],
     tags: [ "protocol", "email" ],
     imgurl: "",
+    // additional info.
+    ribbon: "AI",
     creation_date: "2026-03-26",
     srcs: [ "perplexity" ],
   },
@@ -475,11 +516,13 @@ export class LocalDataProviderService {
     crossrefs: [ 18, 20 ],
     tags: [ "web" ],
     imgurl: "https://upload.wikimedia.org/wikipedia/commons/9/95/World_Wide_Web_Symbol.svg",
+    // additional info.
+    ribbon: "AI",
     creation_date: "2026-03-26",
     srcs: [ "perplexity" ],
   },
   {
-    id: 6,
+    id: 24,
     term: "Microsoft",
     text: "Major technology company that has shaped web development through Internet Explorer browser, Active Server Pages (ASP), and modern tools like TypeScript and Edge.",
     points: [
@@ -494,11 +537,13 @@ export class LocalDataProviderService {
     crossrefs: [],
     tags: [ "company" ],
     imgurl: "",
+    // additional info.
+    ribbon: "AI",
     creation_date: "2026-03-26",
     srcs: [ "perplexity" ],
   },
   {
-    id: 7,
+    id: 25,
     term: "Netscape",
     text: "Pioneering company that created the Netscape Navigator browser, sparking the 1990s browser wars and commercialization of the web.",
     points: [
@@ -513,11 +558,13 @@ export class LocalDataProviderService {
     crossrefs: [ 2, 5 ],
     tags: [ "company", "browser" ],
     imgurl: "",
+    // additional info.
+    ribbon: "AI",
     creation_date: "2026-03-26",
     srcs: [ "perplexity" ],
   },
   {
-    id: 8,
+    id: 26,
     term: "Navigator",
     text: "Netscape's flagship web browser (1994-2008), first to gain mass adoption and introduce features like JavaScript and frames.",
     points: [
@@ -532,11 +579,13 @@ export class LocalDataProviderService {
     crossrefs: [ 1, 3 ],
     tags: [ "browser" ],
     imgurl: "",
+    // additional info.
+    ribbon: "AI",
     creation_date: "2026-03-26",
     srcs: [ "perplexity" ],
   },
   {
-    id: 9,
+    id: 27,
     term: "Mozilla",
     text: "Non-profit foundation born from Netscape's open-source code, creators of Firefox browser and key web standards advocate.",
     points: [
@@ -551,11 +600,13 @@ export class LocalDataProviderService {
     crossrefs: [ 1, 4, 5, 11, 12 ],
     tags: [ "organization", "browser" ],
     imgurl: "",
+    // additional info.
+    ribbon: "AI",
     creation_date: "2026-03-26",
     srcs: [ "perplexity" ],
   },
   {
-    id: 10,
+    id: 28,
     term: "Firefox",
     text: "Mozilla's open-source web browser using Gecko engine, known for privacy features and rapid standards implementation.",
     points: [
@@ -570,6 +621,8 @@ export class LocalDataProviderService {
     crossrefs: [ 3, 11, 12 ],
     tags: [ "browser" ],
     imgurl: "",
+    // additional info.
+    ribbon: "AI",
     creation_date: "2026-03-26",
     srcs: [ "perplexity" ],
   },
