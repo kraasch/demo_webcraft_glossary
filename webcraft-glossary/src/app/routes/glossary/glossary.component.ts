@@ -4,6 +4,8 @@ import { ReactiveFormsModule, FormsModule, FormControl, FormGroup } from '@angul
 import { MytileComponent } from '../../components/mytile/mytile.component';
 import { LocalDataProviderService } from '../../services/data/local-data-provider.service';
 
+type SortTarget = 'term' | 'id';
+
 @Component({
   selector: 'app-glossary',
   standalone: true,
@@ -78,6 +80,27 @@ import { LocalDataProviderService } from '../../services/data/local-data-provide
         -->
         <fieldset class="fieldset bg-info rounded-box p-2">
           <legend class="fieldset-legend">Sort style</legend>
+
+          <!-- change w-100 popover-1 and --anchor-1 names. Use unique names for each dropdown -->
+          <button class="btn" popovertarget="popover-1" style="anchor-name:--anchor-1; width: 100px">
+            Sort by
+          </button>
+          <ul class="dropdown menu w-52 rounded-box bg-base-100 shadow-sm"
+              popover #sortPopover
+              id="popover-1"
+              style="position-anchor:--anchor-1">
+            <li>
+              <a (click)="chooseSort('term', sortPopover)">
+                Title
+              </a>
+            </li>
+            <li>
+              <a (click)="chooseSort('id', sortPopover)">
+                Card ID
+              </a>
+            </li>
+          </ul>
+
           <label class="label">
             <input type="checkbox" class="toggle" [checked]="sortAscending" (change)="sortAscending = !sortAscending" />
             Sort ascending
@@ -139,6 +162,7 @@ export class GlossaryComponent {
   searchWithinTexts:  boolean = true;
   searchWithinPoints: boolean = true;
   sortAscending:      boolean = true;
+  sortTarget:         SortTarget = 'term';
 
   myfilters = new FormGroup({
     searchBody:  new FormControl('')
@@ -156,6 +180,39 @@ export class GlossaryComponent {
     for (const item of this.data) {
       this.idToElementData.set(item.id, { term: item.term });
     }
+  }
+
+  chooseSort(target: SortTarget, popover: HTMLElement): void {
+    this.sortTarget = target;
+    // TypeScript‑safe hidePopover call.
+    if (typeof popover.hidePopover === 'function') {
+      popover.hidePopover();
+    }
+  }
+
+  sortFilteredData(): void {
+    switch (this.sortTarget) {
+      case 'term':
+        this.data = [...this.data].sort((a, b) => {
+          const fieldA = a.term;
+          const fieldB = b.term;
+          if (this.sortAscending) {
+            return fieldA < fieldB ? -1 : fieldA > fieldB ? 1 : 0;
+          } else {
+            return fieldB < fieldA ? -1 : fieldB > fieldA ? 1 : 0;
+          }
+        });
+        break;
+      case 'id':
+        this.data = [...this.data].sort((a, b) => {
+          const diff = a.id - b.id;
+          return this.sortAscending ? diff : -diff;
+        });
+        break;
+      default:
+        break;
+    }
+
   }
 
   // Resets collection of seleectedd tags.
@@ -210,6 +267,10 @@ export class GlossaryComponent {
 
   // Computed filtered data.
   get filteredData() {
+    // apply sorting.
+    this.sortFilteredData();
+
+    // Apply filter.
     let filtered = this.data.filter( e => {
       const searchBody = this.myfilters.get('searchBody')?.value?.toLowerCase() ?? ''; // The search phrase provided by input.
       let searchTargets = ""; // The text which will be searched in the end.
