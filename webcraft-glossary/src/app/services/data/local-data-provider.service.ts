@@ -5,10 +5,6 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class LocalDataProviderService {
-  /*
-   * More terms:
-   *
-   */
   data = [
     {
       id: 0,
@@ -127,9 +123,8 @@ export class LocalDataProviderService {
     term: "JScript",
     text: "Microsoft's proprietary implementation of JavaScript (1996), reverse-engineered from Netscape's version during browser wars.",
     points: [
-      "Powered client-side scripting in Internet Explorer.",
       "ECMAScript-compliant but with IE-specific extensions.",
-      "Predecessor to modern Chakra/ChakraCore engines.",
+      "Powered client-side scripting in Internet Explorer.",
     ],
     abbreviations: [],
     references: [
@@ -148,9 +143,7 @@ export class LocalDataProviderService {
     term: "TypeScript",
     text: "Microsoft's open-source superset of JavaScript adding static types, compiles to plain JS for scalable web apps.",
     points: [
-      "Created 2012; used by Angular, VS Code.",
-      "Catch-all errors at compile-time.",
-      "Adopted by 80%+ of surveyed JS devs.",
+      "Created 2012, used by Angular.",
     ],
     abbreviations: [ { short: "TS", long: "TypeScript" } ],
     references: [
