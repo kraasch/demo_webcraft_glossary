@@ -6,6 +6,8 @@ import { Injectable } from '@angular/core';
 })
 export class LocalDataProviderService {
   data = [
+
+    /* BASIC TERMS */
     {
       id: 0,
       term: "npm",
@@ -117,7 +119,9 @@ export class LocalDataProviderService {
       creation_date: "2026-05-26",
       srcs: [ "ack" ],
     },
-    /* SOME DUMMY ENTRIES BELOW */
+
+  /* SOME DUMMY ENTRIES BELOW */
+  /*
   {
     id: 5,
     term: "JScript",
@@ -619,6 +623,428 @@ export class LocalDataProviderService {
     creation_date: "2026-03-26",
     srcs: [ "perplexity" ],
   },
+  */
+
+  /* FOR LEARNING */
+  {
+    id: 29,
+    term: "Angular Module",
+    text: "",
+    points: [
+      "",
+    ],
+    abbreviations: [],
+    references: [
+      { handle: "official", weblink: "https://www.google.com", txt: "NOT SET" },
+    ],
+    crossrefs: [ ],
+    tags: [ "new", "xxx", ],
+    imgurl: "",
+    // additional info.
+    ribbon: "NEW",
+    creation_date: "2026-03-26",
+    srcs: [ "sad" ],
+  },
+  {
+    id: 30,
+    term: "Angular Standalone Component",
+    text: "",
+    points: [
+      "",
+    ],
+    abbreviations: [],
+    references: [
+      { handle: "official", weblink: "https://www.google.com", txt: "NOT SET" },
+    ],
+    crossrefs: [ ],
+    tags: [ "new", "xxx", ],
+    imgurl: "",
+    // additional info.
+    ribbon: "NEW",
+    creation_date: "2026-03-26",
+    srcs: [ "sad" ],
+  },
+  {
+    id: 31,
+    term: "Angular Component",
+    text: "",
+    points: [
+      "",
+    ],
+    abbreviations: [],
+    references: [
+      { handle: "official", weblink: "https://www.google.com", txt: "NOT SET" },
+    ],
+    crossrefs: [ ],
+    tags: [ "new", "xxx", ],
+    imgurl: "",
+    // additional info.
+    ribbon: "NEW",
+    creation_date: "2026-03-26",
+    srcs: [ "sad" ],
+  },
+  {
+    id: 32,
+    term: "Angular Pipe",
+    text: "",
+    points: [
+      "",
+    ],
+    abbreviations: [],
+    references: [
+      { handle: "official", weblink: "https://www.google.com", txt: "NOT SET" },
+    ],
+    crossrefs: [ ],
+    tags: [ "new", "xxx", ],
+    imgurl: "",
+    // additional info.
+    ribbon: "NEW",
+    creation_date: "2026-03-26",
+    srcs: [ "sad" ],
+  },
+  {
+    id: 33,
+    term: "Angular Observable",
+    text: "",
+    points: [
+      "",
+    ],
+    abbreviations: [],
+    references: [
+      { handle: "official", weblink: "https://www.google.com", txt: "NOT SET" },
+    ],
+    crossrefs: [ ],
+    tags: [ "new", "xxx", ],
+    imgurl: "",
+    // additional info.
+    ribbon: "NEW",
+    creation_date: "2026-03-26",
+    srcs: [ "sad" ],
+  },
+  {
+    id: 34,
+    term: "Angular HttpClient",
+    text: "",
+    points: [
+      "",
+    ],
+    abbreviations: [],
+    references: [
+      { handle: "official", weblink: "https://www.google.com", txt: "NOT SET" },
+    ],
+    crossrefs: [ ],
+    tags: [ "new", "xxx", ],
+    imgurl: "",
+    // additional info.
+    ribbon: "NEW",
+    creation_date: "2026-03-26",
+    srcs: [ "sad" ],
+  },
+  {
+    id: 35,
+    term: "Angular HttpClient Interceptor",
+    text: "",
+    points: [
+      "",
+    ],
+    abbreviations: [],
+    references: [
+      { handle: "official", weblink: "https://www.google.com", txt: "NOT SET" },
+    ],
+    crossrefs: [ ],
+    tags: [ "new", "xxx", ],
+    imgurl: "",
+    // additional info.
+    ribbon: "NEW",
+    creation_date: "2026-03-26",
+    srcs: [ "sad" ],
+  },
+  {
+    id: 36,
+    term: "Angular Component Lifecycle",
+    text: "",
+    points: [
+      "",
+    ],
+    abbreviations: [],
+    references: [
+      { handle: "official", weblink: "https://www.google.com", txt: "NOT SET" },
+    ],
+    crossrefs: [ ],
+    tags: [ "new", "xxx", ],
+    imgurl: "",
+    // additional info.
+    ribbon: "NEW",
+    creation_date: "2026-03-26",
+    srcs: [ "sad" ],
+  },
+  {
+    id: 37,
+    term: "jasmine",
+    text: "",
+    points: [
+      "",
+    ],
+    abbreviations: [],
+    references: [
+      { handle: "official", weblink: "https://www.google.com", txt: "NOT SET" },
+    ],
+    crossrefs: [ ],
+    tags: [ "new", "xxx", ],
+    imgurl: "",
+    // additional info.
+    ribbon: "NEW",
+    creation_date: "2026-03-26",
+    srcs: [ "sad" ],
+  },
+  {
+    id: 38,
+    term: "karma",
+    text: "",
+    points: [
+      "",
+    ],
+    abbreviations: [],
+    references: [
+      { handle: "official", weblink: "https://www.google.com", txt: "NOT SET" },
+    ],
+    crossrefs: [ ],
+    tags: [ "new", "xxx", ],
+    imgurl: "",
+    // additional info.
+    ribbon: "NEW",
+    creation_date: "2026-03-26",
+    srcs: [ "sad" ],
+  },
+  {
+    id: 39,
+    term: "dependency injection",
+    text: "",
+    points: [
+      "",
+    ],
+    abbreviations: [],
+    references: [
+      { handle: "official", weblink: "https://www.google.com", txt: "NOT SET" },
+    ],
+    crossrefs: [ ],
+    tags: [ "new", "xxx", ],
+    imgurl: "",
+    // additional info.
+    ribbon: "NEW",
+    creation_date: "2026-03-26",
+    srcs: [ "sad" ],
+  },
+  {
+    id: 40,
+    term: "Angular dependency injection scope",
+    text: "",
+    points: [
+      "",
+    ],
+    abbreviations: [],
+    references: [
+      { handle: "official", weblink: "https://www.google.com", txt: "NOT SET" },
+    ],
+    crossrefs: [ ],
+    tags: [ "new", "xxx", ],
+    imgurl: "",
+    // additional info.
+    ribbon: "NEW",
+    creation_date: "2026-03-26",
+    srcs: [ "sad" ],
+  },
+  {
+    id: 41,
+    term: "Rxjs Subject",
+    text: "",
+    points: [
+      "",
+    ],
+    abbreviations: [],
+    references: [
+      { handle: "official", weblink: "https://www.google.com", txt: "NOT SET" },
+    ],
+    crossrefs: [ ],
+    tags: [ "new", "xxx", ],
+    imgurl: "",
+    // additional info.
+    ribbon: "NEW",
+    creation_date: "2026-03-26",
+    srcs: [ "sad" ],
+  },
+  {
+    id: 42,
+    term: "Rxjs BehaviorSubject",
+    text: "",
+    points: [
+      "",
+    ],
+    abbreviations: [],
+    references: [
+      { handle: "official", weblink: "https://www.google.com", txt: "NOT SET" },
+    ],
+    crossrefs: [ ],
+    tags: [ "new", "xxx", ],
+    imgurl: "",
+    // additional info.
+    ribbon: "NEW",
+    creation_date: "2026-03-26",
+    srcs: [ "sad" ],
+  },
+  {
+    id: 43,
+    term: "Angular DataBinding",
+    text: "",
+    points: [
+      "",
+    ],
+    abbreviations: [],
+    references: [
+      { handle: "official", weblink: "https://www.google.com", txt: "NOT SET" },
+    ],
+    crossrefs: [ ],
+    tags: [ "new", "xxx", ],
+    imgurl: "",
+    // additional info.
+    ribbon: "NEW",
+    creation_date: "2026-03-26",
+    srcs: [ "sad" ],
+  },
+  {
+    id: 44,
+    term: "Angular Reactive Forms",
+    text: "",
+    points: [
+      "",
+    ],
+    abbreviations: [],
+    references: [
+      { handle: "official", weblink: "https://www.google.com", txt: "NOT SET" },
+    ],
+    crossrefs: [ ],
+    tags: [ "new", "xxx", ],
+    imgurl: "",
+    // additional info.
+    ribbon: "NEW",
+    creation_date: "2026-03-26",
+    srcs: [ "sad" ],
+  },
+  {
+    id: 45,
+    term: "Angular ContentChildren",
+    text: "",
+    points: [
+      "",
+    ],
+    abbreviations: [],
+    references: [
+      { handle: "official", weblink: "https://www.google.com", txt: "NOT SET" },
+    ],
+    crossrefs: [ ],
+    tags: [ "new", "xxx", ],
+    imgurl: "",
+    // additional info.
+    ribbon: "NEW",
+    creation_date: "2026-03-26",
+    srcs: [ "sad" ],
+  },
+  {
+    id: 46,
+    term: "Angular ViewChild",
+    text: "",
+    points: [
+      "",
+    ],
+    abbreviations: [],
+    references: [
+      { handle: "official", weblink: "https://www.google.com", txt: "NOT SET" },
+    ],
+    crossrefs: [ ],
+    tags: [ "new", "xxx", ],
+    imgurl: "",
+    // additional info.
+    ribbon: "NEW",
+    creation_date: "2026-03-26",
+    srcs: [ "sad" ],
+  },
+  {
+    id: 47,
+    term: "Angular Routing",
+    text: "",
+    points: [
+      "",
+    ],
+    abbreviations: [],
+    references: [
+      { handle: "official", weblink: "https://www.google.com", txt: "NOT SET" },
+    ],
+    crossrefs: [ ],
+    tags: [ "new", "xxx", ],
+    imgurl: "",
+    // additional info.
+    ribbon: "NEW",
+    creation_date: "2026-03-26",
+    srcs: [ "sad" ],
+  },
+  {
+    id: 48,
+    term: "Angular Route Parameters",
+    text: "",
+    points: [
+      "",
+    ],
+    abbreviations: [],
+    references: [
+      { handle: "official", weblink: "https://www.google.com", txt: "NOT SET" },
+    ],
+    crossrefs: [ ],
+    tags: [ "new", "xxx", ],
+    imgurl: "",
+    // additional info.
+    ribbon: "NEW",
+    creation_date: "2026-03-26",
+    srcs: [ "sad" ],
+  },
+  {
+    id: 49,
+    term: "Angular Route Data",
+    text: "",
+    points: [
+      "",
+    ],
+    abbreviations: [],
+    references: [
+      { handle: "official", weblink: "https://www.google.com", txt: "NOT SET" },
+    ],
+    crossrefs: [ ],
+    tags: [ "new", "xxx", ],
+    imgurl: "",
+    // additional info.
+    ribbon: "NEW",
+    creation_date: "2026-03-26",
+    srcs: [ "sad" ],
+  },
+  {
+    id: 50,
+    term: "Angular Routing Lazy Loading",
+    text: "",
+    points: [
+      "",
+    ],
+    abbreviations: [],
+    references: [
+      { handle: "official", weblink: "https://www.google.com", txt: "NOT SET" },
+    ],
+    crossrefs: [ ],
+    tags: [ "new", "xxx", ],
+    imgurl: "",
+    // additional info.
+    ribbon: "NEW",
+    creation_date: "2026-03-26",
+    srcs: [ "sad" ],
+  },
+
 ];
 
   getData() {
@@ -626,4 +1052,3 @@ export class LocalDataProviderService {
   }
 
 }
-
