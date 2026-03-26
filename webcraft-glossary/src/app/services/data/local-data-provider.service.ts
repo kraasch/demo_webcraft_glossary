@@ -98,7 +98,7 @@ export class LocalDataProviderService {
         { short: "IE", long: "Internet Explorer" },
       ],
       references: [
-        { handle: "wikipedia", weblink: "https://en.wikipedia.org/wiki/Internet_Explorer", txt: "wikipedia.org",  },
+        { handle: "wikipedia", weblink: "https://en.wikipedia.org/wiki/Internet_Explorer", txt: "/Internet_Explorer",  },
       ],
       crossrefs: [ 4, ],
       tags: [ "browser", "browser wars" ],
@@ -116,7 +116,7 @@ export class LocalDataProviderService {
       abbreviations: [
       ],
       references: [
-        { handle: "wikipedia", weblink: "https://en.wikipedia.org/wiki/Browser_wars", txt: "wikipedia.org",  },
+        { handle: "wikipedia", weblink: "https://en.wikipedia.org/wiki/Browser_wars", txt: "/Browser_wars",  },
       ],
       crossrefs: [ 3, ],
       tags: [ "historic event" ],
