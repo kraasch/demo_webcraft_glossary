@@ -6,8 +6,16 @@ Link to the [Github Pages upload](https://kraasch.github.io/demo_webcraft_glossa
 A project with...
 
   - [X] Angular 17,
+  - [X] provide some filters,
+
+<!--
+my task list:
+  - [ ] implement search for related terms,
+  - [ ] implement sorting,
+  - [ ] solve issue: do not scroll past footer,
+  - [ ] write more entries.
   - [ ] upload to Github Pages,
-  - [ ] provide some filters.
+ -->
 
 <!--
 optional:
