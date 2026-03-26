@@ -10,7 +10,7 @@ A project with...
 
 <!--
 my task list:
-  - [ ] implement search for related terms,
+  - [ ] implement click and search for related terms,
   - [ ] implement sorting,
   - [ ] solve issue: do not scroll past footer,
   - [ ] write more entries.
