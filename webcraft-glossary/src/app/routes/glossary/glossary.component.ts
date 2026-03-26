@@ -194,6 +194,7 @@ export class GlossaryComponent {
 
   // Tag was clicked in child, therefore select it.
   onTagClicked(tag: string): void {
+    this.myfilters.get('searchBody')?.setValue("", { emitEvent: false });
     this.deselectAllTags();
     this.selectedTags[tag] = true;
   }
