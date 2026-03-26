@@ -11,9 +11,9 @@ A project with...
 <!--
 my task list:
   - [X] implement click and search for related terms,
+  - [X] write more stats.
   - [ ] implement sorting,
   - [ ] solve issue: do not scroll past footer,
-  - [ ] write more stats.
   - [ ] write more entries.
   - [ ] upload to Github Pages,
  -->
