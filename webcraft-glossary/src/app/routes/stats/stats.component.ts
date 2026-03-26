@@ -49,6 +49,9 @@ import Chart from 'chart.js/auto';
         <canvas #chartElement2 class="p-4" width="400" height="300"></canvas>
       </div>
 
+      <!-- IDEAS FOR OTHER STATS
+        - [ ] timeline of number of cards created per day (or month).
+      -->
       <!-- DUMMY CARD
       <div class="myitem" class="card bg-base-100 shadow-xl p-10 max-h-120">
         Another stat.
