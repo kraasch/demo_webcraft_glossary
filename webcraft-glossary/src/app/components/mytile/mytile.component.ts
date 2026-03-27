@@ -75,6 +75,14 @@ const defaultRibbonColor: string = colors['c0ffee'];
      right: 0;
      pointer-events: none;
    }
+
+   .badge.badge-info:hover {
+     cursor: pointer; /* Values can be "default", "help", "move", "not-allowed", etc. */
+   }
+
+   .badge.badge-outline:hover {
+     cursor: pointer;
+   }
 `
 })
 export class MytileComponent {
@@ -83,9 +91,9 @@ export class MytileComponent {
   @Input() hasBg: boolean = false;
   @Input() crossrefData!: Map<number, { term: string }>;
   @Input() tagColors: Record<string, string> = {};
+  @Input() tagFgColors: Record<string, string> = {};
   @Output() tagClicked = new EventEmitter<string>();
   @Output() refClicked = new EventEmitter<string>();
-
 
   searchRibbonColor(text: string) {
     let newColor = defaultRibbonColor;

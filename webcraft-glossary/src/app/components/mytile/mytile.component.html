@@ -12,7 +12,7 @@
       class="ribbon bg-primary"
       [style.background-color]="searchRibbonColor(tileData.ribbon)"
     >
-      {{ tileData.ribbon }}
+      {{ tileData.ribbon }} #{{tileData.id}}
     </div>
   </div>
   }
@@ -22,12 +22,15 @@
       <!-- SECTION FOR TITLE AND TAGS -->
       <h2 class="card-title">
         {{ tileData.term }}
+        <!-- TAGS BELOW -->
         @if (tileData.tags.length) {
         <div class="card-actions justify-end">
+          <!-- TODO: change cursor on hovering button -->
           @for (tag of tileData.tags; track tag) {
           <button
             class="badge badge-info"
             [style.background-color]="tagColors[tag]"
+            [style.color]="tagFgColors[tag]"
             (click)="emitTagClicked(tag)"
           >
             {{ tag }}
@@ -35,6 +38,7 @@
           }
         </div>
         }
+        <!-- TAGS ABOVE -->
       </h2>
       <!-- SECTION FOR TRIVIA POINTS -->
       <div>
@@ -58,9 +62,8 @@
       </div>
       <div class="mt-auto">
         <!-- DIVIDER NOTE -->
-       <div class="divider divider-start"></div>
+        <div class="divider divider-start"></div>
         <!-- SECTION FOR ABBREVIATIONS -->
-        <!--- TODO: add abbreviations here. -->
         @if (tileData.abbreviations.length) {
         <div class="mt-2 text-sm text-secondary">
           <ul class="pl-4 text-xs">
@@ -86,7 +89,7 @@
         </ul>
         }
         <!-- SECTION FOR CROSS-REFERENCES -->
-        <!--- TODO: resolve link to crossref -->
+        <!-- TODO: change cursor on hovering button -->
         @if (getCrossrefData().length) {
         <div class="mt-2 text-sm text-secondary">
           <strong class="pl-5 pr-2">See also:</strong>

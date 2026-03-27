@@ -3,6 +3,7 @@ import { Component, inject } from '@angular/core';
 import { ReactiveFormsModule, FormsModule, FormControl, FormGroup } from '@angular/forms';
 import { MytileComponent } from '../../components/mytile/mytile.component';
 import { LocalDataProviderService } from '../../services/data/local-data-provider.service';
+import { GlossaryEntry, DEFAULT_ENTRY } from '../../services/data/glossary-entry';
 
 type SortTarget = 'term' | 'id';
 
@@ -134,6 +135,7 @@ type SortTarget = 'term' | 'id';
           [hasBg]="cardsHaveBg"
           [crossrefData]="idToElementData"
           [tagColors]="tagColors"
+          [tagFgColors]="tagFgColors"
           (tagClicked)="onTagClicked($event)"
           (refClicked)="onCrossRefClicked($event)"
         />
@@ -164,32 +166,36 @@ type SortTarget = 'term' | 'id';
 `
 })
 export class GlossaryComponent {
-  dataProvider = inject(LocalDataProviderService);
-  data = this.dataProvider.getData();
-  cardsHaveBg: boolean = true;
-  showTagsOnStartup: boolean = true;
 
-  allTags: string[] = [];
-  selectedTags: Record<string, boolean> = {};
-  tagColors: Record<string, string> = {};
-  idToElementData: Map<number, { term: string }> = new Map();
-  searchWithinTerms:  boolean = true;
-  searchWithinTexts:  boolean = true;
-  searchWithinPoints: boolean = true;
-  sortAscending:      boolean = true;
-  sortTarget:         SortTarget = 'term';
+  dataProvider        = inject(LocalDataProviderService);
+  data                = this.dataProvider.getData();
+
+  cardsHaveBg:        boolean                       = true;
+  showTagsOnStartup:  boolean                       = true;
+  allTags:            string[]                      = [];
+  selectedTags:       Record<string, boolean>       = {};
+  tagColors:          Record<string, string>        = {};
+  tagFgColors:        Record<string, string>        = {};
+  idToElementData:    Map<number, { term: string }> = new Map();
+  searchWithinTerms:  boolean                       = true;
+  searchWithinTexts:  boolean                       = true;
+  searchWithinPoints: boolean                       = true;
+  sortAscending:      boolean                       = true;
+  sortTarget:         SortTarget                    = 'term';
 
   myfilters = new FormGroup({
     searchBody:  new FormControl('')
   });
 
+  // Angular's on-init hook.
   ngOnInit(): void {
     // Extract all tags and initialize deselected.
     const tags = this.data.flatMap(item => item.tags || []).filter(tag => tag);
     this.allTags = [...new Set(tags)];
     this.allTags.forEach(tag => {
       this.selectedTags[tag] = this.showTagsOnStartup;
-      this.tagColors[tag] = this.tagToColor(tag)
+      this.tagColors[tag] = this.tagToColor(tag);
+      this.tagFgColors[tag] = this.tagToFgColor(this.tagColors[tag]);
     });
     // Build idToElementData map for efficient reference.
     for (const item of this.data) {
@@ -197,14 +203,17 @@ export class GlossaryComponent {
     }
   }
 
+  // Resets the search UI to it's default value.
   resetSearchElement(): void {
     this.myfilters.get('searchBody')?.setValue("", { emitEvent: false });
   }
 
+  // Resets the sort UI to it's default value.
   resetSortElement(): void {
     this.sortTarget = 'term';
   }
 
+  // Helps print a human-friendly string for the UI.
   sortTargetToText(): string {
     if (this.sortTarget == 'term') {
       return "Title";
@@ -215,6 +224,7 @@ export class GlossaryComponent {
     return "N/A";
   }
 
+  // Set the dropdown element's choice.
   chooseSort(target: SortTarget, popover: HTMLElement): void {
     this.sortTarget = target;
     // TypeScript‑safe hidePopover call.
@@ -223,6 +233,7 @@ export class GlossaryComponent {
     }
   }
 
+  // Apply the fitlering as specified by the UI elements.
   sortFilteredData(): void {
     switch (this.sortTarget) {
       case 'term':
@@ -281,6 +292,17 @@ export class GlossaryComponent {
     return color;
   }
 
+  // Calculates the font color (fg) based on the background color (bg).
+  tagToFgColor(bgColor: string) : "#000000" | "#ffffff" {
+  const hex = bgColor.replace(/^#/, ""); // Remove leading number sign, if present.
+  const r = parseInt(hex.slice(0, 2), 16);
+  const g = parseInt(hex.slice(2, 4), 16);
+  const b = parseInt(hex.slice(4, 6), 16);
+  // Approximate perceived brightness (HSP-like).
+  const hsp = Math.sqrt(0.299 * r * r + 0.587 * g * g + 0.114 * b * b);
+  return hsp > 127.5 ? "#000000" : "#ffffff";
+}
+
   // Tag was clicked in child, therefore select it.
   onTagClicked(tag: string): void {
     this.myfilters.get('searchBody')?.setValue("", { emitEvent: false });
@@ -298,7 +320,7 @@ export class GlossaryComponent {
   }
 
   // Computed filtered data.
-  get filteredData() {
+  get filteredData() : GlossaryEntry[] {
     // apply sorting.
     this.sortFilteredData();
 
