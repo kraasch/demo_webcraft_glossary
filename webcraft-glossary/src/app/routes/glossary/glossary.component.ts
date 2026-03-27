@@ -15,7 +15,6 @@ type SortTarget = 'term' | 'id';
     FormsModule,
   ],
   template: `
-
     <!-- BEGIN OF SEARCH OPTIONS -->
     <div class="bg-base-100 border-base-300 collapse border rounded-none collapse-arrow">
 
@@ -56,14 +55,23 @@ type SortTarget = 'term' | 'id';
         <!-- search within text -->
         <fieldset class="fieldset bg-info rounded-box p-2">
           <legend class="fieldset-legend">Search content</legend>
+          <div class="p-0 flex flex-wrap items-center">
+          <input type="button" class="btn btn-square m-1" value="×" (click)="resetSearchElement()"/>
           <form class="my-padded-tags-form" (submit)="$event.preventDefault()" [formGroup]="myfilters">
-            <input formControlName="searchBody" type="text" placeholder="Search here" class="input" />
+            <input list="allTitles" formControlName="searchBody" type="text" placeholder="Search here" class="input" />
+            <datalist id="allTitles">
+            @for (dataItem of filteredData; track dataItem.id) {
+              <option value="{{dataItem.term}}"></option>
+            }
+            </datalist>
           </form>
-          <label class="label">
+          </div>
+          <div class="p-2 flex flex-wrap items-center">
+          <label class="label pr-4">
             <input type="checkbox" class="toggle" [checked]="searchWithinTerms" (change)="searchWithinTerms = !searchWithinTerms" />
             Include titles
           </label>
-          <label class="label">
+          <label class="label pr-4">
             <input type="checkbox" class="toggle" [checked]="searchWithinTexts" (change)="searchWithinTexts = !searchWithinTexts" />
             Include descriptions
           </label>
@@ -71,6 +79,7 @@ type SortTarget = 'term' | 'id';
             <input type="checkbox" class="toggle" [checked]="searchWithinPoints" (change)="searchWithinPoints = !searchWithinPoints" />
             Include notes
           </label>
+          </div>
         </fieldset>
 
         <!-- sort results -->
@@ -85,6 +94,8 @@ type SortTarget = 'term' | 'id';
           <label class="label">
             Sort by
           </label>
+          <div class="p-0 flex flex-wrap items-center">
+          <input type="button" class="btn btn-square m-1" value="×" (click)="resetSortElement()"/>
           <button class="btn" popovertarget="popover-1" style="anchor-name:--anchor-1; width: 100px">
             {{ sortTargetToText() }}
           </button>
@@ -103,8 +114,9 @@ type SortTarget = 'term' | 'id';
               </a>
             </li>
           </ul>
+          </div>
 
-          <label class="label">
+          <label class="label p-2">
             <input type="checkbox" class="toggle" [checked]="sortAscending" (change)="sortAscending = !sortAscending" />
             Sort ascending
           </label>
@@ -183,6 +195,14 @@ export class GlossaryComponent {
     for (const item of this.data) {
       this.idToElementData.set(item.id, { term: item.term });
     }
+  }
+
+  resetSearchElement(): void {
+    this.myfilters.get('searchBody')?.setValue("", { emitEvent: false });
+  }
+
+  resetSortElement(): void {
+    this.sortTarget = 'term';
   }
 
   sortTargetToText(): string {

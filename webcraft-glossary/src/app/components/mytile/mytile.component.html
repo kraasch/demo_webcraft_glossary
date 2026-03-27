@@ -66,7 +66,9 @@
           <ul class="pl-4 text-xs">
             @for (abbr of tileData.abbreviations; track abbr.long ) {
             <li class="text-xs md:text-xs">
-              <div class="badge badge-secondary badge-ghost mr-2">{{ abbr.short }}</div> = {{abbr.long}}
+              <div title="{{abbr.long}}" class="badge badge-secondary badge-ghost mr-2">
+                {{ abbr.short }}
+              </div>= {{abbr.long}}
             </li>
             }
           </ul>
@@ -77,8 +79,8 @@
         <ul class="space-y-0 pl-4 text-xs mt-3">
           @for (ref of tileData.references; track ref.weblink ) {
           <li class="text-xs md:text-xs">
-            <div class="badge badge-info mr-2 mb-1">{{ ref.handle }}</div>
-            <a class="link link-info text-xs" href="{{ ref.weblink }}">{{ ref.txt }}</a>
+            <div title="{{ref.weblink}}" class="badge badge-info mr-2 mb-1">{{ ref.handle }}</div>
+            <a title="{{ref.weblink}}" class="link link-info text-xs" href="{{ ref.weblink }}">{{ ref.txt }}</a>
           </li>
           }
         </ul>

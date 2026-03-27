@@ -8,16 +8,28 @@ import Chart from 'chart.js/auto';
   standalone: true,
   imports: [],
   template: `
-    <div class="hero bg-base-100 min-h-40 m-10">
+
+    <div class="hero bg-base-100 min-h-40">
       <div class="hero-content text-center">
         <div class="max-w-md">
           <h1 class="text-5xl font-bold">Stats</h1>
-          <p class="py-6">
-            Here is some statistical dashboard.
-          </p>
+          <div class="py-6">
+             <div>
+               Here is some
+               <span class="text-rotate">
+                 <span class="justify-items-center">
+                   <span class="bg-teal-400 text-teal-800 px-2">statistical</span>
+                   <span class="bg-red-400  text-red-800  px-2">fantastical</span>
+                   <span class="bg-blue-400 text-blue-800 px-2">quixotical</span>
+                 </span>
+               </span>
+               dashboard.
+              </div>
+          </div>
         </div>
       </div>
     </div>
+
     <div class="mybox">
 
       <!-- TAG FREQUENCY -->
@@ -64,7 +76,7 @@ import Chart from 'chart.js/auto';
   styles: `
 .mybox {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 .myitem {
@@ -76,6 +88,7 @@ import Chart from 'chart.js/auto';
   border: solid;
   */
 }
+
 `
 })
 export class StatsComponent implements OnInit {
