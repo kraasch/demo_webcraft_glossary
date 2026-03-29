@@ -6,5 +6,5 @@ build:
 	cd ./webcraft-glossary/ && ng build webcraft-glossary
 
 topages:
-	cd ./webcraft-glossary/ && ng webcraft-glossary
+	cd ./webcraft-glossary/ && ng deploy --base-href=https://kraasch.github.io/demo_webcraft_glossary/
 
