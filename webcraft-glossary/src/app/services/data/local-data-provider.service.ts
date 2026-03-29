@@ -426,7 +426,7 @@ export class LocalDataProviderService {
         crossrefs: [ ],
         tags: [ "tool", "cli", ],
         imgurl: "https://upload.wikimedia.org/wikipedia/commons/d/db/Npm-logo.svg",
-        ribbon: "NOW",
+        ribbon: "XXX",
         creation_date: "2026-05-26",
         srcs: [ "ack" ],
       },
