@@ -12,7 +12,7 @@
       class="ribbon bg-primary"
       [style.background-color]="searchRibbonColor(tileData.ribbon)"
     >
-      {{ tileData.ribbon }} #{{tileData.id}}
+      {{ tileData.ribbon | ribbonFullNames }} #{{tileData.id + 1}}
     </div>
   </div>
   }

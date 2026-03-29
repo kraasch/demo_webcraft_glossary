@@ -1,29 +1,34 @@
 
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { GlossaryEntry, DEFAULT_ENTRY } from '../../services/data/glossary-entry';
+import { RibbonFullNamesPipe } from './ribbon-full-names.pipe';
 
 const colors: Record<string, string> = {
   "concrete":    "#a0a0a0",
   "green":       "#4fd11f",
   "orange":      "#ff7700",
   "yellow":      "#f5ef42",
+  "red":         "#ff0000",
   "pink":        "#ff00dd",
   "blue":        "#0077ff",
   "c0ffee":      "#c0ffee",
   "eggshell":    "#f0ead6",
-  "dark-blue":   "#161bab",
 };
 const ribbonColors: Record<string, string> = {
-  "AI":  colors['orange'],
-  "BASIC": colors['concrete'],
-  "NEW": colors['yellow'],
+  // permanent.
+  "HW":    colors['green'],
+  // temporary and helpers.
+  "NEW":   colors['orange'],
+  "NOW":   colors['red'],
 };
-const defaultRibbonColor: string = colors['c0ffee'];
+const defaultRibbonColor: string = colors['yellow'];
 
 @Component({
   selector: 'app-mytile',
   standalone: true,
-  imports: [],
+  imports: [
+    RibbonFullNamesPipe,
+  ],
   templateUrl: 'mytile.component.html',
   styles: `
     .card {

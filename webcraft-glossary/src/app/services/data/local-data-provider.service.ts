@@ -7,418 +7,452 @@ import { Injectable } from '@angular/core';
 export class LocalDataProviderService {
 
   data = [
-    /* LEARNING */
+
+    /* HOMEWORK */
     {
       id: 0,
       term: "Angular Module",
-      text: "Fundamental building block in Angular apps that groups components, directives, pipes, and services. Modules bootstrap the app and configure dependency injection.",
+      text: "Fundamental building block in Angular apps that groups components, directives, pipes and services.",
       points: [
-        "Decorated with @NgModule defining declarations, imports, providers, and bootstrap.",
-        "Root module bootstraps the app; feature modules organize code by domain.",
-        "Modern Angular favors standalone components over traditional modules.",
+        "Modules bootstrap the app and configure dependency injection.",
+        "Decorated with @NgModule defining declarations, imports, providers and bootstrap.",
+        "Modern Angular favors standalone components over traditional modules (NgModules).",
+      ],
+      abbreviations: [
+        { short: "@NgModule", long: "Angular module decorator" }
+      ],
+      references: [
+        { handle: "docs", weblink: "https://angular.dev/guide/ngmodules/overview", txt: "angular.dev/ngmodules" }
+      ],
+      crossrefs: [ 1, 2, 3, 10, 11, 84, 126, ],
+      tags: [ "homework", "angular", "technicality" ],
+      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
+      ribbon: "HW",
+      creation_date: "2026-03-29",
+      srcs: [ "sad" ],
+    },
+    {
+      id: 1,
+      term: "Angular Standalone Component",
+      text: "Modern Angular components that do not require NgModules and can directly import other standalone components, directives and pipes.",
+      points: [
+        "Simplifies architecture by eliminating module boilerplate.",
+        "Default in Angular 17+.",
+        "A full NgModule hierarchy defining the app's entry point is not required.",
+        "Bootstrap directly in main.ts and use 'standalone: true' in @Component decorator.",
       ],
       abbreviations: [],
       references: [
-        { handle: "official", weblink: "https://angular.dev/guide/ngmodules", txt: "angular.dev/ngmodules" }
+        { handle: "docs", weblink: "https://v17.angular.io/guide/standalone-components", txt: "angular.io/v17/standalone" }
       ],
-      crossrefs: [ 1, 2, 11 ],
-      tags: [ "new", "xxx", "angular" ],
+      crossrefs: [ 0, 2 ],
+      tags: [ "homework", "angular", "technicality" ],
       imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
-      ribbon: "NEW",
-      creation_date: "2026-03-26",
-      srcs: [ "ack" ],
+      ribbon: "HW",
+      creation_date: "2026-03-29",
+      srcs: [ "sad" ],
     },
-//    {
-//      id: 1,
-//      term: "Angular Standalone Component",
-//      text: "Modern Angular components that don't require NgModules. They can directly import other standalone components, directives, and pipes.",
-//      points: [
-//        "Simplifies architecture by eliminating module boilerplate.",
-//        "Default in Angular 17+; bootstrap directly in main.ts.",
-//        "Use standalone: true in @Component decorator.",
-//      ],
-//      abbreviations: [],
-//      references: [
-//        { handle: "official", weblink: "https://angular.dev/guide/standalone", txt: "angular.dev/standalone" }
-//      ],
-//      crossrefs: [ 0, 2 ],
-//      tags: [ "new", "xxx", "angular" ],
-//      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
-//      ribbon: "NEW",
-//      creation_date: "2026-03-26",
-//      srcs: [ "ack" ],
-//    },
-//    {
-//      id: 2,
-//      term: "Angular Component",
-//      text: "Core building block controlling a view via @Component decorator. Contains template, styles, and logic for UI elements.",
-//      points: [
-//        "Lifecycle hooks: ngOnInit, ngOnChanges, ngOnDestroy, etc.",
-//        "Can be standalone or declared in NgModule.",
-//        "Uses @Input/@Output for parent-child communication.",
-//      ],
-//      abbreviations: [],
-//      references: [
-//        { handle: "official", weblink: "https://angular.dev/guide/components", txt: "angular.dev/components" }
-//      ],
-//      crossrefs: [ 0, 1, 7 ],
-//      tags: [ "new", "xxx", "angular" ],
-//      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
-//      ribbon: "NEW",
-//      creation_date: "2026-03-26",
-//      srcs: [ "ack" ],
-//    },
-//    {
-//      id: 3,
-//      term: "Angular Pipe",
-//      text: "Transform display values in templates using pure | impure pipes. Built-in pipes like date, currency; custom pipes via @Pipe decorator.",
-//      points: [
-//        "Usage: {{ value | pipeName:arg }} in templates.",
-//        "Pure pipes optimize by only updating on input reference change.",
-//        "AsyncPipe subscribes to observables/promises automatically.",
-//      ],
-//      abbreviations: [],
-//      references: [
-//        { handle: "official", weblink: "https://angular.dev/guide/templates/pipe", txt: "angular.dev/pipes" }
-//      ],
-//      crossrefs: [],
-//      tags: [ "new", "xxx", "angular" ],
-//      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
-//      ribbon: "NEW",
-//      creation_date: "2026-03-26",
-//      srcs: [ "ack" ],
-//    },
-//    {
-//      id: 4,
-//      term: "Angular Observable",
-//      text: "RxJS Observable streams for handling async operations and reactive data flows. Foundation of Angular's change detection.",
-//      points: [
-//        "Hot by default; use shareReplay() for sharing.",
-//        "Use with AsyncPipe or .subscribe() in services/components.",
-//        "Operators like map, filter, switchMap, debounceTime.",
-//      ],
-//      abbreviations: [],
-//      references: [
-//        { handle: "official", weblink: "https://rxjs.dev/guide/observable", txt: "rxjs.dev/observable" }
-//      ],
-//      crossrefs: [ 12 ],
-//      tags: [ "new", "xxx", "angular" ],
-//      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
-//      ribbon: "NEW",
-//      creation_date: "2026-03-26",
-//      srcs: [ "ack" ],
-//    },
-//    {
-//      id: 5,
-//      term: "Angular HttpClient",
-//      text: "Angular's HTTP client service for making AJAX requests. Provides typed responses, interceptors, and progress events.",
-//      points: [
-//        "Inject HttpClient in services; use get(), post(), etc.",
-//        "Returns Observables; use map(), catchError() operators.",
-//        "Must import HttpClientModule in standalone bootstrap.",
-//      ],
-//      abbreviations: [],
-//      references: [
-//        { handle: "official", weblink: "https://angular.dev/guide/http", txt: "angular.dev/http" }
-//      ],
-//      crossrefs: [ 6 ],
-//      tags: [ "new", "xxx", "angular" ],
-//      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
-//      ribbon: "NEW",
-//      creation_date: "2026-03-26",
-//      srcs: [ "ack" ],
-//    },
-//    {
-//      id: 6,
-//      term: "Angular HttpClient Interceptor",
-//      text: "RxJS interceptors that transform HTTP requests/responses globally. Perfect for auth headers, logging, caching.",
-//      points: [
-//        "Implement HttpInterceptor interface; provide in DI.",
-//        "intercept(req, next) method returns Observable<HttpEvent>.",
-//        "Use clone() to modify request headers/body.",
-//      ],
-//      abbreviations: [],
-//      references: [
-//        { handle: "official", weblink: "https://angular.dev/guide/http/interceptor", txt: "angular.dev/interceptors" }
-//      ],
-//      crossrefs: [ 5 ],
-//      tags: [ "new", "xxx", "angular" ],
-//      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
-//      ribbon: "NEW",
-//      creation_date: "2026-03-26",
-//      srcs: [ "ack" ],
-//    },
-//    {
-//      id: 7,
-//      term: "Angular Component Lifecycle",
-//      text: "Predictable sequence of hooks from creation to destruction. Use ngOnInit for initialization, ngOnDestroy for cleanup.",
-//      points: [
-//        "ngOnChanges → ngOnInit → ngDoCheck → ngAfterViewInit → ngAfterContentInit.",
-//        "Most used: ngOnInit, ngOnChanges, ngOnDestroy.",
-//        "Standalone components have same lifecycle hooks.",
-//      ],
-//      abbreviations: [],
-//      references: [
-//        { handle: "official", weblink: "https://angular.dev/guide/components/lifecycle", txt: "angular.dev/lifecycle" }
-//      ],
-//      crossrefs: [ 2 ],
-//      tags: [ "new", "xxx", "angular" ],
-//      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
-//      ribbon: "NEW",
-//      creation_date: "2026-03-26",
-//      srcs: [ "ack" ],
-//    },
-//    {
-//      id: 8,
-//      term: "jasmine",
-//      text: "Behavior-driven development framework for testing JavaScript. Default Angular test runner using describe/it/expect syntax.",
-//      points: [
-//        "describe() groups tests; it() defines test cases.",
-//        "Matchers: expect(value).toBe(), toEqual(), toBeTruthy().",
-//        "Async testing: fakeAsync(), tick(), async/await.",
-//      ],
-//      abbreviations: [],
-//      references: [
-//        { handle: "official", weblink: "https://jasmine.github.io/", txt: "jasmine.github.io" }
-//      ],
-//      crossrefs: [ 9 ],
-//      tags: [ "new", "xxx", "testing" ],
-//      imgurl: "https://upload.wikimedia.org/wikipedia/en/2/22/Logo_jasmine.svg",
-//      ribbon: "NEW",
-//      creation_date: "2026-03-26",
-//      srcs: [ "ack" ],
-//    },
-//    {
-//      id: 9,
-//      term: "karma",
-//      text: "Test runner for JavaScript executing tests in real browsers. Angular CLI uses karma-jasmine-html-reporter by default.",
-//      points: [
-//        "karma.conf.js configures browsers, frameworks, reporters.",
-//        "ng test runs karma in watch mode with live reload.",
-//        "Supports Chrome, Firefox, Edge, Safari browsers.",
-//      ],
-//      abbreviations: [],
-//      references: [
-//        { handle: "official", weblink: "https://karma-runner.github.io/", txt: "karma-runner.github.io" }
-//      ],
-//      crossrefs: [ 8 ],
-//      tags: [ "new", "xxx", "testing" ],
-//      imgurl: "https://karma-runner.github.io/assets/img/karma-3.png",
-//      ribbon: "NEW",
-//      creation_date: "2026-03-26",
-//      srcs: [ "ack" ],
-//    },
-//    {
-//      id: 10,
-//      term: "dependency injection",
-//      text: "Design pattern where components receive dependencies from external source rather than creating them. Angular's hierarchical DI system.",
-//      points: [
-//        "Services injected via constructor parameters.",
-//        "Providers at component/module/root levels control scope.",
-//        "Use @Injectable() for services; providedIn: 'root'.",
-//      ],
-//      abbreviations: [
-//        { short: "DI", long: "dependency injection" }
-//      ],
-//      references: [
-//        { handle: "official", weblink: "https://angular.dev/guide/di", txt: "angular.dev/di" }
-//      ],
-//      crossrefs: [ 11 ],
-//      tags: [ "new", "xxx", "design-pattern", "di" ],
-//      imgurl: "https://upload.wikimedia.org/wikipedia/commons/3/35/%D9%86%D8%B8%D8%B1%D8%A9_%D9%85%D9%82%D8%B1%D8%A8%D8%A9_%D9%84%D9%84%D8%B2%D9%84%D9%8A%D8%AC_%D9%81%D9%8A_%D9%85%D8%AF%D8%B1%D8%B3%D8%A9_%D8%A7%D8%A8%D9%86_%D9%8A%D9%88%D8%B3%D9%81.jpeg",
-//      ribbon: "NEW",
-//      creation_date: "2026-03-26",
-//      srcs: [ "ack" ],
-//    },
-//    {
-//      id: 11,
-//      term: "Angular dependency injection scope",
-//      text: "Angular's hierarchical DI tree determines service instance sharing. Root services shared app-wide; component providers create new instances.",
-//      points: [
-//        "providedIn: 'root' = singleton at app root.",
-//        "providers: [] at component = new instance per component.",
-//        "useExisting/useValue/useFactory for advanced scenarios.",
-//      ],
-//      abbreviations: [],
-//      references: [
-//        { handle: "official", weblink: "https://angular.dev/guide/di/hierarchical", txt: "angular.dev/di-hierarchical" }
-//      ],
-//      crossrefs: [ 10 ],
-//      tags: [ "new", "xxx", "di", "angular" ],
-//      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
-//      ribbon: "NEW",
-//      creation_date: "2026-03-26",
-//      srcs: [ "ack" ],
-//    },
-//    {
-//      id: 12,
-//      term: "Rxjs Subject",
-//      text: "Special Observable that can multicast to multiple subscribers. Base for BehaviorSubject, ReplaySubject, AsyncSubject.",
-//      points: [
-//        "Use next(value) to emit; complete() or error(err).",
-//        "Subjects are hot; subscribers get current + future emissions.",
-//        "Never expose raw Subject; use as service observables.",
-//      ],
-//      abbreviations: [],
-//      references: [
-//        { handle: "official", weblink: "https://rxjs.dev/guide/subject", txt: "rxjs.dev/subject" }
-//      ],
-//      crossrefs: [ 4 ],
-//      tags: [ "new", "xxx", "rxjs" ],
-//      imgurl: "https://rxjs.dev/generated/images/marketing/home/Rx_Logo-512-512.png",
-//      ribbon: "NEW",
-//      creation_date: "2026-03-26",
-//      srcs: [ "ack" ],
-//    },
-//    {
-//      id: 13,
-//      term: "Rxjs BehaviorSubject",
-//      text: "Special Subject that requires initial value and replays last emitted value to new subscribers. Common for state management in Angular services.",
-//      points: [
-//        "new BehaviorSubject(initialValue); emits current value immediately on subscribe().",
-//        "getValue() returns current value synchronously.",
-//        "Ideal for app state, user preferences, form state.",
-//      ],
-//      abbreviations: [],
-//      references: [
-//        { handle: "official", weblink: "https://rxjs.dev/api/index/class/BehaviorSubject", txt: "rxjs.dev/BehaviorSubject" }
-//      ],
-//      crossrefs: [ 12, 4 ],
-//      tags: [ "new", "xxx", "rxjs" ],
-//      imgurl: "https://rxjs.dev/generated/images/marketing/home/Rx_Logo-512-512.png",
-//      ribbon: "NEW",
-//      creation_date: "2026-03-26",
-//      srcs: [ "ack" ],
-//    },
-//    {
-//      id: 14,
-//      term: "Angular DataBinding",
-//      text: "Automatic synchronization between component TypeScript properties and DOM template. Four types: interpolation, property, event, two-way.",
-//      points: [
-//        "Interpolation {{ }} displays property values.",
-//        "Property binding [prop]=expression sets element properties.",
-//        "(event)=handler captures DOM events.",
-//        "[(ngModel)]=property enables two-way binding.",
-//      ],
-//      abbreviations: [],
-//      references: [
-//        { handle: "official", weblink: "https://angular.dev/guide/templates/binding", txt: "angular.dev/databinding" }
-//      ],
-//      crossrefs: [ 2 ],
-//      tags: [ "new", "xxx", "angular" ],
-//      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
-//      ribbon: "NEW",
-//      creation_date: "2026-03-26",
-//      srcs: [ "ack" ],
-//    },
-//    {
-//      id: 15,
-//      term: "Angular Reactive Forms",
-//      text: "Programmatic form handling using FormGroup, FormControl, FormArray. Observable-based validation and value changes.",
-//      points: [
-//        "ReactiveFormsModule provides FormBuilder, validators.",
-//        "valueChanges emits on every input change.",
-//        "Nested forms with FormGroup; dynamic arrays with FormArray.",
-//      ],
-//      abbreviations: [],
-//      references: [
-//        { handle: "official", weblink: "https://angular.dev/guide/forms/reactive", txt: "angular.dev/reactive-forms" }
-//      ],
-//      crossrefs: [],
-//      tags: [ "new", "xxx", "angular" ],
-//      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
-//      ribbon: "NEW",
-//      creation_date: "2026-03-26",
-//      srcs: [ "ack" ],
-//    },
-//    {
-//      id: 16,
-//      term: "Angular ContentChildren",
-//      text: "Query children content projected via ng-content. Access components/directives in parent template's ng-content.",
-//      points: [
-//        "@ContentChildren(ChildComponent) children!: QueryList<ChildComponent>;",
-//        "Detects changes when content children added/removed.",
-//        "Use {descendants: true} to include nested children.",
-//      ],
-//      abbreviations: [],
-//      references: [
-//        { handle: "official", weblink: "https://angular.dev/guide/components/query#query-contentchildren", txt: "angular.dev/contentchildren" }
-//      ],
-//      crossrefs: [ 17 ],
-//      tags: [ "new", "xxx", "angular" ],
-//      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
-//      ribbon: "NEW",
-//      creation_date: "2026-03-26",
-//      srcs: [ "ack" ],
-//    },
-//    {
-//      id: 17,
-//      term: "Angular ViewChild",
-//      text: "Query child components, directives, or DOM elements in component's own template. Access via @ViewChild.",
-//      points: [
-//        "@ViewChild(ChildComponent) child!: ChildComponent; available after ngAfterViewInit.",
-//        "Supports static/dynamic queries with {static: false}.",
-//        "Template reference variables: @ViewChild('myTemplate') template!: TemplateRef.",
-//      ],
-//      abbreviations: [],
-//      references: [
-//        { handle: "official", weblink: "https://angular.dev/guide/components/query#viewchild", txt: "angular.dev/viewchild" }
-//      ],
-//      crossrefs: [ 16 ],
-//      tags: [ "new", "xxx", "angular" ],
-//      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
-//      ribbon: "NEW",
-//      creation_date: "2026-03-26",
-//      srcs: [ "ack" ],
-//    }
-//
-//    /* BASIC TERMS */
+    {
+      id: 2,
+      term: "Angular Component",
+      text: "Core building block controlling a view, containing a template, styles and the logic for UI elements.",
+      points: [
+        "Lifecycle hooks: ngOnInit, ngOnChanges, ngOnDestroy, etc.",
+        "Uses @Input and @Output for parent-child communication.",
+        "Can be standalone or declared in NgModule.",
+      ],
+      abbreviations: [
+        { short: "@Component", long: "Angular componenet decorator" }
+      ],
+      references: [
+        { handle: "docs", weblink: "https://angular.dev/guide/components", txt: "angular.dev/components" }
+      ],
+      crossrefs: [ 0, 1, 7 ],
+      tags: [ "homework", "angular", "technicality" ],
+      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
+      ribbon: "HW",
+      creation_date: "2026-03-29",
+      srcs: [ "sad" ],
+    },
+    {
+      id: 3,
+      term: "Angular Pipe",
+      text: "Transform display values in templates. There is built-in pipes and custom pipes via @Pipe decorator.",
+      points: [
+        "Usage: {{ value | pipeName:arg }} within templates syntax",
+        "Pure pipes optimize by only updating on input reference change (default).",
+        "Impure pipes change every detecion cycle (heavy logic can slow the app).",
+        "AsyncPipe subscribes to observables/promises automatically.",
+      ],
+      abbreviations: [],
+      references: [
+        { handle: "docs",  weblink: "https://angular.dev/guide/templates/pipes", txt: "angular.dev/guide/pipes" },
+        { handle: "docs",  weblink: "https://angular.dev/api/core/Pipe", txt: "angular.dev/core/pipe" },
+        { handle: "guide", weblink: "https://angular.dev/tutorials/learn-angular/24-create-a-pipe", txt: "angular.dev/create-a-pipe" },
+        { handle: "demo",  weblink: "https://www.youtu.be/DdFvhAua05Y", txt: "youtu.be/DdFvhAua05Y" },
+      ],
+      crossrefs: [ 0, ],
+      tags: [ "homework", "angular", "technicality" ],
+      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
+      ribbon: "HW",
+      creation_date: "2026-03-29",
+      srcs: [ "sad" ],
+    },
+    {
+      id: 4,
+      term: "Angular Observable",
+      text: "RxJS Observable streams for handling async operations and reactive data flows. Foundation of Angular's change detection.",
+      points: [
+        "Promises resolve once, Observables can emit multiple values and have to be subscribed to (no data without subsscriber, aka. lazy).",
+        "Create with Observable.create() or helpers like of(), from(), interval().",
+        "Operators like map, filter, switchMap, debounceTime.",
+      ],
+      abbreviations: [],
+      references: [
+        { handle: "docs",  weblink: "https://rxjs.dev/guide/observable",          txt: "rxjs.dev/observable" },
+        { handle: "guide", weblink: "https://v17.angular.io/guide/observables",   txt: "angular.io/v17/observables" },
+        { handle: "guide", weblink: "https://angular.dev/ecosystem/rxjs-interop", txt: "angular.dev/rxjs-interop" },
+        { handle: "demo",  weblink: "https://youtu.be/LT8pyUwZQhI",               txt: "youtu.be/LT8pyUwZQhI" },
+      ],
+      crossrefs: [ 5, 57, 70, ],
+      tags: [ "homework", "angular", "technicality" ],
+      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
+      ribbon: "HW",
+      creation_date: "2026-03-29",
+      srcs: [ "sad" ],
+    },
+    {
+      id: 5,
+      term: "Angular HttpClient",
+      text: "Angular's HTTP client service for making AJAX requests. Provides typed responses, interceptors and progress events.",
+      points: [
+        "Inject HttpClient in services; use get(), post(), etc.",
+        "Returns Observables; use map(), catchError() operators.",
+        "Must import HttpClientModule in standalone bootstrap (from main.ts and without NgModules).",
+      ],
+      abbreviations: [],
+      references: [
+        { handle: "docs",  weblink: "https://angular.dev/api/common/http/HttpClient", txt: "angular.dev/HttpClient" },
+        { handle: "guide", weblink: "https://angular.dev/guide/http", txt: "angular.dev/guide/http" },
+        { handle: "guide", weblink: "https://angular.dev/best-practices/security#trusting-safe-values", txt: "angular.dev/security" },
+      ],
+      crossrefs: [ 4, 6, 36, 61, 105 ],
+      tags: [ "homework", "angular", "technicality", "security"],
+      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
+      ribbon: "HW",
+      creation_date: "2026-03-29",
+      srcs: [ "sad" ],
+    },
+    {
+      id: 6,
+      term: "Angular HttpClient Interceptor",
+      text: "RxJS interceptors that transform HTTP requests and responses globally.",
+      points: [
+        "Can be used for auth headers, logging, caching.",
+        "Implement HttpInterceptor interface, provided through dependency injection.",
+        "Method intercept(req, next) returns Observable<HttpEvent>.",
+        "Use clone() to modify request headers and body.",
+      ],
+      abbreviations: [],
+      references: [
+        { handle: "official", weblink: "https://angular.dev/guide/http/interceptor", txt: "angular.dev/interceptors" },
+        { handle: "demo",     weblink: "https://youtu.be/BNM5203kxgs", txt: "youtu.be/BNM5203kxgs" },
+        { handle: "demo",     weblink: "https://youtu.be/Qg9Y2Mv2I2M", txt: "youtu.be/Qg9Y2Mv2I2M" },
+      ],
+      crossrefs: [ 4, 5, 11, 57, ],
+      tags: [ "homework", "angular", "technicality" ],
+      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
+      ribbon: "HW",
+      creation_date: "2026-03-29",
+      srcs: [ "sad" ],
+    },
+    {
+      id: 7,
+      term: "Angular Component Lifecycle",
+      text: "Predictable sequence of hooks from creation to destruction.",
+      points: [
+        "Standalone components have the same lifecycle hooks.",
+        "Change detection hooks: ngOnInit, ngOnChanges, ngDoCheck, etc.",
+        "Rendering hooks: afterNextRenderer, afterEveryRenderer.",
+        "Destruction hook: ngOnDestroy.",
+      ],
+      abbreviations: [],
+      references: [
+        { handle: "docs", weblink: "https://angular.dev/guide/components/lifecycle", txt: "angular.dev/lifecycle" }
+      ],
+      crossrefs: [ 2 ],
+      tags: [ "homework", "angular", "technicality", ],
+      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
+      ribbon: "HW",
+      creation_date: "2026-03-29",
+      srcs: [ "sad" ],
+    },
+    {
+      id: 8,
+      term: "Jasmine",
+      text: "Behavior-driven development framework for testing JavaScript.",
+      points: [
+        "Default build-in Angular test runner using describe/it/expect syntax.",
+        "Group tests with describe(), define test cases with it().",
+        "Matchers: expect(value).toBe(), toEqual(), toBeTruthy().",
+        "Async testing: fakeAsync(), tick(), async and await.",
+      ],
+      abbreviations: [],
+      references: [
+        { handle: "docs",   weblink: "https://jasmine.github.io/",       txt: "jasmine.github.io" },
+        { handle: "github", weblink: "https://github.com/jasmine/",      txt: "github.com/jasmine" },
+        { handle: "demo",   weblink: "https://www.youtu.be/h2eWfvcAOTI", txt: "youtu.be/h2eWfvcAOTI" },
+      ],
+      crossrefs: [ 9, 19, 80, 81, 84, ],
+      tags: [ "homework", "testing", ],
+      imgurl: "https://upload.wikimedia.org/wikipedia/en/2/22/Logo_jasmine.svg",
+      ribbon: "HW",
+      creation_date: "2026-03-29",
+      srcs: [ "sad" ],
+    },
+    {
+      id: 9,
+      term: "Karma",
+      text: "Test runner for JavaScript executing tests in real browsers.",
+      points: [
+        "Configure browsers, frameworks, reporters in karma.conf.js.",
+        "Angular's tests (ng test) runs karma in watch mode with live reload.",
+        "Angular CLI uses karma-jasmine-html-reporter by default.",
+        "Supports Chrome, Firefox, Edge and Safari.",
+      ],
+      abbreviations: [],
+      references: [
+        { handle: "official", weblink: "https://karma-runner.github.io/latest/index.html",           txt: "karma-runner.github.io" },
+        { handle: "docs",     weblink: "https://karma-runner.github.io/6.4/intro/how-it-works.html", txt: "karma-runner.github.io" },
+        { handle: "github",   weblink: "https://github.com/karma-runner/karma",                      txt: "github.com/karma-runner" },
+        { handle: "npm",      weblink: "https://www.npmjs.com/package/karma",                        txt: "npmjs.com/package/karma" },
+        { handle: "demo",     weblink: "https://www.youtu.be/bJc078szrZA",                           txt: "youtu.be/bJc078szrZA" },
+      ],
+      crossrefs: [ 8, 18, 84, ],
+      tags: [ "homework", "testing", "browser", ],
+      imgurl: "https://avatars.githubusercontent.com/u/3284117?s=200&v=4",
+      ribbon: "HW",
+      creation_date: "2026-03-29",
+      srcs: [ "sad" ],
+    },
+    {
+      id: 10,
+      term: "Dependency Injection",
+      text: "Simple design pattern where components receive dependencies from external source rather than creating them.",
+      points: [
+        "Angular's DI is hierarchical mirroring componenet and module tree.",
+      ],
+      abbreviations: [
+        { short: "DI", long: "dependency injection" }
+      ],
+      references: [
+        { handle: "wikipedia", weblink: "https://en.wikipedia.org/wiki/Dependency_injection", txt: "/Dependency Injection" },
+        { handle: "guide", weblink: "https://angular.dev/guide/di", txt: "angular.dev/di" },
+      ],
+      crossrefs: [ 11 ],
+      tags: [ "homework", "design-pattern", ],
+      imgurl: "https://upload.wikimedia.org/wikipedia/commons/3/35/%D9%86%D8%B8%D8%B1%D8%A9_%D9%85%D9%82%D8%B1%D8%A8%D8%A9_%D9%84%D9%84%D8%B2%D9%84%D9%8A%D8%AC_%D9%81%D9%8A_%D9%85%D8%AF%D8%B1%D8%B3%D8%A9_%D8%A7%D8%A8%D9%86_%D9%8A%D9%88%D8%B3%D9%81.jpeg",
+      ribbon: "HW",
+      creation_date: "2026-03-29",
+      srcs: [ "sad" ],
+    },
+    {
+      id: 11,
+      term: "Angular Dependency Injection Scope",
+      text: "Angular's hierarchical dependency-injection tree determines service instance sharing.",
+      points: [
+        "Angular has element injectors at component and directive level and environment injectors at module and app level.",
+        "Angular has DI providers at component (providers array), module (@Injectable) and root levels control scope.",
+        "Advanced usage through useExisting, useValue, useFactory.",
+      ],
+      abbreviations: [
+      ],
+      references: [
+        { handle: "docs", weblink: "https://angular.dev/guide/di/defining-dependency-providers#injector-hierarchy-in-angular", txt: "angular.dev/guide/di" }
+      ],
+      crossrefs: [ 10, 84, ],
+      tags: [ "homework", "angular", "technicality", ],
+      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
+      ribbon: "HW",
+      creation_date: "2026-03-29",
+      srcs: [ "sad" ],
+    },
+    {
+      id: 12,
+      term: "RxJS Subject",
+      text: "Special Observable that can multicast to multiple subscribers.",
+      points: [
+        "Subjects are hot, underlying data producer already exists and can push values independently of whether there are subscribers (subscribers get only current and future emissions).",
+        "Base for BehaviorSubject, ReplaySubject, AsyncSubject.",
+        "Use next(value) to emit, complete() or error(err).",
+        "Never expose a raw Subject, use as service observables.",
+      ],
+      abbreviations: [],
+      references: [
+        { handle: "docs", weblink: "https://rxjs.dev/guide/subject", txt: "rxjs.dev/subject" }
+      ],
+      crossrefs: [ 4, 57, ],
+      tags: [ "homework", "rxjs", "technicality", ],
+      imgurl: "https://rxjs.dev/generated/images/marketing/home/Rx_Logo-512-512.png",
+      ribbon: "HW",
+      creation_date: "2026-03-29",
+      srcs: [ "sad" ],
+    },
+    {
+      id: 13,
+      term: "RxJS BehaviorSubject",
+      text: "Special Subject that requires initial value and replays last emitted value to new subscribers.",
+      points: [
+        "Common for state management in Angular services.",
+        "Can be used for app state, user preferences and form state.",
+        "Object new BehaviorSubject(initialValue) emits current value immediately on subscribe().",
+        "Method getValue() returns current value synchronously.",
+      ],
+      abbreviations: [],
+      references: [
+        { handle: "docs", weblink: "https://rxjs.dev/api/index/class/BehaviorSubject", txt: "rxjs.dev/BehaviorSubject" }
+      ],
+      crossrefs: [ 4, 57, 84, ],
+      tags: [ "homework", "rxjs", "technicality", ],
+      imgurl: "https://rxjs.dev/generated/images/marketing/home/Rx_Logo-512-512.png",
+      ribbon: "HW",
+      creation_date: "2026-03-29",
+      srcs: [ "sad" ],
+    },
+    {
+      id: 14,
+      term: "Angular DataBinding",
+      text: "Automatic synchronization between component TypeScript properties and DOM template.",
+      points: [
+        "Four types: interpolation, property, event, two-way.",
+        "Interpolation '{{ }}' displays property values.",
+        "Property binding '[prop]=expression' sets element properties.",
+        "Capture DOM events with '(event)=handler'.",
+        "Create two-way bindings with '[(ngModel)]=property'.",
+      ],
+      abbreviations: [],
+      references: [
+        { handle: "docs", weblink: "https://angular.dev/guide/templates/binding", txt: "angular.dev/databinding" }
+      ],
+      crossrefs: [ 2, 84, 104, ],
+      tags: [ "homework", "angular", "technicality", ],
+      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
+      ribbon: "HW",
+      creation_date: "2026-03-29",
+      srcs: [ "sad" ],
+    },
+    {
+      id: 15,
+      term: "Angular Reactive Forms",
+      text: "Programmatic form handling using Observable-based validation and value changes.",
+      points: [
+        "ReactiveFormsModule provides FormBuilder and validators.",
+        "Involved Objects are FormGroup, FormControl and FormArray.",
+        "Form's observable valueChanges emits on every input change.",
+        "Nested forms with FormGroup; dynamic arrays with FormArray.",
+      ],
+      abbreviations: [],
+      references: [
+        { handle: "docs", weblink: "https://angular.dev/guide/forms/reactive-forms", txt: "angular.dev/reactive-forms" }
+      ],
+      crossrefs: [ 2, 84, ],
+      tags: [ "homework", "angular", "technicality", ],
+      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
+      ribbon: "HW",
+      creation_date: "2026-03-29",
+      srcs: [ "sad" ],
+    },
+    {
+      id: 16,
+      term: "Angular ContentChildren",
+      text: "Query children content projected via ng-content. ",
+      points: [
+        "Access components and directives in parent template's ng-content.",
+        "Detects changes when content children are added or removed.",
+        "Use '{descendants: true}' to include nested children.",
+      ],
+      abbreviations: [],
+      references: [
+        { handle: "docs", weblink: "https://angular.dev/api/core/ContentChildren", txt: "angular.dev/ContentChildren" },
+        { handle: "docs", weblink: "https://angular.dev/api/core/ng-content",      txt: "angular.dev/ng-content" },
+        { handle: "demo", weblink: "https://www.youtu.be/8-U_x0Ui0p8",             txt: "youtu.be/8-U_x0Ui0p8" },
+      ],
+      crossrefs: [ 2, 17, 84, 126, ],
+      tags: [ "homework", "angular", "technicality", ],
+      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
+      ribbon: "HW",
+      creation_date: "2026-03-29",
+      srcs: [ "sad" ],
+    },
+    {
+      id: 17,
+      term: "Angular ViewChild",
+      text: "Query child components, directives, or DOM elements in component's own template. Access via @ViewChild.",
+      points: [
+        "@ViewChild(ChildComponent) child!: ChildComponent; available after ngAfterViewInit.",
+        "Supports static/dynamic queries with {static: false}.",
+        "Template reference variables: @ViewChild('myTemplate') template!: TemplateRef.",
+      ],
+      abbreviations: [],
+      references: [
+        { handle: "docs", weblink: "https://angular.dev/api/core/ViewChild", txt: "angular.dev/ViewChild" },
+        { handle: "demo", weblink: "https://www.youtu.be/ZsaTJzke0iA",       txt: "youtu.be/ZsaTJzke0iA"  },
+      ],
+      crossrefs: [ 2, 16, 84, ],
+      tags: [ "homework", "angular", "technicality", ],
+      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
+      ribbon: "HW",
+      creation_date: "2026-03-29",
+      srcs: [ "sad" ],
+    },
+
+      /* ADDITIONAL ENTRIES */
+      {
+        id: 18,
+        term: "npm",
+        text: "A tool for managing JavaScript packages and fundamentally a dependency manager: it reads your package.json and reproducibly installs the exact versions of libraries.",
+        points: [
+          "Always commit package.json and package-lock.json so others can run npm install.",
+          "Avoid editing node_modules by hand, treat it as a build artifact that npm will recreate.",
+          "Owned by GitHub, which is a subsidary of Microsoft.",
+        ],
+        abbreviations: [
+          { short: "npm", long: "node package manager" },
+        ],
+        references: [
+          { handle: "official", weblink: "https://www.npmjs.com/",  txt: "npmjs.com",      },
+          { handle: "docs",     weblink: "https://docs.npmjs.com/", txt: "docs.npmjs.com", },
+        ],
+        crossrefs: [ ],
+        tags: [ "tool" ],
+        imgurl: "https://upload.wikimedia.org/wikipedia/commons/d/db/Npm-logo.svg",
+        ribbon: "NOW",
+        creation_date: "2026-05-26",
+        srcs: [ "ack" ],
+      },
+      {
+        id: 19,
+        term: "JavaScript",
+        text: "A programming language made by Netscape, later Mozilla, during the browser wars in the 90s used to create interactive content on websites.",
+        points: [
+          "The name was chosen to include Java, which was a cool language at the time.",
+          "The Internet Explorer alternative was called JScript.",
+        ],
+        abbreviations: [
+          { short: "JS", long: "JavaScript" },
+        ],
+        references: [
+          { handle: "official", weblink: "https://developer.mozilla.org/en-US/docs/Web/JavaScript", txt: "mozilla.org",   },
+        ],
+        crossrefs: [ ],
+        tags: [ "language", "browser wars" ],
+        imgurl: "https://upload.wikimedia.org/wikipedia/commons/b/b9/JavaScript_shield_logo_%28no_text%29.svg",
+        ribbon: "BASIC",
+        creation_date: "2026-05-26",
+        srcs: [ "ack" ],
+      },
 //      {
-//        id: 25,
-//        term: "npm",
-//        text: "A tool for managing JavaScript packages and fundamentally a dependency manager: it reads your package.json and reproducibly installs the exact versions of libraries.",
-//        points: [
-//          "Always commit package.json and package-lock.json so others can run npm install.",
-//          "Avoid editing node_modules by hand, treat it as a build artifact that npm will recreate.",
-//          "Owned by GitHub, which is a subsidary of Microsoft.",
-//        ],
-//        abbreviations: [
-//          { short: "npm", long: "node package manager" },
-//        ],
-//        references: [
-//          { handle: "official", weblink: "https://www.npmjs.com/",  txt: "npmjs.com",      },
-//          { handle: "docs",     weblink: "https://docs.npmjs.com/", txt: "docs.npmjs.com", },
-//        ],
-//        crossrefs: [ ],
-//        tags: [ "tool" ],
-//        imgurl: "https://upload.wikimedia.org/wikipedia/commons/d/db/Npm-logo.svg",
-//        ribbon: "BASIC",
-//        creation_date: "2026-05-26",
-//        srcs: [ "ack" ],
-//      },
-//      {
-//        id: 26,
-//        term: "JavaScript",
-//        text: "A programming language made by Netscape, later Mozilla, during the browser wars in the 90s used to create interactive content on websites.",
-//        points: [
-//          "The name was chosen to include Java, which was a cool language at the time.",
-//          "The Internet Explorer alternative was called JScript.",
-//        ],
-//        abbreviations: [
-//          { short: "JS", long: "JavaScript" },
-//        ],
-//        references: [
-//          { handle: "official", weblink: "https://developer.mozilla.org/en-US/docs/Web/JavaScript", txt: "mozilla.org",   },
-//        ],
-//        crossrefs: [ ],
-//        tags: [ "language", "browser wars" ],
-//        imgurl: "https://upload.wikimedia.org/wikipedia/commons/b/b9/JavaScript_shield_logo_%28no_text%29.svg",
-//        ribbon: "BASIC",
-//        creation_date: "2026-05-26",
-//        srcs: [ "ack" ],
-//      },
-//      {
-//        id: 27,
+//        id: 20,
 //        term: "npx",
 //        text: "A command-line tool for executing npm packages",
 //        points: [
@@ -439,7 +473,7 @@ export class LocalDataProviderService {
 //        srcs: [ "ack" ],
 //      },
 //      {
-//        id: 28,
+//        id: 21,
 //        term: "Internet Explorer",
 //        text: "A web browser developed by Microsoft, widely used for many years, but now phased out.",
 //        points: [
@@ -460,7 +494,7 @@ export class LocalDataProviderService {
 //        srcs: [ "ack" ],
 //      },
 //      {
-//        id: 29,
+//        id: 22,
 //        term: "Browser Wars",
 //        text: "The intense competition between Microsoft's Internet Explorer and Netscape's Navigator in the late 90s and early 2000s.",
 //        points: [
@@ -479,10 +513,8 @@ export class LocalDataProviderService {
 //        creation_date: "2026-05-26",
 //        srcs: [ "ack" ],
 //      },
-//
-//     /* SOME DUMMY ENTRIES BELOW */
 //     {
-//       id: 30,
+//       id: 23,
 //       term: "JScript",
 //       text: "Microsoft's proprietary implementation of JavaScript (1996), reverse-engineered from Netscape's version during browser wars.",
 //       points: [
@@ -501,7 +533,7 @@ export class LocalDataProviderService {
 //       srcs: [ "perplexity" ],
 //     },
 //     {
-//       id: 31,
+//       id: 24,
 //       term: "TypeScript",
 //       text: "Microsoft's open-source superset of JavaScript adding static types, compiles to plain JS for scalable web apps.",
 //       points: [
@@ -519,7 +551,7 @@ export class LocalDataProviderService {
 //       srcs: [ "perplexity" ],
 //     },
 //     {
-//       id: 32,
+//       id: 25,
 //       term: "Edge",
 //       text: "Microsoft's web browser; originally Trident-based (2015), relaunched on Chromium (2020) for cross-platform compatibility.",
 //       points: [
@@ -539,7 +571,7 @@ export class LocalDataProviderService {
 //       srcs: [ "perplexity" ],
 //     },
 //     {
-//       id: 33,
+//       id: 26,
 //       term: "Chromium",
 //       text: "Google's open-source browser project (2008), foundation for Chrome, Edge, Opera; uses Blink engine and V8 JS.",
 //       points: [
@@ -559,7 +591,7 @@ export class LocalDataProviderService {
 //       srcs: [ "perplexity" ],
 //     },
 //     {
-//       id: 34,
+//       id: 27,
 //       term: "Chrome",
 //       text: "Google's proprietary browser (2008) based on Chromium, dominant with 65%+ market share, fast V8 JavaScript.",
 //       points: [
@@ -579,7 +611,7 @@ export class LocalDataProviderService {
 //       srcs: [ "perplexity" ],
 //     },
 //     {
-//       id: 35,
+//       id: 28,
 //       term: "Safari",
 //       text: "Apple's macOS/iOS browser using WebKit engine, emphasizes battery life and privacy features like Intelligent Tracking Prevention.",
 //       points: [
@@ -599,7 +631,7 @@ export class LocalDataProviderService {
 //       srcs: [ "perplexity" ],
 //     },
 //     {
-//       id: 36,
+//       id: 29,
 //       term: "Gecko",
 //       text: "Mozilla's open-source web rendering engine powering Firefox, supports modern HTML/CSS/JS standards.",
 //       points: [
@@ -619,7 +651,7 @@ export class LocalDataProviderService {
 //       srcs: [ "perplexity" ],
 //     },
 //     {
-//       id: 37,
+//       id: 30,
 //       term: "SpiderMonkey",
 //       text: "Mozilla's JavaScript engine (1998), first JS implementation; powers Firefox with JIT compilation.",
 //       points: [
@@ -639,7 +671,7 @@ export class LocalDataProviderService {
 //       srcs: [ "perplexity" ],
 //     },
 //     {
-//       id: 38,
+//       id: 31,
 //       term: "V8",
 //       text: "Google's high-performance JavaScript engine (2008) using JIT compilation; core of Chrome, Node.js, Deno.",
 //       points: [
@@ -659,7 +691,7 @@ export class LocalDataProviderService {
 //       srcs: [ "perplexity" ],
 //     },
 //     {
-//       id: 39,
+//       id: 32,
 //       term: "WebKit",
 //       text: "Apple's open-source rendering engine (2001) forked to Blink (2013); powers Safari.",
 //       points: [
@@ -679,7 +711,7 @@ export class LocalDataProviderService {
 //       srcs: [ "perplexity" ],
 //     },
 //     {
-//       id: 40,
+//       id: 33,
 //       term: "CSS",
 //       text: "Cascading Style Sheets language for styling HTML/XML; separates content from presentation.",
 //       points: [
@@ -699,7 +731,7 @@ export class LocalDataProviderService {
 //       srcs: [ "perplexity" ],
 //     },
 //     {
-//       id: 41,
+//       id: 34,
 //       term: "Adobe Flash Player",
 //       text: "Multimedia plugin (1996-2020) for animations, video; largely replaced by HTML5.",
 //       points: [
@@ -719,7 +751,7 @@ export class LocalDataProviderService {
 //       srcs: [ "perplexity" ],
 //     },
 //     {
-//       id: 42,
+//       id: 35,
 //       term: "SSL",
 //       text: "Secure Sockets Layer protocol (1995) for encrypting network connections; predecessor to TLS.",
 //       points: [
@@ -738,28 +770,28 @@ export class LocalDataProviderService {
 //       creation_date: "2026-03-26",
 //       srcs: [ "perplexity" ],
 //     },
+     {
+       id: 36,
+       term: "HTTP",
+       text: "Hypertext Transfer Protocol for transferring web data; stateless request-response.",
+       points: [
+         "HTTP/1.1 (1997) persistent connections.",
+         "HTTP/2 multiplexing; HTTP/3 QUIC.",
+         "REST APIs built on HTTP.",
+       ],
+       abbreviations: [ { short: "HTTP", long: "Hypertext Transfer Protocol" } ],
+       references: [
+         { handle: "ietf", weblink: "https://httpwg.org/", txt: "HTTP Working Group" },
+       ],
+       crossrefs: [ ],
+       tags: [ "protocol" ],
+       imgurl: "https://upload.wikimedia.org/wikipedia/commons/0/09/HTTP-1.1_vs._HTTP-2_vs._HTTP-3_Protocol_Stack.svg",
+       ribbon: "AI",
+       creation_date: "2026-03-26",
+       srcs: [ "perplexity" ],
+     },
 //     {
-//       id: 43,
-//       term: "HTTP",
-//       text: "Hypertext Transfer Protocol for transferring web data; stateless request-response.",
-//       points: [
-//         "HTTP/1.1 (1997) persistent connections.",
-//         "HTTP/2 multiplexing; HTTP/3 QUIC.",
-//         "REST APIs built on HTTP.",
-//       ],
-//       abbreviations: [ { short: "HTTP", long: "Hypertext Transfer Protocol" } ],
-//       references: [
-//         { handle: "ietf", weblink: "https://httpwg.org/", txt: "HTTP Working Group" },
-//       ],
-//       crossrefs: [ ],
-//       tags: [ "protocol" ],
-//       imgurl: "https://upload.wikimedia.org/wikipedia/commons/0/09/HTTP-1.1_vs._HTTP-2_vs._HTTP-3_Protocol_Stack.svg",
-//       ribbon: "AI",
-//       creation_date: "2026-03-26",
-//       srcs: [ "perplexity" ],
-//     },
-//     {
-//       id: 44,
+//       id: 37,
 //       term: "HTTPS",
 //       text: "HTTP over TLS/SSL encryption; secures data in transit with certificates.",
 //       points: [
@@ -779,7 +811,7 @@ export class LocalDataProviderService {
 //       srcs: [ "perplexity" ],
 //     },
 //     {
-//       id: 45,
+//       id: 38,
 //       term: "HTML",
 //       text: "HyperText Markup Language standard for web page structure and content.",
 //       points: [
@@ -799,7 +831,7 @@ export class LocalDataProviderService {
 //       srcs: [ "perplexity" ],
 //     },
 //     {
-//       id: 46,
+//       id: 39,
 //       term: "FTP",
 //       text: "File Transfer Protocol (1971) for uploading/downloading files over networks.",
 //       points: [
@@ -819,7 +851,7 @@ export class LocalDataProviderService {
 //       srcs: [ "perplexity" ],
 //     },
 //     {
-//       id: 47,
+//       id: 40,
 //       term: "SMTP",
 //       text: "Simple Mail Transfer Protocol for sending emails between servers.",
 //       points: [
@@ -839,7 +871,7 @@ export class LocalDataProviderService {
 //       srcs: [ "perplexity" ],
 //     },
 //     {
-//       id: 48,
+//       id: 41,
 //       term: "www",
 //       text: "World Wide Web information system using HTTP, HTML, URLs invented by Tim Berners-Lee (1989).",
 //       points: [
@@ -862,7 +894,7 @@ export class LocalDataProviderService {
 //       srcs: [ "perplexity" ],
 //     },
 //     {
-//       id: 49,
+//       id: 42,
 //       term: "Active Server Pages",
 //       text: "",
 //       points: [
@@ -882,7 +914,7 @@ export class LocalDataProviderService {
 //       srcs: [ "perplexity" ],
 //     },
 //     {
-//       id: 50,
+//       id: 43,
 //       term: "Netscape",
 //       text: "Pioneering company that created the Netscape Navigator browser, sparking the 1990s browser wars and commercialization of the web.",
 //       points: [
@@ -902,7 +934,7 @@ export class LocalDataProviderService {
 //       srcs: [ "perplexity" ],
 //     },
 //     {
-//       id: 51,
+//       id: 44,
 //       term: "Navigator",
 //       text: "Netscape's flagship web browser (1994-2008), first to gain mass adoption and introduce features like JavaScript and frames.",
 //       points: [
@@ -922,7 +954,7 @@ export class LocalDataProviderService {
 //       srcs: [ "perplexity" ],
 //     },
 //     {
-//       id: 52,
+//       id: 45,
 //       term: "Mozilla",
 //       text: "Non-profit foundation born from Netscape's open-source code, creators of Firefox browser and key web standards advocate.",
 //       points: [
@@ -942,7 +974,7 @@ export class LocalDataProviderService {
 //       srcs: [ "perplexity" ],
 //     },
 //     {
-//       id: 53,
+//       id: 46,
 //       term: "Firefox",
 //       text: "Mozilla's open-source web browser using Gecko engine, known for privacy features and rapid standards implementation.",
 //       points: [
@@ -962,7 +994,7 @@ export class LocalDataProviderService {
 //       srcs: [ "perplexity" ],
 //     },
 //     {
-//       id: 54,
+//       id: 47,
 //       term: "tailwindcss",
 //       text: "A utility-first CSS framework that provides low-level classes for building custom designs directly in HTML without writing separate style sheets.",
 //       points: [
@@ -985,7 +1017,7 @@ export class LocalDataProviderService {
 //       srcs: ["perplexity"]
 //     },
 //     {
-//       id: 55,
+//       id: 48,
 //       term: "ecmascript",
 //       text: "The standardized specification of the JavaScript language maintained by ECMA International. Each yearly edition defines core syntax, semantics, and built-in objects used by browsers and Node.js.",
 //       points: [
@@ -1007,7 +1039,7 @@ export class LocalDataProviderService {
 //       srcs: ["perplexity"]
 //     },
 //     {
-//       id: 56,
+//       id: 49,
 //       term: "svg",
 //       text: "A vector image format based on XML, allowing for scalable graphics that remain crisp at any resolution and can be styled or animated with CSS and JavaScript.",
 //       points: [
@@ -1029,7 +1061,7 @@ export class LocalDataProviderService {
 //       srcs: ["perplexity"]
 //     },
 //     {
-//       id: 57,
+//       id: 50,
 //       term: "cdn",
 //       text: "A network of distributed servers that deliver content like images, scripts, and stylesheets efficiently by serving users from geographically closer locations.",
 //       points: [
@@ -1051,7 +1083,7 @@ export class LocalDataProviderService {
 //       srcs: ["perplexity"]
 //     },
 //     {
-//       id: 58,
+//       id: 51,
 //       term: "APF (.apf)",
 //       text: "The Angular Package Format defines how Angular libraries should be structured, built, and distributed to ensure compatibility with the Angular ecosystem.",
 //       points: [
@@ -1073,7 +1105,7 @@ export class LocalDataProviderService {
 //       srcs: ["perplexity"]
 //     },
 //     {
-//       id: 59,
+//       id: 52,
 //       term: "LCP",
 //       text: "Largest Contentful Paint is a Core Web Vital metric that measures how long it takes for the largest visible element to render on a page.",
 //       points: [
@@ -1095,7 +1127,7 @@ export class LocalDataProviderService {
 //       srcs: ["perplexity"]
 //     },
 //     {
-//       id: 60,
+//       id: 53,
 //       term: "PostCSS",
 //       text: "A JavaScript tool that processes CSS with plugins, allowing transformations such as autoprefixing, nesting, or linting during the build step.",
 //       points: [
@@ -1115,7 +1147,7 @@ export class LocalDataProviderService {
 //       srcs: ["perplexity"]
 //     },
 //     {
-//       id: 61,
+//       id: 54,
 //       term: "webpack",
 //       text: "A JavaScript module bundler that processes and combines assets such as JS, CSS, and images into optimized bundles for deployment.",
 //       points: [
@@ -1135,7 +1167,7 @@ export class LocalDataProviderService {
 //       srcs: ["perplexity"]
 //     },
 //     {
-//       id: 62,
+//       id: 55,
 //       term: "web assembly",
 //       text: "A low-level binary format that allows code written in languages like C, C++, or Rust to run efficiently in web browsers.",
 //       points: [
@@ -1157,7 +1189,7 @@ export class LocalDataProviderService {
 //       srcs: ["perplexity"]
 //     },
 //     {
-//       id: 63,
+//       id: 56,
 //       term: "API",
 //       text: "A defined interface for communication between software components that allows one system to request or send data to another.",
 //       points: [
@@ -1178,30 +1210,30 @@ export class LocalDataProviderService {
 //       creation_date: "2026-03-27",
 //       srcs: ["perplexity"]
 //     },
+     {
+       id: 57,
+       term: "RxJS",
+       text: "A reactive programming library for composing asynchronous and event-based programs using observable sequences in JavaScript.",
+       points: [
+         "Central to Angular’s change detection and event systems.",
+         "Supports operators for filtering, mapping, and combining streams.",
+         "Promotes declarative handling of asynchronous workflows."
+       ],
+       abbreviations: [
+         { short: "RxJS", long: "Reactive Extensions for JavaScript" }
+       ],
+       references: [
+         { handle: "official", weblink: "https://rxjs.dev/", txt: "rxjs.dev" }
+       ],
+       crossrefs: [ ],
+       tags: ["library", "async"],
+       imgurl: "https://upload.wikimedia.org/wikipedia/commons/3/3d/Rx_Logo_Grey.svg",
+       ribbon: "AI",
+       creation_date: "2026-03-27",
+       srcs: ["perplexity"]
+     },
 //     {
-//       id: 64,
-//       term: "rxjs",
-//       text: "A reactive programming library for composing asynchronous and event-based programs using observable sequences in JavaScript.",
-//       points: [
-//         "Central to Angular’s change detection and event systems.",
-//         "Supports operators for filtering, mapping, and combining streams.",
-//         "Promotes declarative handling of asynchronous workflows."
-//       ],
-//       abbreviations: [
-//         { short: "RxJS", long: "Reactive Extensions for JavaScript" }
-//       ],
-//       references: [
-//         { handle: "official", weblink: "https://rxjs.dev/", txt: "rxjs.dev" }
-//       ],
-//       crossrefs: [ ],
-//       tags: ["library", "async"],
-//       imgurl: "https://upload.wikimedia.org/wikipedia/commons/3/3d/Rx_Logo_Grey.svg",
-//       ribbon: "AI",
-//       creation_date: "2026-03-27",
-//       srcs: ["perplexity"]
-//     },
-//     {
-//       id: 65,
+//       id: 58,
 //       term: "cors",
 //       text: "Cross-Origin Resource Sharing is a browser mechanism that allows controlled access to resources from a different domain than the one that served the web page.",
 //       points: [
@@ -1223,7 +1255,7 @@ export class LocalDataProviderService {
 //       srcs: ["perplexity"]
 //     },
 //     {
-//       id: 66,
+//       id: 59,
 //       term: "XSS",
 //       text: "A type of web vulnerability where an attacker injects malicious scripts into webpages viewed by other users.",
 //       points: [
@@ -1245,7 +1277,7 @@ export class LocalDataProviderService {
 //       srcs: ["perplexity"]
 //     },
 //     {
-//       id: 67,
+//       id: 60,
 //       term: "csrf",
 //       text: "A web security vulnerability where unauthorized commands are transmitted from a trusted user’s browser to a web application, exploiting credentialed sessions.",
 //       points: [
@@ -1266,30 +1298,30 @@ export class LocalDataProviderService {
 //       creation_date: "2026-03-27",
 //       srcs: ["perplexity"]
 //     },
+     {
+       id: 61,
+       term: "AJAX",
+       text: "A method for asynchronously updating parts of a web page without reloading by exchanging data with a server through JavaScript.",
+       points: [
+         "Uses XMLHttpRequest or the modern Fetch API.",
+         "Enabled rich, dynamic web applications.",
+         "JSON replaced XML as the dominant data format used with AJAX."
+       ],
+       abbreviations: [
+         { short: "AJAX", long: "Asynchronous JavaScript and XML" }
+       ],
+       references: [
+         { handle: "mdn", weblink: "https://developer.mozilla.org/docs/Web/Guide/AJAX", txt: "MDN Web Docs: AJAX" }
+       ],
+       crossrefs: [ ],
+       tags: ["web", "async"],
+       imgurl: "https://upload.wikimedia.org/wikipedia/commons/9/9e/Ajax.svg",
+       ribbon: "AI",
+       creation_date: "2026-03-27",
+       srcs: ["perplexity"]
+     },
 //     {
-//       id: 68,
-//       term: "AJAX",
-//       text: "A method for asynchronously updating parts of a web page without reloading by exchanging data with a server through JavaScript.",
-//       points: [
-//         "Uses XMLHttpRequest or the modern Fetch API.",
-//         "Enabled rich, dynamic web applications.",
-//         "JSON replaced XML as the dominant data format used with AJAX."
-//       ],
-//       abbreviations: [
-//         { short: "AJAX", long: "Asynchronous JavaScript and XML" }
-//       ],
-//       references: [
-//         { handle: "mdn", weblink: "https://developer.mozilla.org/docs/Web/Guide/AJAX", txt: "MDN Web Docs: AJAX" }
-//       ],
-//       crossrefs: [ ],
-//       tags: ["web", "async"],
-//       imgurl: "https://upload.wikimedia.org/wikipedia/commons/9/9e/Ajax.svg",
-//       ribbon: "AI",
-//       creation_date: "2026-03-27",
-//       srcs: ["perplexity"]
-//     },
-//     {
-//       id: 69,
+//       id: 62,
 //       term: "json",
 //       text: "A lightweight data-interchange format based on human-readable text used for structuring data.",
 //       points: [
@@ -1311,7 +1343,7 @@ export class LocalDataProviderService {
 //       srcs: ["perplexity"]
 //     },
 //     {
-//       id: 70,
+//       id: 63,
 //       term: "jsonc",
 //       text: "A variation of JSON that allows comments and trailing commas, commonly used in configuration files for tools like VS Code.",
 //       points: [
@@ -1333,7 +1365,7 @@ export class LocalDataProviderService {
 //       srcs: ["perplexity"]
 //     },
 //     {
-//       id: 71,
+//       id: 64,
 //       term: "jsonp",
 //       text: "A historical technique for requesting data from a server in a different domain by dynamically injecting a script tag with a callback.",
 //       points: [
@@ -1355,7 +1387,7 @@ export class LocalDataProviderService {
 //       srcs: ["perplexity"]
 //     },
 //     {
-//       id: 72,
+//       id: 65,
 //       term: "react",
 //       text: "A JavaScript library for building user interfaces using a component-based architecture and declarative rendering.",
 //       points: [
@@ -1377,7 +1409,7 @@ export class LocalDataProviderService {
 //       srcs: ["perplexity"]
 //     },
 //     {
-//       id: 73,
+//       id: 66,
 //       term: "Node.js",
 //       text: "A runtime environment that lets developers run JavaScript outside the browser, built on Chrome's V8 JavaScript engine.",
 //       points: [
@@ -1397,7 +1429,7 @@ export class LocalDataProviderService {
 //       srcs: ["perplexity"]
 //     },
 //     {
-//       id: 74,
+//       id: 67,
 //       term: "Nuxt",
 //       text: "An open-source framework built on top of Vue.js for creating server-rendered and static web applications.",
 //       points: [
@@ -1417,7 +1449,7 @@ export class LocalDataProviderService {
 //       srcs: ["perplexity"]
 //     },
 //     {
-//       id: 75,
+//       id: 68,
 //       term: "Vite",
 //       text: "A modern frontend build tool that provides instant server start, lightning-fast HMR, and optimized builds using ES modules and Rollup.",
 //       points: [
@@ -1437,7 +1469,7 @@ export class LocalDataProviderService {
 //       srcs: ["perplexity"]
 //     },
 //     {
-//       id: 76,
+//       id: 69,
 //       term: "Rxjs forkjoin",
 //       text: "A function in RxJS that combines multiple observables and emits a single value when all of them complete.",
 //       points: [
@@ -1456,28 +1488,28 @@ export class LocalDataProviderService {
 //       creation_date: "2026-03-27",
 //       srcs: ["perplexity"]
 //     },
+     {
+       id: 70,
+       term: "JavaScript async",
+       text: "A keyword in JavaScript used to define asynchronous functions that return a Promise.",
+       points: [
+         "Allows use of 'await' for simplified asynchronous code.",
+         "Enables non-blocking execution for operations like API calls.",
+         "Async functions always return a Promise, even if no explicit return is provided."
+       ],
+       abbreviations: [],
+       references: [
+         { handle: "mdn", weblink: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function", txt: "MDN docs" }
+       ],
+       crossrefs: [],
+       tags: ["javascript", "async"],
+       imgurl: "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
+       ribbon: "AI",
+       creation_date: "2026-03-27",
+       srcs: ["perplexity"]
+     },
 //     {
-//       id: 77,
-//       term: "JavaScript async",
-//       text: "A keyword in JavaScript used to define asynchronous functions that return a Promise.",
-//       points: [
-//         "Allows use of 'await' for simplified asynchronous code.",
-//         "Enables non-blocking execution for operations like API calls.",
-//         "Async functions always return a Promise, even if no explicit return is provided."
-//       ],
-//       abbreviations: [],
-//       references: [
-//         { handle: "mdn", weblink: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function", txt: "MDN docs" }
-//       ],
-//       crossrefs: [],
-//       tags: ["javascript", "async"],
-//       imgurl: "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
-//       ribbon: "AI",
-//       creation_date: "2026-03-27",
-//       srcs: ["perplexity"]
-//     },
-//     {
-//       id: 78,
+//       id: 71,
 //       term: "JavaScript await",
 //       text: "A keyword used inside async functions to pause execution until a Promise resolves or rejects.",
 //        points: [
@@ -1497,7 +1529,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 79,
+//        id: 72,
 //        term: "DNS",
 //        text: "The Domain Name System (DNS) translates human-readable domain names (like example.com) into IP addresses that computers use to communicate.",
 //        points: [
@@ -1519,7 +1551,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 80,
+//        id: 73,
 //        term: "CI/CD",
 //        text: "CI/CD stands for Continuous Integration and Continuous Deployment, practices that automate code testing and delivery to production.",
 //        points: [
@@ -1542,7 +1574,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 81,
+//        id: 74,
 //        term: "SaaS",
 //        text: "Software as a Service (SaaS) is a software delivery model where applications are hosted centrally and accessed over the internet.",
 //        points: [
@@ -1564,7 +1596,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 82,
+//        id: 75,
 //        term: "TLS",
 //        text: "Transport Layer Security (TLS) encrypts data between clients and servers, ensuring confidentiality and integrity over the internet.",
 //        points: [
@@ -1586,7 +1618,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 83,
+//        id: 76,
 //        term: "OAuth",
 //        text: "OAuth is an open authorization standard that lets users grant third-party apps limited access to their resources without sharing credentials.",
 //        points: [
@@ -1608,7 +1640,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 84,
+//        id: 77,
 //        term: "sso",
 //        text: "Single Sign-On (SSO) allows users to access multiple applications with one set of login credentials.",
 //        points: [
@@ -1630,7 +1662,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 85,
+//        id: 78,
 //        term: "dry",
 //        text: "DRY stands for 'Don't Repeat Yourself', a software principle that discourages code duplication.",
 //        points: [
@@ -1652,7 +1684,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 86,
+//        id: 79,
 //        term: "KISS",
 //        text: "KISS stands for 'Keep It Simple, Stupid', a design principle emphasizing simplicity over unnecessary complexity.",
 //        points: [
@@ -1673,52 +1705,52 @@ export class LocalDataProviderService {
 //        creation_date: "2026-05-27",
 //        srcs: ["perplexity"]
 //      },
+      {
+        id: 80,
+        term: "TDD",
+        text: "Test-Driven Development (TDD) is a software process where tests are written before the code that satisfies them.",
+        points: [
+          "Cycle: Red → Green → Refactor.",
+          "Encourages small, iterative changes and strong test coverage.",
+          "Often used with unit test frameworks like Jest or JUnit."
+        ],
+        abbreviations: [
+          { short: "tdd", long: "test-driven development" }
+        ],
+        references: [
+          { handle: "martinfowler", weblink: "https://martinfowler.com/bliki/TestDrivenDevelopment.html", txt: "Martin Fowler on TDD" }
+        ],
+        crossrefs: [],
+        tags: ["testing", "methodology"],
+        imgurl: "https://upload.wikimedia.org/wikipedia/commons/0/0b/TDD_Global_Lifecycle.png",
+        ribbon: "AI",
+        creation_date: "2026-05-27",
+        srcs: ["perplexity"]
+      },
+      {
+        id: 81,
+        term: "BDD",
+        text: "Behavior-Driven Development (BDD) builds on TDD by focusing on human-readable tests that describe system behavior.",
+        points: [
+          "Uses 'Given-When-Then' syntax to define expected outcomes.",
+          "Popular tools: Cucumber, SpecFlow, Jasmine.",
+          "Bridges the gap between technical and non-technical stakeholders."
+        ],
+        abbreviations: [
+          { short: "BDD", long: "behavior-driven development" }
+        ],
+        references: [
+          { handle: "cucumber", weblink: "https://cucumber.io/docs/bdd/", txt: "Cucumber Docs" }
+        ],
+        crossrefs: [],
+        tags: ["testing", "methodology"],
+        imgurl: "https://upload.wikimedia.org/wikipedia/commons/f/f0/BDD_process_overview.png",
+        ribbon: "AI",
+        creation_date: "2026-05-27",
+        srcs: ["perplexity"]
+      },
 //      {
-//        id: 87,
-//        term: "tdd",
-//        text: "Test-Driven Development (TDD) is a software process where tests are written before the code that satisfies them.",
-//        points: [
-//          "Cycle: Red → Green → Refactor.",
-//          "Encourages small, iterative changes and strong test coverage.",
-//          "Often used with unit test frameworks like Jest or JUnit."
-//        ],
-//        abbreviations: [
-//          { short: "tdd", long: "test-driven development" }
-//        ],
-//        references: [
-//          { handle: "martinfowler", weblink: "https://martinfowler.com/bliki/TestDrivenDevelopment.html", txt: "Martin Fowler on TDD" }
-//        ],
-//        crossrefs: [],
-//        tags: ["testing", "methodology"],
-//        imgurl: "https://upload.wikimedia.org/wikipedia/commons/0/0b/TDD_Global_Lifecycle.png",
-//        ribbon: "AI",
-//        creation_date: "2026-05-27",
-//        srcs: ["perplexity"]
-//      },
-//      {
-//        id: 88,
-//        term: "bdd",
-//        text: "Behavior-Driven Development (BDD) builds on TDD by focusing on human-readable tests that describe system behavior.",
-//        points: [
-//          "Uses 'Given-When-Then' syntax to define expected outcomes.",
-//          "Popular tools: Cucumber, SpecFlow, Jasmine.",
-//          "Bridges the gap between technical and non-technical stakeholders."
-//        ],
-//        abbreviations: [
-//          { short: "bdd", long: "behavior-driven development" }
-//        ],
-//        references: [
-//          { handle: "cucumber", weblink: "https://cucumber.io/docs/bdd/", txt: "Cucumber Docs" }
-//        ],
-//        crossrefs: [],
-//        tags: ["testing", "methodology"],
-//        imgurl: "https://upload.wikimedia.org/wikipedia/commons/f/f0/BDD_process_overview.png",
-//        ribbon: "AI",
-//        creation_date: "2026-05-27",
-//        srcs: ["perplexity"]
-//      },
-//      {
-//        id: 89,
+//        id: 82,
 //        term: "rfc",
 //        text: "RFCs (Requests for Comments) are a series of documents describing standards, protocols, and procedures for the internet.",
 //        points: [
@@ -1740,7 +1772,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 90,
+//        id: 83,
 //        term: "google merchant",
 //        text: "Google Merchant Center is a platform that allows businesses to upload and manage product data for Google Shopping ads and other Google commerce services.",
 //        points: [
@@ -1759,28 +1791,28 @@ export class LocalDataProviderService {
 //        creation_date: "2026-05-27",
 //        srcs: ["perplexity"]
 //      },
+      {
+        id: 84,
+        term: "Angular",
+        text: "Angular is a modern TypeScript-based web application framework maintained by Google, suited for building large-scale single-page applications.",
+        points: [
+          "Completely rewritten version separate from AngularJS.",
+          "Uses TypeScript, dependency injection, and reactive programming.",
+          "Supports strong tooling via Angular CLI."
+        ],
+        abbreviations: [],
+        references: [
+          { handle: "official", weblink: "https://angular.dev", txt: "Angular.dev" }
+        ],
+        crossrefs: [],
+        tags: ["framework", "frontend"],
+        imgurl: "https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg",
+        ribbon: "AI",
+        creation_date: "2026-05-27",
+        srcs: ["perplexity"]
+      },
 //      {
-//        id: 91,
-//        term: "Angular",
-//        text: "Angular is a modern TypeScript-based web application framework maintained by Google, suited for building large-scale single-page applications.",
-//        points: [
-//          "Completely rewritten version separate from AngularJS.",
-//          "Uses TypeScript, dependency injection, and reactive programming.",
-//          "Supports strong tooling via Angular CLI."
-//        ],
-//        abbreviations: [],
-//        references: [
-//          { handle: "official", weblink: "https://angular.dev", txt: "Angular.dev" }
-//        ],
-//        crossrefs: [],
-//        tags: ["framework", "frontend"],
-//        imgurl: "https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg",
-//        ribbon: "AI",
-//        creation_date: "2026-05-27",
-//        srcs: ["perplexity"]
-//      },
-//      {
-//        id: 92,
+//        id: 85,
 //        term: "angular.js",
 //        text: "AngularJS is the original JavaScript-based front-end framework created by Google, emphasizing two-way data binding and MVC architecture.",
 //        points: [
@@ -1800,7 +1832,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 93,
+//        id: 86,
 //        term: "vue",
 //        text: "Vue.js is a progressive JavaScript framework for building user interfaces, emphasizing ease of integration and reactive components.",
 //        points: [
@@ -1822,7 +1854,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 94,
+//        id: 87,
 //        term: "certificate authority (ca)",
 //        text: "A Certificate Authority (CA) is a trusted entity that issues digital certificates verifying the ownership of encryption keys used in secure communications.",
 //        points: [
@@ -1844,7 +1876,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 95,
+//        id: 88,
 //        term: "web of trust",
 //        text: "A Web of Trust is a decentralized trust model where users validate each other’s identities, used notably in PGP encryption systems.",
 //        points: [
@@ -1864,7 +1896,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 96,
+//        id: 89,
 //        term: "javascriptcore",
 //        text: "JavaScriptCore is Apple’s JavaScript engine developed for Safari and WebKit, responsible for interpreting and executing JS code.",
 //        points: [
@@ -1884,7 +1916,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 97,
+//        id: 90,
 //        term: "blink",
 //        text: "Blink is the open-source browser engine developed by Google as part of the Chromium project, powering Chrome, Edge, and Opera.",
 //        points: [
@@ -1904,7 +1936,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 98,
+//        id: 91,
 //        term: "ssr",
 //        text: "Server-Side Rendering (SSR) is the process of generating a complete HTML page on the server for each request rather than building it in the browser. This improves initial load times and SEO.",
 //        points: [
@@ -1924,7 +1956,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 99,
+//        id: 92,
 //        term: "mpa",
 //        text: "A Multi-Page Application (MPA) loads each page separately from the server, refreshing the browser and reloading assets with each navigation.",
 //        points: [
@@ -1942,7 +1974,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 100,
+//        id: 93,
 //        term: "spa",
 //        text: "A Single-Page Application (SPA) dynamically updates the current page instead of loading entire new ones from the server. It relies heavily on client-side JavaScript and APIs.",
 //        points: [
@@ -1962,7 +1994,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 101,
+//        id: 94,
 //        term: "pwa",
 //        text: "A Progressive Web App (PWA) combines web and native app features such as offline use, push notifications, and installation on devices.",
 //        points: [
@@ -1982,7 +2014,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 102,
+//        id: 95,
 //        term: "ssg",
 //        text: "Static Site Generation (SSG) pre-builds HTML pages at build time, serving them as static assets for high performance and scalability.",
 //        points: [
@@ -2000,7 +2032,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 103,
+//        id: 96,
 //        term: "seo",
 //        text: "Search Engine Optimization (SEO) enhances a website’s visibility in search engines by improving content relevance, accessibility, and technical structure. Practice of increasing organic (unpaid) traffic from search engines through on-page, technical, and off-page strategies.",
 //        points: [
@@ -2024,7 +2056,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 104,
+//        id: 97,
 //        term: "isr",
 //        text: "Incremental Static Regeneration (ISR) updates pre-rendered static pages in the background as traffic comes in, avoiding full rebuilds.",
 //        points: [
@@ -2044,7 +2076,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 105,
+//        id: 98,
 //        term: "ui",
 //        text: "User Interface (UI) refers to the visual and interactive elements users engage with in software or websites.",
 //        points: [
@@ -2062,7 +2094,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 106,
+//        id: 99,
 //        term: "gui",
 //        text: "Graphical User Interface (GUI) is a type of UI that uses visual components like windows, icons, and menus to allow user interaction with digital systems.",
 //        points: [
@@ -2080,7 +2112,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 107,
+//        id: 100,
 //        term: "ux",
 //        text: "User Experience (UX) describes the overall emotional and functional experience a user has while interacting with a product or service.",
 //        points: [
@@ -2098,7 +2130,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 108,
+//        id: 101,
 //        term: "cms",
 //        text: "A Content Management System (CMS) is software that lets users create, manage, and modify content on a website without needing coding skills.",
 //        points: [
@@ -2118,7 +2150,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 109,
+//        id: 102,
 //        term: "url",
 //        text: "A Uniform Resource Locator (URL) specifies the address of a resource on the internet, combining protocol, domain, and path.",
 //        points: [
@@ -2138,7 +2170,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 110,
+//        id: 103,
 //        term: "XML",
 //        text: "eXtensible Markup Language (XML) is a data format that defines structured documents through custom tags, often used for data interchange.",
 //        points: [
@@ -2157,52 +2189,52 @@ export class LocalDataProviderService {
 //        creation_date: "2026-03-27",
 //        srcs: ["perplexity"]
 //      },
+      {
+        id: 104,
+        term: "DOM",
+        text: "The Document Object Model (DOM) is a programming interface representing the structure of HTML and XML documents as objects and nodes.",
+        points: [
+          "Allows scripts to read and modify web page content.",
+          "Central to dynamic web interactions in browsers.",
+          "Accessible in JavaScript via window.document."
+        ],
+        abbreviations: [
+          { short: "DOM", long: "document object model" },
+        ],
+        references: [
+          { handle: "mdn", weblink: "https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model", txt: "MDN DOM API" }
+        ],
+        crossrefs: [],
+        tags: ["web", "javascript", "api"],
+        imgurl: "https://upload.wikimedia.org/wikipedia/commons/9/99/Dom_model.svg",
+        ribbon: "AI",
+        creation_date: "2026-03-27",
+        srcs: ["perplexity"]
+      },
+      {
+        id: 105,
+        term: "REST",
+        text: "Representational State Transfer (REST) is an architectural style for designing APIs, using stateless operations and standard HTTP methods.",
+        points: [
+          "Typically uses JSON or XML payloads.",
+          "URL endpoints represent resources, not actions.",
+          "GET, POST, PUT, DELETE map to CRUD operations."
+        ],
+        abbreviations: [
+          { short: "rest", long: "representational state transfer" }
+        ],
+        references: [
+          { handle: "royfielding", weblink: "https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm", txt: "Fielding Dissertation" }
+        ],
+        crossrefs: [],
+        tags: ["api", "architecture"],
+        imgurl: "https://upload.wikimedia.org/wikipedia/commons/6/6e/API_Icon.svg",
+        ribbon: "AI",
+        creation_date: "2026-03-27",
+        srcs: ["perplexity"]
+      },
 //      {
-//        id: 111,
-//        term: "DOM",
-//        text: "The Document Object Model (DOM) is a programming interface representing the structure of HTML and XML documents as objects and nodes.",
-//        points: [
-//          "Allows scripts to read and modify web page content.",
-//          "Central to dynamic web interactions in browsers.",
-//          "Accessible in JavaScript via window.document."
-//        ],
-//        abbreviations: [
-//          { short: "DOM", long: "document object model" },
-//        ],
-//        references: [
-//          { handle: "mdn", weblink: "https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model", txt: "MDN DOM API" }
-//        ],
-//        crossrefs: [],
-//        tags: ["web", "javascript", "api"],
-//        imgurl: "https://upload.wikimedia.org/wikipedia/commons/9/99/Dom_model.svg",
-//        ribbon: "AI",
-//        creation_date: "2026-03-27",
-//        srcs: ["perplexity"]
-//      },
-//      {
-//        id: 112,
-//        term: "REST",
-//        text: "Representational State Transfer (REST) is an architectural style for designing APIs, using stateless operations and standard HTTP methods.",
-//        points: [
-//          "Typically uses JSON or XML payloads.",
-//          "URL endpoints represent resources, not actions.",
-//          "GET, POST, PUT, DELETE map to CRUD operations."
-//        ],
-//        abbreviations: [
-//          { short: "rest", long: "representational state transfer" }
-//        ],
-//        references: [
-//          { handle: "royfielding", weblink: "https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm", txt: "Fielding Dissertation" }
-//        ],
-//        crossrefs: [],
-//        tags: ["api", "architecture"],
-//        imgurl: "https://upload.wikimedia.org/wikipedia/commons/6/6e/API_Icon.svg",
-//        ribbon: "AI",
-//        creation_date: "2026-03-27",
-//        srcs: ["perplexity"]
-//      },
-//      {
-//        id: 113,
+//        id: 106,
 //        term: "RESTful",
 //        text: "A RESTful API follows REST principles strictly, ensuring statelessness, consistent resource URIs, and proper use of HTTP verbs and response codes.",
 //        points: [
@@ -2220,7 +2252,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 114,
+//        id: 107,
 //        term: "CRUD",
 //        text: "CRUD stands for the basic operations for persistent storage and database interactions.",
 //        points: [
@@ -2238,7 +2270,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 115,
+//        id: 108,
 //        term: "MVC",
 //        text: "Model–View–Controller (MVC) is a design pattern that separates an application into three interconnected components, promoting organized, reusable code.",
 //        points: [
@@ -2258,7 +2290,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 116,
+//        id: 109,
 //        term: "ORM",
 //        text: "Object–Relational Mapping (ORM) is a programming technique that converts data between relational databases and object-oriented languages.",
 //        points: [
@@ -2278,7 +2310,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 117,
+//        id: 110,
 //        term: "FLoC",
 //        text: "Federated Learning of Cohorts (FLoC) was a Google proposal to replace third-party cookies by grouping users into cohorts based on browsing behavior, enabling interest-based advertising without individual tracking.",
 //        points: [
@@ -2301,7 +2333,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 118,
+//        id: 111,
 //        term: "Topics API",
 //        text: "The Topics API is part of Google's Privacy Sandbox initiative, replacing FLoC by letting browsers determine coarse interest topics locally and share only a few relevant ones with advertisers.",
 //        points: [
@@ -2322,7 +2354,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 119,
+//        id: 112,
 //        term: "DRM",
 //        text: "Digital Rights Management (DRM) refers to technologies that restrict the use, modification, and distribution of digital content to protect intellectual property rights.",
 //        points: [
@@ -2343,31 +2375,31 @@ export class LocalDataProviderService {
 //        creation_date: "2026-03-27",
 //        srcs: ["perplexity"]
 //      },
+      {
+        id: 113,
+        term: "Angular CLI (ng command)",
+        text: "Short for Angular, a TypeScript-based web application framework developed by Google for building single-page client applications.",
+        points: [
+          "Successor to AngularJS with a modular and component-driven architecture.",
+          "Uses TypeScript for strong typing and robust tooling integration.",
+          "Includes a powerful CLI for scaffolding, building, and testing projects."
+        ],
+        abbreviations: [
+          { short: "ng", long: "Angular" }
+        ],
+        references: [
+          { handle: "official", weblink: "https://angular.dev/", txt: "angular.dev" },
+          { handle: "docs", weblink: "https://angular.dev/reference", txt: "Angular Docs" }
+        ],
+        crossrefs: [],
+        tags: ["framework", "typescript", "frontend"],
+        imgurl: "https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg",
+        ribbon: "AI",
+        creation_date: "2026-03-27",
+        srcs: ["perplexity"]
+      },
 //      {
-//        id: 120,
-//        term: "ng",
-//        text: "Short for Angular, a TypeScript-based web application framework developed by Google for building single-page client applications.",
-//        points: [
-//          "Successor to AngularJS with a modular and component-driven architecture.",
-//          "Uses TypeScript for strong typing and robust tooling integration.",
-//          "Includes a powerful CLI for scaffolding, building, and testing projects."
-//        ],
-//        abbreviations: [
-//          { short: "ng", long: "Angular" }
-//        ],
-//        references: [
-//          { handle: "official", weblink: "https://angular.dev/", txt: "angular.dev" },
-//          { handle: "docs", weblink: "https://angular.dev/reference", txt: "Angular Docs" }
-//        ],
-//        crossrefs: [],
-//        tags: ["framework", "typescript", "frontend"],
-//        imgurl: "https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg",
-//        ribbon: "AI",
-//        creation_date: "2026-03-27",
-//        srcs: ["perplexity"]
-//      },
-//      {
-//        id: 121,
+//        id: 114,
 //        term: "pgp",
 //        text: "Pretty Good Privacy (PGP) is a data encryption and decryption program providing cryptographic privacy and authentication for emails and files.",
 //        points: [
@@ -2390,7 +2422,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 122,
+//        id: 115,
 //        term: "typescript class",
 //        text: "A TypeScript class is a blueprint for creating objects, extending JavaScript’s class syntax with type safety, visibility modifiers, and decorators.",
 //        points: [
@@ -2410,7 +2442,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 123,
+//        id: 116,
 //        term: "typescript interface",
 //        text: "A TypeScript interface defines the shape of an object, specifying property names, types, and optional members to enforce consistent type contracts.",
 //        points: [
@@ -2430,7 +2462,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 124,
+//        id: 117,
 //        term: "typescript enum",
 //        text: "A TypeScript enum is a feature for defining sets of named constants, mapping names to numeric or string values for clearer and safer code.",
 //        points: [
@@ -2450,7 +2482,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 125,
+//        id: 118,
 //        term: "conversion rate",
 //        text: "Percentage of website visitors who complete a desired action like making a purchase, calculated as (conversions ÷ total visitors) × 100.",
 //        points: [
@@ -2472,7 +2504,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 126,
+//        id: 119,
 //        term: "cart abandonment",
 //        text: "When shoppers add items to their shopping cart but exit without completing the purchase, averaging 69% abandonment rate globally.",
 //        points: [
@@ -2494,7 +2526,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 127,
+//        id: 120,
 //        term: "customer lifetime value",
 //        text: "Total revenue expected from a single customer account throughout their relationship with the business (CLV = average order value × purchase frequency × lifespan).",
 //        points: [
@@ -2517,7 +2549,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 128,
+//        id: 121,
 //        term: "omnichannel",
 //        text: "Seamless customer experience across all channels (web, mobile, store, social) where the brand recognizes customers wherever they engage.",
 //        points: [
@@ -2539,7 +2571,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 129,
+//        id: 122,
 //        term: "data-driven decisions",
 //        text: "Using customer analytics, A/B testing, and performance metrics to guide business strategy rather than intuition.",
 //        points: [
@@ -2559,7 +2591,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 130,
+//        id: 123,
 //        term: "trust and security",
 //        text: "Building customer confidence through SSL certificates, clear privacy policies, secure payment gateways, and trust signals.",
 //        points: [
@@ -2582,7 +2614,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 131,
+//        id: 124,
 //        term: "scalability",
 //        text: "Ability of e-commerce infrastructure to handle increased traffic, orders, and data without performance degradation.",
 //        points: [
@@ -2602,7 +2634,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 132,
+//        id: 125,
 //        term: "customer retention",
 //        text: "Strategies to encourage repeat purchases through loyalty programs, personalized marketing, and excellent post-purchase experience.",
 //        points: [
@@ -2621,28 +2653,28 @@ export class LocalDataProviderService {
 //        creation_date: "2026-03-27",
 //        srcs: ["perplexity"]
 //      },
+      {
+        id: 126,
+        term: "Angular Directive",
+        text: "Angular directives extend HTML by adding behavior to elements through attributes, structural changes (*ngIf, *ngFor), or custom logic via @Directive decorator.",
+        points: [
+          "Attribute directives modify appearance/behavior (ngClass, ngStyle).",
+          "Structural directives manipulate DOM (add/remove elements).",
+          "Custom directives created with @Directive({ selector: '[appHighlight]' })"
+        ],
+        abbreviations: [],
+        references: [
+          { handle: "docs", weblink: "https://angular.dev/guide/templates/directives", txt: "Angular Directives" }
+        ],
+        crossrefs: [],
+        tags: ["xxx", "angular", "templates"],
+      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
+        ribbon: "AI",
+        creation_date: "2026-03-29",
+        srcs: ["inferred:sad"]
+      },
 //      {
-//        id: 133,
-//        term: "angular directive",
-//        text: "Angular directives extend HTML by adding behavior to elements through attributes, structural changes (*ngIf, *ngFor), or custom logic via @Directive decorator.",
-//        points: [
-//          "Attribute directives modify appearance/behavior (ngClass, ngStyle).",
-//          "Structural directives manipulate DOM (add/remove elements).",
-//          "Custom directives created with @Directive({ selector: '[appHighlight]' })"
-//        ],
-//        abbreviations: [],
-//        references: [
-//          { handle: "docs", weblink: "https://angular.dev/guide/templates/directives", txt: "Angular Directives" }
-//        ],
-//        crossrefs: [],
-//        tags: ["angular", "templates"],
-//        imgurl: "",
-//        ribbon: "AI",
-//        creation_date: "2026-03-27",
-//        srcs: ["perplexity"]
-//      },
-//      {
-//        id: 134,
+//        id: 127,
 //        term: "angular routing guard",
 //        text: "Guards control access to routes with CanActivate, CanDeactivate, CanLoad, and Resolve interfaces to protect routes or pre-fetch data.",
 //        points: [
@@ -2662,7 +2694,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 135,
+//        id: 128,
 //        term: "angular routing resolver",
 //        text: "Resolvers pre-fetch data before route activation using Resolve<T> interface, ensuring components receive required data on initialization.",
 //        points: [
@@ -2682,7 +2714,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 136,
+//        id: 129,
 //        term: "angular routing interceptor",
 //        text: "Interceptors intercept HTTP requests/responses globally to add headers, handle errors, cache responses, or transform data.",
 //        points: [
@@ -2702,7 +2734,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 137,
+//        id: 130,
 //        term: "angular app-shell",
 //        text: "App shell architecture pre-renders critical UI framework (header, nav, footer) while lazy-loading route content for instant page loads.",
 //        points: [
@@ -2722,7 +2754,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 138,
+//        id: 131,
 //        term: "angular service-worker",
 //        text: "PWA service worker for caching assets, offline support, and background sync, configured via ngsw-config.json.",
 //        points: [
@@ -2742,7 +2774,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 139,
+//        id: 132,
 //        term: "angular web-worker",
 //        text: "Web Workers run scripts in background threads, preventing UI blocking during heavy computations like data processing or image manipulation.",
 //        points: [
@@ -2762,7 +2794,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 140,
+//        id: 133,
 //        term: "angular config",
 //        text: "Configuration management through injection tokens and factory providers for environment-specific settings and feature flags.",
 //        points: [
@@ -2782,7 +2814,7 @@ export class LocalDataProviderService {
 //        srcs: ["perplexity"]
 //      },
 //      {
-//        id: 141,
+//        id: 134,
 //        term: "angular environments",
 //        text: "Build-time environment configuration using environment.ts files (development, production, staging) replaced during ng build.",
 //        points: [
@@ -2795,6 +2827,26 @@ export class LocalDataProviderService {
 //          { handle: "docs", weblink: "https://angular.dev/guide/build/configuring-application-environments", txt: "Angular Environments" }
 //        ],
 //        crossrefs: [],
+//        tags: ["angular", "build", "deployment"],
+//        imgurl: "",
+//        ribbon: "AI",
+//        creation_date: "2026-03-27",
+//        srcs: ["perplexity"]
+//      }
+//      {
+//        id: 135,
+//        term: "Command-Line Interface",
+//        text: "How programs were run before desktop environments.",
+//        points: [
+//          "For example: ng."
+//        ],
+//        abbreviations: [
+//          { short: "CLI", long: "Command-Line Interface" }
+//        ],
+//        references: [
+//          { handle: "docs", weblink: "https://angular.dev/guide/build/configuring-application-environments", txt: "Angular Environments" }
+//        ],
+//        crossrefs: [ 113, ],
 //        tags: ["angular", "build", "deployment"],
 //        imgurl: "",
 //        ribbon: "AI",
