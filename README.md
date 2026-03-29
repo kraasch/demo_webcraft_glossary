@@ -21,8 +21,9 @@ task list:
 
 ## Credits
 
-  - [ ] Favicon from [icon8.com](https://icons8.com/icon/17857/sailing-boat/).
-  - [ ] Home screen picture from [unsplash.com](https://images.unsplash.com/).
+  - Favicon from [icon8.com](https://icons8.com/icon/17857/sailing-boat/).
+  - Home screen picture from [unsplash.com](https://images.unsplash.com/).
+  - Card backgrounds from [Wikimedia Commons](https://commons.wikimedia.org/w/index.php).
 
 ## Interesting Docs
 
