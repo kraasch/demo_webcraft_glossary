@@ -42,7 +42,7 @@ type SortTarget = 'term' | 'id';
             <input type="button" class="btn btn-square m-1" value="×" (click)="deselectAllTags()"/>
             <input type="button" class="btn btn-square m-1" value="✓" (click)="selectAllTags()"/>
             @for (tag of allTags; track tag) {
-              <input class="btn m-1" type="checkbox"
+              <input class="btn m-1 btn-with-outline-text" type="checkbox"
                 [attr.aria-label]="tag"
                 [name]="'tag_' + tag"
                 [checked]="selectedTags[tag]"
@@ -149,6 +149,12 @@ type SortTarget = 'term' | 'id';
     </div>
   `,
   styles: `
+.btn-with-outline-text {
+  font-size: clamp(16px, 1vw, 32px);
+  -webkit-text-stroke: 0.2em #111;
+  paint-order: stroke fill;
+}
+
 .mybox {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
