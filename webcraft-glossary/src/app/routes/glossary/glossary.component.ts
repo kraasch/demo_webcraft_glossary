@@ -176,7 +176,7 @@ export class GlossaryComponent {
   dataProvider        = inject(LocalDataProviderService);
   data                = this.dataProvider.getData();
 
-  cardsHaveBg:        boolean                       = false;
+  cardsHaveBg:        boolean                       = true;
   showTagsOnStartup:  boolean                       = true;
   allTags:            string[]                      = [];
   selectedTags:       Record<string, boolean>       = {};

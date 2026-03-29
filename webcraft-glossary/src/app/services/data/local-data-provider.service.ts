@@ -28,351 +28,351 @@ export class LocalDataProviderService {
       creation_date: "2026-03-26",
       srcs: [ "ack" ],
     },
-    {
-      id: 1,
-      term: "Angular Standalone Component",
-      text: "Modern Angular components that don't require NgModules. They can directly import other standalone components, directives, and pipes.",
-      points: [
-        "Simplifies architecture by eliminating module boilerplate.",
-        "Default in Angular 17+; bootstrap directly in main.ts.",
-        "Use standalone: true in @Component decorator.",
-      ],
-      abbreviations: [],
-      references: [
-        { handle: "official", weblink: "https://angular.dev/guide/standalone", txt: "angular.dev/standalone" }
-      ],
-      crossrefs: [ 0, 2 ],
-      tags: [ "new", "xxx", "angular" ],
-      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
-      ribbon: "NEW",
-      creation_date: "2026-03-26",
-      srcs: [ "ack" ],
-    },
-    {
-      id: 2,
-      term: "Angular Component",
-      text: "Core building block controlling a view via @Component decorator. Contains template, styles, and logic for UI elements.",
-      points: [
-        "Lifecycle hooks: ngOnInit, ngOnChanges, ngOnDestroy, etc.",
-        "Can be standalone or declared in NgModule.",
-        "Uses @Input/@Output for parent-child communication.",
-      ],
-      abbreviations: [],
-      references: [
-        { handle: "official", weblink: "https://angular.dev/guide/components", txt: "angular.dev/components" }
-      ],
-      crossrefs: [ 0, 1, 7 ],
-      tags: [ "new", "xxx", "angular" ],
-      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
-      ribbon: "NEW",
-      creation_date: "2026-03-26",
-      srcs: [ "ack" ],
-    },
-    {
-      id: 3,
-      term: "Angular Pipe",
-      text: "Transform display values in templates using pure | impure pipes. Built-in pipes like date, currency; custom pipes via @Pipe decorator.",
-      points: [
-        "Usage: {{ value | pipeName:arg }} in templates.",
-        "Pure pipes optimize by only updating on input reference change.",
-        "AsyncPipe subscribes to observables/promises automatically.",
-      ],
-      abbreviations: [],
-      references: [
-        { handle: "official", weblink: "https://angular.dev/guide/templates/pipe", txt: "angular.dev/pipes" }
-      ],
-      crossrefs: [],
-      tags: [ "new", "xxx", "angular" ],
-      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
-      ribbon: "NEW",
-      creation_date: "2026-03-26",
-      srcs: [ "ack" ],
-    },
-    {
-      id: 4,
-      term: "Angular Observable",
-      text: "RxJS Observable streams for handling async operations and reactive data flows. Foundation of Angular's change detection.",
-      points: [
-        "Hot by default; use shareReplay() for sharing.",
-        "Use with AsyncPipe or .subscribe() in services/components.",
-        "Operators like map, filter, switchMap, debounceTime.",
-      ],
-      abbreviations: [],
-      references: [
-        { handle: "official", weblink: "https://rxjs.dev/guide/observable", txt: "rxjs.dev/observable" }
-      ],
-      crossrefs: [ 12 ],
-      tags: [ "new", "xxx", "angular" ],
-      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
-      ribbon: "NEW",
-      creation_date: "2026-03-26",
-      srcs: [ "ack" ],
-    },
-    {
-      id: 5,
-      term: "Angular HttpClient",
-      text: "Angular's HTTP client service for making AJAX requests. Provides typed responses, interceptors, and progress events.",
-      points: [
-        "Inject HttpClient in services; use get(), post(), etc.",
-        "Returns Observables; use map(), catchError() operators.",
-        "Must import HttpClientModule in standalone bootstrap.",
-      ],
-      abbreviations: [],
-      references: [
-        { handle: "official", weblink: "https://angular.dev/guide/http", txt: "angular.dev/http" }
-      ],
-      crossrefs: [ 6 ],
-      tags: [ "new", "xxx", "angular" ],
-      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
-      ribbon: "NEW",
-      creation_date: "2026-03-26",
-      srcs: [ "ack" ],
-    },
-    {
-      id: 6,
-      term: "Angular HttpClient Interceptor",
-      text: "RxJS interceptors that transform HTTP requests/responses globally. Perfect for auth headers, logging, caching.",
-      points: [
-        "Implement HttpInterceptor interface; provide in DI.",
-        "intercept(req, next) method returns Observable<HttpEvent>.",
-        "Use clone() to modify request headers/body.",
-      ],
-      abbreviations: [],
-      references: [
-        { handle: "official", weblink: "https://angular.dev/guide/http/interceptor", txt: "angular.dev/interceptors" }
-      ],
-      crossrefs: [ 5 ],
-      tags: [ "new", "xxx", "angular" ],
-      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
-      ribbon: "NEW",
-      creation_date: "2026-03-26",
-      srcs: [ "ack" ],
-    },
-    {
-      id: 7,
-      term: "Angular Component Lifecycle",
-      text: "Predictable sequence of hooks from creation to destruction. Use ngOnInit for initialization, ngOnDestroy for cleanup.",
-      points: [
-        "ngOnChanges → ngOnInit → ngDoCheck → ngAfterViewInit → ngAfterContentInit.",
-        "Most used: ngOnInit, ngOnChanges, ngOnDestroy.",
-        "Standalone components have same lifecycle hooks.",
-      ],
-      abbreviations: [],
-      references: [
-        { handle: "official", weblink: "https://angular.dev/guide/components/lifecycle", txt: "angular.dev/lifecycle" }
-      ],
-      crossrefs: [ 2 ],
-      tags: [ "new", "xxx", "angular" ],
-      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
-      ribbon: "NEW",
-      creation_date: "2026-03-26",
-      srcs: [ "ack" ],
-    },
-    {
-      id: 8,
-      term: "jasmine",
-      text: "Behavior-driven development framework for testing JavaScript. Default Angular test runner using describe/it/expect syntax.",
-      points: [
-        "describe() groups tests; it() defines test cases.",
-        "Matchers: expect(value).toBe(), toEqual(), toBeTruthy().",
-        "Async testing: fakeAsync(), tick(), async/await.",
-      ],
-      abbreviations: [],
-      references: [
-        { handle: "official", weblink: "https://jasmine.github.io/", txt: "jasmine.github.io" }
-      ],
-      crossrefs: [ 9 ],
-      tags: [ "new", "xxx", "testing" ],
-      imgurl: "https://upload.wikimedia.org/wikipedia/en/2/22/Logo_jasmine.svg",
-      ribbon: "NEW",
-      creation_date: "2026-03-26",
-      srcs: [ "ack" ],
-    },
-    {
-      id: 9,
-      term: "karma",
-      text: "Test runner for JavaScript executing tests in real browsers. Angular CLI uses karma-jasmine-html-reporter by default.",
-      points: [
-        "karma.conf.js configures browsers, frameworks, reporters.",
-        "ng test runs karma in watch mode with live reload.",
-        "Supports Chrome, Firefox, Edge, Safari browsers.",
-      ],
-      abbreviations: [],
-      references: [
-        { handle: "official", weblink: "https://karma-runner.github.io/", txt: "karma-runner.github.io" }
-      ],
-      crossrefs: [ 8 ],
-      tags: [ "new", "xxx", "testing" ],
-      imgurl: "https://karma-runner.github.io/assets/img/karma-3.png",
-      ribbon: "NEW",
-      creation_date: "2026-03-26",
-      srcs: [ "ack" ],
-    },
-    {
-      id: 10,
-      term: "dependency injection",
-      text: "Design pattern where components receive dependencies from external source rather than creating them. Angular's hierarchical DI system.",
-      points: [
-        "Services injected via constructor parameters.",
-        "Providers at component/module/root levels control scope.",
-        "Use @Injectable() for services; providedIn: 'root'.",
-      ],
-      abbreviations: [
-        { short: "DI", long: "dependency injection" }
-      ],
-      references: [
-        { handle: "official", weblink: "https://angular.dev/guide/di", txt: "angular.dev/di" }
-      ],
-      crossrefs: [ 11 ],
-      tags: [ "new", "xxx", "design-pattern", "di" ],
-      imgurl: "https://upload.wikimedia.org/wikipedia/commons/3/35/%D9%86%D8%B8%D8%B1%D8%A9_%D9%85%D9%82%D8%B1%D8%A8%D8%A9_%D9%84%D9%84%D8%B2%D9%84%D9%8A%D8%AC_%D9%81%D9%8A_%D9%85%D8%AF%D8%B1%D8%B3%D8%A9_%D8%A7%D8%A8%D9%86_%D9%8A%D9%88%D8%B3%D9%81.jpeg",
-      ribbon: "NEW",
-      creation_date: "2026-03-26",
-      srcs: [ "ack" ],
-    },
-    {
-      id: 11,
-      term: "Angular dependency injection scope",
-      text: "Angular's hierarchical DI tree determines service instance sharing. Root services shared app-wide; component providers create new instances.",
-      points: [
-        "providedIn: 'root' = singleton at app root.",
-        "providers: [] at component = new instance per component.",
-        "useExisting/useValue/useFactory for advanced scenarios.",
-      ],
-      abbreviations: [],
-      references: [
-        { handle: "official", weblink: "https://angular.dev/guide/di/hierarchical", txt: "angular.dev/di-hierarchical" }
-      ],
-      crossrefs: [ 10 ],
-      tags: [ "new", "xxx", "di", "angular" ],
-      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
-      ribbon: "NEW",
-      creation_date: "2026-03-26",
-      srcs: [ "ack" ],
-    },
-    {
-      id: 12,
-      term: "Rxjs Subject",
-      text: "Special Observable that can multicast to multiple subscribers. Base for BehaviorSubject, ReplaySubject, AsyncSubject.",
-      points: [
-        "Use next(value) to emit; complete() or error(err).",
-        "Subjects are hot; subscribers get current + future emissions.",
-        "Never expose raw Subject; use as service observables.",
-      ],
-      abbreviations: [],
-      references: [
-        { handle: "official", weblink: "https://rxjs.dev/guide/subject", txt: "rxjs.dev/subject" }
-      ],
-      crossrefs: [ 4 ],
-      tags: [ "new", "xxx", "rxjs" ],
-      imgurl: "https://rxjs.dev/generated/images/marketing/home/Rx_Logo-512-512.png",
-      ribbon: "NEW",
-      creation_date: "2026-03-26",
-      srcs: [ "ack" ],
-    },
-    {
-      id: 13,
-      term: "Rxjs BehaviorSubject",
-      text: "Special Subject that requires initial value and replays last emitted value to new subscribers. Common for state management in Angular services.",
-      points: [
-        "new BehaviorSubject(initialValue); emits current value immediately on subscribe().",
-        "getValue() returns current value synchronously.",
-        "Ideal for app state, user preferences, form state.",
-      ],
-      abbreviations: [],
-      references: [
-        { handle: "official", weblink: "https://rxjs.dev/api/index/class/BehaviorSubject", txt: "rxjs.dev/BehaviorSubject" }
-      ],
-      crossrefs: [ 12, 4 ],
-      tags: [ "new", "xxx", "rxjs" ],
-      imgurl: "https://rxjs.dev/generated/images/marketing/home/Rx_Logo-512-512.png",
-      ribbon: "NEW",
-      creation_date: "2026-03-26",
-      srcs: [ "ack" ],
-    },
-    {
-      id: 14,
-      term: "Angular DataBinding",
-      text: "Automatic synchronization between component TypeScript properties and DOM template. Four types: interpolation, property, event, two-way.",
-      points: [
-        "Interpolation {{ }} displays property values.",
-        "Property binding [prop]=expression sets element properties.",
-        "(event)=handler captures DOM events.",
-        "[(ngModel)]=property enables two-way binding.",
-      ],
-      abbreviations: [],
-      references: [
-        { handle: "official", weblink: "https://angular.dev/guide/templates/binding", txt: "angular.dev/databinding" }
-      ],
-      crossrefs: [ 2 ],
-      tags: [ "new", "xxx", "angular" ],
-      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
-      ribbon: "NEW",
-      creation_date: "2026-03-26",
-      srcs: [ "ack" ],
-    },
-    {
-      id: 15,
-      term: "Angular Reactive Forms",
-      text: "Programmatic form handling using FormGroup, FormControl, FormArray. Observable-based validation and value changes.",
-      points: [
-        "ReactiveFormsModule provides FormBuilder, validators.",
-        "valueChanges emits on every input change.",
-        "Nested forms with FormGroup; dynamic arrays with FormArray.",
-      ],
-      abbreviations: [],
-      references: [
-        { handle: "official", weblink: "https://angular.dev/guide/forms/reactive", txt: "angular.dev/reactive-forms" }
-      ],
-      crossrefs: [],
-      tags: [ "new", "xxx", "angular" ],
-      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
-      ribbon: "NEW",
-      creation_date: "2026-03-26",
-      srcs: [ "ack" ],
-    },
-    {
-      id: 16,
-      term: "Angular ContentChildren",
-      text: "Query children content projected via ng-content. Access components/directives in parent template's ng-content.",
-      points: [
-        "@ContentChildren(ChildComponent) children!: QueryList<ChildComponent>;",
-        "Detects changes when content children added/removed.",
-        "Use {descendants: true} to include nested children.",
-      ],
-      abbreviations: [],
-      references: [
-        { handle: "official", weblink: "https://angular.dev/guide/components/query#query-contentchildren", txt: "angular.dev/contentchildren" }
-      ],
-      crossrefs: [ 17 ],
-      tags: [ "new", "xxx", "angular" ],
-      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
-      ribbon: "NEW",
-      creation_date: "2026-03-26",
-      srcs: [ "ack" ],
-    },
-    {
-      id: 17,
-      term: "Angular ViewChild",
-      text: "Query child components, directives, or DOM elements in component's own template. Access via @ViewChild.",
-      points: [
-        "@ViewChild(ChildComponent) child!: ChildComponent; available after ngAfterViewInit.",
-        "Supports static/dynamic queries with {static: false}.",
-        "Template reference variables: @ViewChild('myTemplate') template!: TemplateRef.",
-      ],
-      abbreviations: [],
-      references: [
-        { handle: "official", weblink: "https://angular.dev/guide/components/query#viewchild", txt: "angular.dev/viewchild" }
-      ],
-      crossrefs: [ 16 ],
-      tags: [ "new", "xxx", "angular" ],
-      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
-      ribbon: "NEW",
-      creation_date: "2026-03-26",
-      srcs: [ "ack" ],
-    }
-
-    /* BASIC TERMS */
+//    {
+//      id: 1,
+//      term: "Angular Standalone Component",
+//      text: "Modern Angular components that don't require NgModules. They can directly import other standalone components, directives, and pipes.",
+//      points: [
+//        "Simplifies architecture by eliminating module boilerplate.",
+//        "Default in Angular 17+; bootstrap directly in main.ts.",
+//        "Use standalone: true in @Component decorator.",
+//      ],
+//      abbreviations: [],
+//      references: [
+//        { handle: "official", weblink: "https://angular.dev/guide/standalone", txt: "angular.dev/standalone" }
+//      ],
+//      crossrefs: [ 0, 2 ],
+//      tags: [ "new", "xxx", "angular" ],
+//      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
+//      ribbon: "NEW",
+//      creation_date: "2026-03-26",
+//      srcs: [ "ack" ],
+//    },
+//    {
+//      id: 2,
+//      term: "Angular Component",
+//      text: "Core building block controlling a view via @Component decorator. Contains template, styles, and logic for UI elements.",
+//      points: [
+//        "Lifecycle hooks: ngOnInit, ngOnChanges, ngOnDestroy, etc.",
+//        "Can be standalone or declared in NgModule.",
+//        "Uses @Input/@Output for parent-child communication.",
+//      ],
+//      abbreviations: [],
+//      references: [
+//        { handle: "official", weblink: "https://angular.dev/guide/components", txt: "angular.dev/components" }
+//      ],
+//      crossrefs: [ 0, 1, 7 ],
+//      tags: [ "new", "xxx", "angular" ],
+//      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
+//      ribbon: "NEW",
+//      creation_date: "2026-03-26",
+//      srcs: [ "ack" ],
+//    },
+//    {
+//      id: 3,
+//      term: "Angular Pipe",
+//      text: "Transform display values in templates using pure | impure pipes. Built-in pipes like date, currency; custom pipes via @Pipe decorator.",
+//      points: [
+//        "Usage: {{ value | pipeName:arg }} in templates.",
+//        "Pure pipes optimize by only updating on input reference change.",
+//        "AsyncPipe subscribes to observables/promises automatically.",
+//      ],
+//      abbreviations: [],
+//      references: [
+//        { handle: "official", weblink: "https://angular.dev/guide/templates/pipe", txt: "angular.dev/pipes" }
+//      ],
+//      crossrefs: [],
+//      tags: [ "new", "xxx", "angular" ],
+//      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
+//      ribbon: "NEW",
+//      creation_date: "2026-03-26",
+//      srcs: [ "ack" ],
+//    },
+//    {
+//      id: 4,
+//      term: "Angular Observable",
+//      text: "RxJS Observable streams for handling async operations and reactive data flows. Foundation of Angular's change detection.",
+//      points: [
+//        "Hot by default; use shareReplay() for sharing.",
+//        "Use with AsyncPipe or .subscribe() in services/components.",
+//        "Operators like map, filter, switchMap, debounceTime.",
+//      ],
+//      abbreviations: [],
+//      references: [
+//        { handle: "official", weblink: "https://rxjs.dev/guide/observable", txt: "rxjs.dev/observable" }
+//      ],
+//      crossrefs: [ 12 ],
+//      tags: [ "new", "xxx", "angular" ],
+//      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
+//      ribbon: "NEW",
+//      creation_date: "2026-03-26",
+//      srcs: [ "ack" ],
+//    },
+//    {
+//      id: 5,
+//      term: "Angular HttpClient",
+//      text: "Angular's HTTP client service for making AJAX requests. Provides typed responses, interceptors, and progress events.",
+//      points: [
+//        "Inject HttpClient in services; use get(), post(), etc.",
+//        "Returns Observables; use map(), catchError() operators.",
+//        "Must import HttpClientModule in standalone bootstrap.",
+//      ],
+//      abbreviations: [],
+//      references: [
+//        { handle: "official", weblink: "https://angular.dev/guide/http", txt: "angular.dev/http" }
+//      ],
+//      crossrefs: [ 6 ],
+//      tags: [ "new", "xxx", "angular" ],
+//      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
+//      ribbon: "NEW",
+//      creation_date: "2026-03-26",
+//      srcs: [ "ack" ],
+//    },
+//    {
+//      id: 6,
+//      term: "Angular HttpClient Interceptor",
+//      text: "RxJS interceptors that transform HTTP requests/responses globally. Perfect for auth headers, logging, caching.",
+//      points: [
+//        "Implement HttpInterceptor interface; provide in DI.",
+//        "intercept(req, next) method returns Observable<HttpEvent>.",
+//        "Use clone() to modify request headers/body.",
+//      ],
+//      abbreviations: [],
+//      references: [
+//        { handle: "official", weblink: "https://angular.dev/guide/http/interceptor", txt: "angular.dev/interceptors" }
+//      ],
+//      crossrefs: [ 5 ],
+//      tags: [ "new", "xxx", "angular" ],
+//      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
+//      ribbon: "NEW",
+//      creation_date: "2026-03-26",
+//      srcs: [ "ack" ],
+//    },
+//    {
+//      id: 7,
+//      term: "Angular Component Lifecycle",
+//      text: "Predictable sequence of hooks from creation to destruction. Use ngOnInit for initialization, ngOnDestroy for cleanup.",
+//      points: [
+//        "ngOnChanges → ngOnInit → ngDoCheck → ngAfterViewInit → ngAfterContentInit.",
+//        "Most used: ngOnInit, ngOnChanges, ngOnDestroy.",
+//        "Standalone components have same lifecycle hooks.",
+//      ],
+//      abbreviations: [],
+//      references: [
+//        { handle: "official", weblink: "https://angular.dev/guide/components/lifecycle", txt: "angular.dev/lifecycle" }
+//      ],
+//      crossrefs: [ 2 ],
+//      tags: [ "new", "xxx", "angular" ],
+//      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
+//      ribbon: "NEW",
+//      creation_date: "2026-03-26",
+//      srcs: [ "ack" ],
+//    },
+//    {
+//      id: 8,
+//      term: "jasmine",
+//      text: "Behavior-driven development framework for testing JavaScript. Default Angular test runner using describe/it/expect syntax.",
+//      points: [
+//        "describe() groups tests; it() defines test cases.",
+//        "Matchers: expect(value).toBe(), toEqual(), toBeTruthy().",
+//        "Async testing: fakeAsync(), tick(), async/await.",
+//      ],
+//      abbreviations: [],
+//      references: [
+//        { handle: "official", weblink: "https://jasmine.github.io/", txt: "jasmine.github.io" }
+//      ],
+//      crossrefs: [ 9 ],
+//      tags: [ "new", "xxx", "testing" ],
+//      imgurl: "https://upload.wikimedia.org/wikipedia/en/2/22/Logo_jasmine.svg",
+//      ribbon: "NEW",
+//      creation_date: "2026-03-26",
+//      srcs: [ "ack" ],
+//    },
+//    {
+//      id: 9,
+//      term: "karma",
+//      text: "Test runner for JavaScript executing tests in real browsers. Angular CLI uses karma-jasmine-html-reporter by default.",
+//      points: [
+//        "karma.conf.js configures browsers, frameworks, reporters.",
+//        "ng test runs karma in watch mode with live reload.",
+//        "Supports Chrome, Firefox, Edge, Safari browsers.",
+//      ],
+//      abbreviations: [],
+//      references: [
+//        { handle: "official", weblink: "https://karma-runner.github.io/", txt: "karma-runner.github.io" }
+//      ],
+//      crossrefs: [ 8 ],
+//      tags: [ "new", "xxx", "testing" ],
+//      imgurl: "https://karma-runner.github.io/assets/img/karma-3.png",
+//      ribbon: "NEW",
+//      creation_date: "2026-03-26",
+//      srcs: [ "ack" ],
+//    },
+//    {
+//      id: 10,
+//      term: "dependency injection",
+//      text: "Design pattern where components receive dependencies from external source rather than creating them. Angular's hierarchical DI system.",
+//      points: [
+//        "Services injected via constructor parameters.",
+//        "Providers at component/module/root levels control scope.",
+//        "Use @Injectable() for services; providedIn: 'root'.",
+//      ],
+//      abbreviations: [
+//        { short: "DI", long: "dependency injection" }
+//      ],
+//      references: [
+//        { handle: "official", weblink: "https://angular.dev/guide/di", txt: "angular.dev/di" }
+//      ],
+//      crossrefs: [ 11 ],
+//      tags: [ "new", "xxx", "design-pattern", "di" ],
+//      imgurl: "https://upload.wikimedia.org/wikipedia/commons/3/35/%D9%86%D8%B8%D8%B1%D8%A9_%D9%85%D9%82%D8%B1%D8%A8%D8%A9_%D9%84%D9%84%D8%B2%D9%84%D9%8A%D8%AC_%D9%81%D9%8A_%D9%85%D8%AF%D8%B1%D8%B3%D8%A9_%D8%A7%D8%A8%D9%86_%D9%8A%D9%88%D8%B3%D9%81.jpeg",
+//      ribbon: "NEW",
+//      creation_date: "2026-03-26",
+//      srcs: [ "ack" ],
+//    },
+//    {
+//      id: 11,
+//      term: "Angular dependency injection scope",
+//      text: "Angular's hierarchical DI tree determines service instance sharing. Root services shared app-wide; component providers create new instances.",
+//      points: [
+//        "providedIn: 'root' = singleton at app root.",
+//        "providers: [] at component = new instance per component.",
+//        "useExisting/useValue/useFactory for advanced scenarios.",
+//      ],
+//      abbreviations: [],
+//      references: [
+//        { handle: "official", weblink: "https://angular.dev/guide/di/hierarchical", txt: "angular.dev/di-hierarchical" }
+//      ],
+//      crossrefs: [ 10 ],
+//      tags: [ "new", "xxx", "di", "angular" ],
+//      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
+//      ribbon: "NEW",
+//      creation_date: "2026-03-26",
+//      srcs: [ "ack" ],
+//    },
+//    {
+//      id: 12,
+//      term: "Rxjs Subject",
+//      text: "Special Observable that can multicast to multiple subscribers. Base for BehaviorSubject, ReplaySubject, AsyncSubject.",
+//      points: [
+//        "Use next(value) to emit; complete() or error(err).",
+//        "Subjects are hot; subscribers get current + future emissions.",
+//        "Never expose raw Subject; use as service observables.",
+//      ],
+//      abbreviations: [],
+//      references: [
+//        { handle: "official", weblink: "https://rxjs.dev/guide/subject", txt: "rxjs.dev/subject" }
+//      ],
+//      crossrefs: [ 4 ],
+//      tags: [ "new", "xxx", "rxjs" ],
+//      imgurl: "https://rxjs.dev/generated/images/marketing/home/Rx_Logo-512-512.png",
+//      ribbon: "NEW",
+//      creation_date: "2026-03-26",
+//      srcs: [ "ack" ],
+//    },
+//    {
+//      id: 13,
+//      term: "Rxjs BehaviorSubject",
+//      text: "Special Subject that requires initial value and replays last emitted value to new subscribers. Common for state management in Angular services.",
+//      points: [
+//        "new BehaviorSubject(initialValue); emits current value immediately on subscribe().",
+//        "getValue() returns current value synchronously.",
+//        "Ideal for app state, user preferences, form state.",
+//      ],
+//      abbreviations: [],
+//      references: [
+//        { handle: "official", weblink: "https://rxjs.dev/api/index/class/BehaviorSubject", txt: "rxjs.dev/BehaviorSubject" }
+//      ],
+//      crossrefs: [ 12, 4 ],
+//      tags: [ "new", "xxx", "rxjs" ],
+//      imgurl: "https://rxjs.dev/generated/images/marketing/home/Rx_Logo-512-512.png",
+//      ribbon: "NEW",
+//      creation_date: "2026-03-26",
+//      srcs: [ "ack" ],
+//    },
+//    {
+//      id: 14,
+//      term: "Angular DataBinding",
+//      text: "Automatic synchronization between component TypeScript properties and DOM template. Four types: interpolation, property, event, two-way.",
+//      points: [
+//        "Interpolation {{ }} displays property values.",
+//        "Property binding [prop]=expression sets element properties.",
+//        "(event)=handler captures DOM events.",
+//        "[(ngModel)]=property enables two-way binding.",
+//      ],
+//      abbreviations: [],
+//      references: [
+//        { handle: "official", weblink: "https://angular.dev/guide/templates/binding", txt: "angular.dev/databinding" }
+//      ],
+//      crossrefs: [ 2 ],
+//      tags: [ "new", "xxx", "angular" ],
+//      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
+//      ribbon: "NEW",
+//      creation_date: "2026-03-26",
+//      srcs: [ "ack" ],
+//    },
+//    {
+//      id: 15,
+//      term: "Angular Reactive Forms",
+//      text: "Programmatic form handling using FormGroup, FormControl, FormArray. Observable-based validation and value changes.",
+//      points: [
+//        "ReactiveFormsModule provides FormBuilder, validators.",
+//        "valueChanges emits on every input change.",
+//        "Nested forms with FormGroup; dynamic arrays with FormArray.",
+//      ],
+//      abbreviations: [],
+//      references: [
+//        { handle: "official", weblink: "https://angular.dev/guide/forms/reactive", txt: "angular.dev/reactive-forms" }
+//      ],
+//      crossrefs: [],
+//      tags: [ "new", "xxx", "angular" ],
+//      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
+//      ribbon: "NEW",
+//      creation_date: "2026-03-26",
+//      srcs: [ "ack" ],
+//    },
+//    {
+//      id: 16,
+//      term: "Angular ContentChildren",
+//      text: "Query children content projected via ng-content. Access components/directives in parent template's ng-content.",
+//      points: [
+//        "@ContentChildren(ChildComponent) children!: QueryList<ChildComponent>;",
+//        "Detects changes when content children added/removed.",
+//        "Use {descendants: true} to include nested children.",
+//      ],
+//      abbreviations: [],
+//      references: [
+//        { handle: "official", weblink: "https://angular.dev/guide/components/query#query-contentchildren", txt: "angular.dev/contentchildren" }
+//      ],
+//      crossrefs: [ 17 ],
+//      tags: [ "new", "xxx", "angular" ],
+//      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
+//      ribbon: "NEW",
+//      creation_date: "2026-03-26",
+//      srcs: [ "ack" ],
+//    },
+//    {
+//      id: 17,
+//      term: "Angular ViewChild",
+//      text: "Query child components, directives, or DOM elements in component's own template. Access via @ViewChild.",
+//      points: [
+//        "@ViewChild(ChildComponent) child!: ChildComponent; available after ngAfterViewInit.",
+//        "Supports static/dynamic queries with {static: false}.",
+//        "Template reference variables: @ViewChild('myTemplate') template!: TemplateRef.",
+//      ],
+//      abbreviations: [],
+//      references: [
+//        { handle: "official", weblink: "https://angular.dev/guide/components/query#viewchild", txt: "angular.dev/viewchild" }
+//      ],
+//      crossrefs: [ 16 ],
+//      tags: [ "new", "xxx", "angular" ],
+//      imgurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?_=20231107180344",
+//      ribbon: "NEW",
+//      creation_date: "2026-03-26",
+//      srcs: [ "ack" ],
+//    }
+//
+//    /* BASIC TERMS */
 //      {
 //        id: 25,
 //        term: "npm",
