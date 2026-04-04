@@ -6,6 +6,14 @@ import { Injectable } from '@angular/core';
 })
 export class LocalDataProviderService {
 
+	/* more ideas for data:
+	 *
+	 * - HSTS
+	 * - CommonJS JS vs ECMAScript JS
+	 * - .mjs vs .cjs vs .js
+	 *
+	 */
+
   data = [
 
     /* HOMEWORK */
