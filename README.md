@@ -1,6 +1,15 @@
 
 # Webcraft Glossary
 
+## Demo
+
+!(demo)[2026-04-04_20-52-31_440289857.png]
+!(demo)[2026-04-04_20-52-43_568167180.png]
+!(demo)[2026-04-04_20-52-53_458027090.png]
+!(demo)[2026-04-04_20-53-11_461430575.png]
+
+## About
+
 Link to the [Github Pages upload](https://kraasch.github.io/demo_webcraft_glossary/).
 
 A project with...
