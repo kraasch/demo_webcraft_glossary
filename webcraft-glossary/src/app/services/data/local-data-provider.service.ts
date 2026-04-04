@@ -11,7 +11,9 @@ export class LocalDataProviderService {
 	 * - HSTS
 	 * - CommonJS JS vs ECMAScript JS
 	 * - .mjs vs .cjs vs .js
-	 *
+	 * - bun.js
+	 * - bundle.js.map
+	 * - axios (1.14.1 and 0.30.4)
 	 */
 
   data = [
