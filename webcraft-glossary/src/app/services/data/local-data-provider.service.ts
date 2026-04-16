@@ -15,8 +15,16 @@ export class LocalDataProviderService {
 	 * - bundle.js.map
 	 * - axios (1.14.1 and 0.30.4).
 	 * - closure (google's ts compiler for efficiency).
+	 *   - https://github.com/google/closure-compiler
 	 * - ngc (angular compiler which creates typescript).
+	 *   - identifiers: https://github.com/angular/angular/commit/5caab71f7dc64b10f3544b2a3b2650e1666adbf1
 	 * - tsc (typescript compiler).
+	 * - nop commerce 
+	 *   - https://github.com/nopsolutions/nopcommerce
+	 *   - https://www.nopcommerce.com/en
+	 * - umbraco
+	 * - web browser
+	 *   - https://github.com/codywohlers/browsermap
 	 */
 
   data = [
@@ -1831,11 +1839,13 @@ export class LocalDataProviderService {
 //        points: [
 //          "Introduced declarative templates using HTML.",
 //          "Now deprecated in favor of modern Angular.",
-//          "Pioneered many early SPA development concepts."
+//          "Pioneered many early SPA development concepts.",
+//          "Unlike later Angular, Angular JS let the browsers parse the HTML to create the DOM."
 //        ],
 //        abbreviations: [],
 //        references: [
-//          { handle: "archive", weblink: "https://angularjs.org/", txt: "AngularJS.org" }
+//          { handle: "archive", weblink: "https://angularjs.org/", txt: "AngularJS.org" },
+//          { handle: "code", weblink: "https://github.com/angular/angular.js/blob/e65928eecb3443943e3f9431e394e9bc59787952/src/ng/compile.js#L2124", txt: "Github" },
 //        ],
 //        crossrefs: [],
 //        tags: ["framework", "legacy", "frontend"],
