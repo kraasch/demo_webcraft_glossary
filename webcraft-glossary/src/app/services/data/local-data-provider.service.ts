@@ -13,7 +13,10 @@ export class LocalDataProviderService {
 	 * - .mjs vs .cjs vs .js
 	 * - bun.js
 	 * - bundle.js.map
-	 * - axios (1.14.1 and 0.30.4)
+	 * - axios (1.14.1 and 0.30.4).
+	 * - closure (google's ts compiler for efficiency).
+	 * - ngc (angular compiler which creates typescript).
+	 * - tsc (typescript compiler).
 	 */
 
   data = [
